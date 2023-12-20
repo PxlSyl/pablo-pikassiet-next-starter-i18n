@@ -1,0 +1,95 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "title": "Aerian Banger",
+      "genre": "Trap",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Aerian Banger.mp3",
+      "image": "/songs_images/song_Aerian Banger.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Asian Road Trip",
+      "genre": "Dub",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Asian Road Trip.mp3",
+      "image": "/songs_images/song_Asian Road Trip.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Monkey on the moon",
+      "genre": "Dub",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Monkey on the moon.mp3",
+      "image": "/songs_images/song_Monkey on the moon.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Remix Bisous",
+      "genre": "Reggae",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Remix Bisous.mp3",
+      "image": "/songs_images/song_Remix Bisous.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Remix Natural Mystic Ft Youyou",
+      "genre": "Reggae",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Remix Natural Mystic Ft Youyou.mp3",
+      "image": "/songs_images/song_Remix Natural Mystic Ft Youyou.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Saxofever",
+      "genre": "Hip-Hop",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Saxofever.mp3",
+      "image": "/songs_images/song_Saxofever.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Sombre",
+      "genre": "Hip-Hop",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Sombre.mp3",
+      "image": "/songs_images/song_Sombre.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Steppaddict",
+      "genre": "Dub",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Steppaddict.mp3",
+      "image": "/songs_images/song_Steppaddict.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Wanna go back to the nursery",
+      "genre": "Trap",
+      "author": "PxlSyl",
+      "album": "",
+      "year": "",
+      "url": "/songs/Wanna go back to the nursery.mp3",
+      "image": "/songs_images/song_Wanna go back to the nursery.jpg"
+    }
+  ],
+  "totalMP3Files": 9
+}

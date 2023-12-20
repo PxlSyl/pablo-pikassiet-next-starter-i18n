@@ -1,0 +1,29 @@
+  /*----------
+      Menu
+  ----------*/
+
+  .navmenu {
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 32px;
+    width: 200px;
+    height: 0px;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+  }
+
+  .navmenuactive {
+    border-top-right-radius: 32px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    width: 200px;
+    height: 400px;
+  }
+
+  

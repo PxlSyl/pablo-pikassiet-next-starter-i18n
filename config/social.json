@@ -1,0 +1,44 @@
+{
+  "main": [
+    {
+      "name": "facebook",
+      "icon": "FaFacebook",
+      "link": "https://www.facebook.com/"
+    },
+    {
+      "name": "twitter",
+      "icon": "FaTwitter",
+      "link": "https://twitter.com/"
+    },
+    {
+      "name": "instagram",
+      "icon": "FaInstagram",
+      "link": "https://instagram.com/"
+    },
+    {
+      "name": "tiktok",
+      "icon": "FaTiktok",
+      "link": "https://tiktok.com/"
+    },
+    {
+      "name": "deviantart",
+      "icon": "FaDeviantart",
+      "link": "https://www.deviantart.com/"
+    },
+    {
+      "name": "github",
+      "icon": "FaGithub",
+      "link": "https://www.github.com/"
+    },
+    {
+      "name": "linkedin",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "name": "youtube",
+      "icon": "FaYoutube",
+      "link": "https://www.youtube.com/"
+    }
+  ]
+}

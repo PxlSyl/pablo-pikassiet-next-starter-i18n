@@ -1,0 +1,11 @@
+{
+    "title": "Title",
+    "genre": "Genre",
+    "artist": "Artist",
+    "album": "Album",
+    "year": "Year",
+    "choose": "Choose a track!",
+    "all": "All",
+    "search": "Search",
+    "searchdescription": "Search for artist, track or genre"
+}

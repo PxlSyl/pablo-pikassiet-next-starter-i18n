@@ -1,0 +1,27 @@
+{
+"home":"Accueil",
+"etsy": "Etsy",
+"prints": "Impressions",
+"commissions": "Commandes",
+"shopinfos":"Infos Boutique",
+"infos": "Infos",
+"drawings": "Dessins",
+"photography": "Photographie",
+"projects": "Projets",
+"music": "Musique",
+"tracks": "Tracks",
+"videos": "Vidéos",
+"musicinfos":"Infos musique",
+"posts": "Articles",
+"categories": "Catégories",
+"tags": "Tags",
+"authors": "Auteurs",
+"about": "À propos",
+"terms": "CGV",
+"legalnotice": "Mentions légales",
+"contact": "Contact",
+
+"/about": "/about",
+"/terms":"/terms",
+"/legal-notice":"/legal-notice"
+}
