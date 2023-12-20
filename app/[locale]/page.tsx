@@ -5,9 +5,11 @@ import { genPageMetadata } from './seo'
 import { getListPage } from '@/lib/contentParser'
 import { markdownify } from '@/lib/utils/textConverter'
 
+import siteMetadata from '@/config/siteMetadata'
 import CallToAction from '@/components/partials/CallToAction'
 import ImageFallback from '@/components/helpers/ImageFallback'
 import Testimonials from '@/components/partials/Testimonials'
+import NewsletterForm from '@/components/blog/NewsletterForm'
 
 import { LocaleTypes } from './i18n/settings'
 
@@ -98,6 +100,11 @@ const Home = ({ params: { locale } }: HomeProps) => {
 
       <Testimonials data={testimonial} />
       <CallToAction data={callToAction} />
+      {siteMetadata.newsletter?.provider && (
+        <div className="mb-10 flex items-center justify-center pt-4">
+          <NewsletterForm />
+        </div>
+      )}
     </>
   )
 }

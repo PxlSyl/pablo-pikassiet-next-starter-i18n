@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef, useState } from 'react'
 import { useTranslation } from 'app/[locale]/i18n/client'
 import { useParams } from 'next/navigation'
@@ -57,7 +59,7 @@ const NewsletterForm = ({ apiUrl = '/api/newsletter' }: NewsletterFormProps) => 
             <span className="sr-only">{t('mail')}</span>
             <input
               autoComplete="email"
-              className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-highlighted dark:bg-black"
+              className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-highlighted dark:bg-[#3d3d3d] dark:focus:ring-darkmode-highlighted"
               id="email-input"
               name="email"
               placeholder={`${subscribed ? t('placeholderSuccess') : t('placeholderDefault')}`}

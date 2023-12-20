@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 
 import footer from '@/config/footer.json'
@@ -7,18 +5,25 @@ import social from '@/config/social.json'
 import { footerLinks } from '@/config/headerLinks'
 
 import siteMetadata from '@/config/siteMetadata'
-import NewsletterForm from '../../blog/NewsletterForm'
 import Social from '../../blog/Social'
+
+import { LocaleTypes } from 'app/[locale]/i18n/settings'
+import { createTranslation } from '@/app/[locale]/i18n/server'
 
 import { markdownify } from '@/lib/utils/textConverter'
 
-const Footer = () => {
+type Props = {
+  params: { locale: LocaleTypes }
+}
+
+const Footer = async ({ params: { locale } }: Props) => {
+  const { t } = await createTranslation(locale, 'headerlinks')
   const { copyright, credits } = footer.params
 
   return (
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
-      <div className="container">
-        <div className="mb-8 justify-center text-center">
+      <div className="container pt-10">
+        <div className="mb-8  justify-center text-center">
           <Social source={social.main} className="social-icons" />
         </div>
         <div className="mb-2 flex flex-row justify-center space-x-2 text-center text-sm">
@@ -33,7 +38,7 @@ const Footer = () => {
                 className="m-3 inline-block text-sm underline hover:text-highlighted dark:hover:text-darkmode-highlighted"
                 key={link.title}
               >
-                <Link href={link.href}>{link.title}</Link>
+                <Link href={`/${locale}${link.href}`}>{t(`${link.title.toLowerCase()}`)}</Link>
               </li>
             ))}
           </ul>

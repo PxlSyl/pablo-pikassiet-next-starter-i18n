@@ -100,7 +100,7 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
           </SearchProvider>
-          <Footer />
+          <Footer params={{ locale: locale }} />
         </Providers>
       </body>
     </html>
