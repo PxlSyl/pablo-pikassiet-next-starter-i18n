@@ -23,7 +23,7 @@ const Footer = async ({ params: { locale } }: Props) => {
   return (
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
       <div className="container pt-10">
-        <div className="mb-8  justify-center text-center">
+        <div className="mb-8 justify-center text-center">
           <Social source={social.main} className="social-icons" />
         </div>
         <div className="mb-2 flex flex-row justify-center space-x-2 text-center text-sm">
