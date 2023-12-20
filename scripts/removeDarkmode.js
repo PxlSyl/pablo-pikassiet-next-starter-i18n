@@ -56,7 +56,7 @@ function deleteNestedProperty(obj, propertyPath) {
     if (Object.prototype.hasOwnProperty.call(currentObj, property)) {
       currentObj = currentObj[property]
     } else {
-      return // Property not found, no need to continue
+      return
     }
   }
   delete currentObj[properties[properties.length - 1]]
