@@ -7,7 +7,6 @@ import { useWindowWidth } from '@/hooks/useWindowWidth'
 import { useGalleryStore } from '@/components/gallery/drawings/store'
 
 import { useParams } from 'next/navigation'
-import { useTranslation } from '@/app/[locale]/i18n/client'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 
 interface GalleryProps {
