@@ -8,5 +8,3 @@ export * from './types'
 export declare const allBlogs: Blog[]
 
 export declare const allDocuments: DocumentTypes[]
-
-

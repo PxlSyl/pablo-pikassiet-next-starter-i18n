@@ -63,7 +63,7 @@ export const Sidebar = ({
         setGenre(genre)
         handleSelect(genre)
       }}
-      onKeyPress={(e) => {
+      onKeyDown={(e) => {
         if (e.key === 'Enter') {
           setGenre(genre)
           handleSelect(genre)

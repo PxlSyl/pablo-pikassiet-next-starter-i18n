@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 // how to use
 // const mobile = useWindow(767) < 768
@@ -6,20 +6,17 @@ import { useEffect, useState } from "react";
 
 const useWindow = (size: number) => {
   // getWindowDimensions
-  const [windowSize, setWindowSize] = useState(size || 768);
+  const [windowSize, setWindowSize] = useState(size || 768)
   useEffect(() => {
     function viewport() {
-      var width = Math.max(
-        document.documentElement.clientWidth,
-        window.innerWidth || 0,
-      );
-      setWindowSize(width);
+      var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+      setWindowSize(width)
     }
-    viewport();
-    window.onresize = viewport;
-  }, []);
+    viewport()
+    window.onresize = viewport
+  }, [])
 
-  return windowSize;
-};
+  return windowSize
+}
 
-export default useWindow;
+export default useWindow

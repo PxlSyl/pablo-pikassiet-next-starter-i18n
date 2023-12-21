@@ -32,10 +32,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <input
             type="checkbox"
             aria-label="Music menu"
-            id="menucheckbox"
+            id="checkbox"
             className="checkbox visuallyHidden"
           />
-          <label htmlFor="menucheckbox">
+          <label htmlFor="checkbox">
             <div
               role="button"
               tabIndex={0}

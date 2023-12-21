@@ -81,15 +81,8 @@
         "description": "this is meta description",
         "date": "2016-03-08T00:00:00.000Z",
         "image": "/images/image-placeholder.png",
-        "categories": [
-          "Application",
-          "Data"
-        ],
-        "tags": [
-          "markdown",
-          "code",
-          "features"
-        ],
+        "categories": ["Application", "Data"],
+        "tags": ["markdown", "code", "features"],
         "draft": false,
         "author": "John Doe",
         "summary": "Example of a markdown file with code blocks and syntax highlighting",
@@ -149,15 +142,8 @@
         "description": "this is meta description",
         "date": "2016-03-08T00:00:00.000Z",
         "image": "/images/image-placeholder.png",
-        "categories": [
-          "Application",
-          "Data"
-        ],
-        "tags": [
-          "markdown",
-          "code",
-          "features"
-        ],
+        "categories": ["Application", "Data"],
+        "tags": ["markdown", "code", "features"],
         "draft": false,
         "author": "John Doe",
         "summary": "Example of a markdown file with code blocks and syntax highlighting\r",

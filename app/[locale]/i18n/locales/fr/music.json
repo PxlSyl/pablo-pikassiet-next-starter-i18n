@@ -1,11 +1,11 @@
 {
-    "title": "Titre",
-    "genre": "Genre",
-    "artist": "Artiste",
-    "album": "Album",
-    "year": "Année",
-    "choose": "Choisis un son!",
-    "all": "Tous",
-    "search": "Chercher",
-    "searchdescription": "Chercher par artiste, titre ou genre"
+  "title": "Titre",
+  "genre": "Genre",
+  "artist": "Artiste",
+  "album": "Album",
+  "year": "Année",
+  "choose": "Choisis un son!",
+  "all": "Tous",
+  "search": "Chercher",
+  "searchdescription": "Chercher par artiste, titre ou genre"
 }

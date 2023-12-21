@@ -1,10 +1,7 @@
-import { formatInTimeZone } from "date-fns-tz";
+import { formatInTimeZone } from 'date-fns-tz'
 
-const dateFormat = (
-  date: Date | string,
-  format: string = "dd MMM, yyyy",
-): string => {
-  return formatInTimeZone(date, "America/New_York", format);
-};
+const dateFormat = (date: Date | string, format: string = 'dd MMM, yyyy'): string => {
+  return formatInTimeZone(date, 'America/New_York', format)
+}
 
-export default dateFormat;
+export default dateFormat

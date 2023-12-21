@@ -26,4 +26,30 @@ import theTimeMachineMdx from './the-time-machine.mdx.json' assert { type: 'json
 import nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx from './nested-route__introducing-multi-part-posts-with-nested-routing.mdx.json' assert { type: 'json' }
 import routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx from './route-imbriquee__presentation-publications-en-plusieurs-parties-routage-imbrique.mdx.json' assert { type: 'json' }
 
-export const allBlogs = [codeSampleMdx, derivationEstimateurOlsMdx, derivingOlsEstimatorMdx, elementsMdx, exempleCodeMdx, githubMarkdownGuideMdx, guideGithubMarkdownMdx, guideToUsingImagesInNextjsMdx, guideUtilisationImagesNextjsMdx, imagesDuCanadaMdx, internationalisationV2Mdx, internationalizationV2Mdx, introducingTailwindNextjsStarterBlogMdx, laMachineARemonterLeTempsMdx, monTitreFancyMdx, myFancyTitleMdx, newFeaturesInV1Mdx, nouvellesFonctionnalitesV1Mdx, picturesOfCanadaMdx, presentationBlogStarterTailwindNextjsMdx, presentationStarterBlogTailwindNextjsV2_0Mdx, releaseOfTailwindNextjsStarterBlogV2_0Mdx, theTimeMachineMdx, nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx, routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx]
+export const allBlogs = [
+  codeSampleMdx,
+  derivationEstimateurOlsMdx,
+  derivingOlsEstimatorMdx,
+  elementsMdx,
+  exempleCodeMdx,
+  githubMarkdownGuideMdx,
+  guideGithubMarkdownMdx,
+  guideToUsingImagesInNextjsMdx,
+  guideUtilisationImagesNextjsMdx,
+  imagesDuCanadaMdx,
+  internationalisationV2Mdx,
+  internationalizationV2Mdx,
+  introducingTailwindNextjsStarterBlogMdx,
+  laMachineARemonterLeTempsMdx,
+  monTitreFancyMdx,
+  myFancyTitleMdx,
+  newFeaturesInV1Mdx,
+  nouvellesFonctionnalitesV1Mdx,
+  picturesOfCanadaMdx,
+  presentationBlogStarterTailwindNextjsMdx,
+  presentationStarterBlogTailwindNextjsV2_0Mdx,
+  releaseOfTailwindNextjsStarterBlogV2_0Mdx,
+  theTimeMachineMdx,
+  nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx,
+  routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx,
+]

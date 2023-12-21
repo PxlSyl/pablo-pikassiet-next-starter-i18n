@@ -4,12 +4,8 @@
   "language": "fr",
   "localeid": "myfancytitle",
   "image": "/images/image-placeholder.png",
-  "categories": [
-    "draft"
-  ],
-  "tags": [
-    "salut"
-  ],
+  "categories": ["draft"],
+  "tags": ["salut"],
   "draft": true,
   "summary": "Article en construction",
   "images": [],

@@ -1,7 +1,7 @@
 import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
 import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
-import GithubSlugger from 'github-slugger'
+import { slug } from 'github-slugger'
 import path from 'path'
 // Remark packages
 import remarkGfm from 'remark-gfm'
@@ -74,7 +74,7 @@ function createCategoryCount(allBlogs) {
   allBlogs.forEach((file) => {
     if (file.categories && (!isProduction || file.draft !== true)) {
       file.categories.forEach((category: string) => {
-        const formattedCategory = GithubSlugger.slug(category)
+        const formattedCategory = slug(category)
         if (file.language === fallbackLng) {
           categoryCount[fallbackLng][formattedCategory] =
             (categoryCount[fallbackLng][formattedCategory] || 0) + 1
@@ -100,7 +100,7 @@ function createTagCount(allBlogs) {
   allBlogs.forEach((file) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
       file.tags.forEach((tag: string) => {
-        const formattedTag = GithubSlugger.slug(tag)
+        const formattedTag = slug(tag)
         if (file.language === fallbackLng) {
           tagCount[fallbackLng][formattedTag] = (tagCount[fallbackLng][formattedTag] || 0) + 1
         } else if (file.language === secondLng) {
@@ -189,10 +189,10 @@ export default makeSource({
       rehypePresetMinify,
     ],
   },
-  /*  onSuccess: async (importData) => {
+  onSuccess: async (importData) => {
     const { allBlogs } = await importData()
     generateSlugMap(allBlogs)
     createTagCount(allBlogs)
     createSearchIndex(allBlogs)
-  },*/
+  },
 })

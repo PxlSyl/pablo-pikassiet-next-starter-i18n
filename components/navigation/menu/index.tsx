@@ -40,6 +40,7 @@ import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 export const Header: React.FC = (): JSX.Element | null => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'headerlinks')
+
   const pathname = usePathname()
 
   const [menuclick, setClick] = useState<boolean>(false)

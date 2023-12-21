@@ -4,18 +4,11 @@
   "language": "en",
   "localeid": "canadapictures",
   "image": "/images/image-placeholder.png",
-  "categories": [
-    "holiday"
-  ],
-  "tags": [
-    "canada",
-    "images"
-  ],
+  "categories": ["holiday"],
+  "tags": ["canada", "images"],
   "draft": false,
   "summary": "The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.",
-  "images": [
-    "/static/images/canada/mountains.jpg"
-  ],
+  "images": ["/static/images/canada/mountains.jpg"],
   "layout": "PostBanner",
   "body": {
     "raw": "\nThe scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.\n\nFeatures images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/canada/[filename].jpg`\n\nSince we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.\n\n---\n\n# Gallery\n\n<div className=\"-mx-2 flex flex-wrap overflow-hidden xl:-mx-2\">\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Maple](/static/images/canada/maple.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Lake](/static/images/canada/lake.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Mountains](/static/images/canada/mountains.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Toronto](/static/images/canada/toronto.jpg)\n  </div>\n</div>\n\n# Implementation\n\n```js\n<div className=\"-mx-2 flex flex-wrap overflow-hidden xl:-mx-2\">\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Maple](/static/images/canada/maple.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Lake](/static/images/canada/lake.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Mountains](/static/images/canada/mountains.jpg)\n  </div>\n  <div className=\"my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2\">\n    ![Toronto](/static/images/canada/toronto.jpg)\n  </div>\n</div>\n```\n\nWith MDX v2, one can interleave markdown in jsx as shown in the example code.\n\n### Photo Credits\n\n<div>\n  Maple photo by [Guillaume\n  Jaillet](https://unsplash.com/@i_am_g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n  on\n  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n</div>\n<div>\n  Mountains photo by [John\n  Lee](https://unsplash.com/@john_artifexfilms?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n  on\n  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n</div>\n<div>\n  Lake photo by [Tj\n  Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n  on\n  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n</div>\n<div>\n  Toronto photo by [Matthew\n  Henry](https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n  on\n  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)\n</div>\n",

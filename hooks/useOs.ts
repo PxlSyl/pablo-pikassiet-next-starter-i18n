@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 // how to use
 // const macOS = useOs()
@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 
 const useOs = () => {
   // get Os
-  const [os, setOs] = useState(false);
+  const [os, setOs] = useState(false)
   useEffect(() => {
-    setOs(navigator.platform.indexOf("Mac") > -1);
-  }, []);
+    setOs(navigator.platform.indexOf('Mac') > -1)
+  }, [])
 
-  return os;
-};
+  return os
+}
 
-export default useOs;
+export default useOs

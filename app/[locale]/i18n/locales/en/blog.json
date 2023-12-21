@@ -1,15 +1,14 @@
 {
-"tags": "Tags",
-"categories": "Categories",
-"allposts": "All posts",
-"readmore": "Read more",
-"published": "Published on",
-"share": "Share",
-"author": "Author",
-"prevpost": "Previous Article",
-"nextpost": "Next Article",
-"back": "Back to the blog",
-"relatedposts": "Related posts",
-"comments": "Load comments"
+  "tags": "Tags",
+  "categories": "Categories",
+  "allposts": "All posts",
+  "readmore": "Read more",
+  "published": "Published on",
+  "share": "Share",
+  "author": "Author",
+  "prevpost": "Previous Article",
+  "nextpost": "Next Article",
+  "back": "Back to the blog",
+  "relatedposts": "Related posts",
+  "comments": "Load comments"
 }
-  

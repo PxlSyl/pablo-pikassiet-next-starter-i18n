@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  @import "base";
+  @import 'base';
 }
 
 @layer components {
-  @import "components";
-  @import "navigation";
-  @import "buttons";
-  @import "themetoggler";
+  @import 'components';
+  @import 'navigation';
+  @import 'buttons';
+  @import 'themetoggler';
 }
 
 @layer utilities {
-  @import "utilities";
+  @import 'utilities';
 }
 
 .animate-spin {
@@ -47,11 +47,14 @@
 /*Hamburger*/
 
 .visuallyHidden {
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .hamburger {
@@ -69,7 +72,7 @@
   display: block;
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
-  position: absolute; 
+  position: absolute;
 }
 
 .bar1 {
@@ -98,7 +101,9 @@
 }
 
 .hamburger_style .bar {
-  transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+  transition:
+    all 0.4s ease-in-out,
+    transform 0.4s ease-in-out 0.4s;
 }
 
 .hamburger_style .bar2 {
@@ -110,31 +115,30 @@
 .hamburger_style .bar3 {
   width: 1px;
   left: 13.5px;
-  
 }
 
-.checkbox:checked + label > .hamburger_style > .bar1{
+.checkbox:checked + label > .hamburger_style > .bar1 {
   top: 13.5px;
   background-color: transparent;
 }
 
-.checkbox:checked + label > .hamburger_style > .bar2{
+.checkbox:checked + label > .hamburger_style > .bar2 {
   left: 0px;
   width: 30px;
   transform: rotate(45deg);
 }
 
-.checkbox:checked + label > .hamburger_style > .bar3{
+.checkbox:checked + label > .hamburger_style > .bar3 {
   left: 0;
   width: 30px;
   transform: rotate(-45deg);
 }
 
-.checkbox:checked + label > .hamburger_style > .bar4{
+.checkbox:checked + label > .hamburger_style > .bar4 {
   background-color: transparent;
 }
 
-.checkbox:checked + label > .hamburger_style > .bar5{
+.checkbox:checked + label > .hamburger_style > .bar5 {
   bottom: 13.5px;
-  background-color: transparent; 
+  background-color: transparent;
 }

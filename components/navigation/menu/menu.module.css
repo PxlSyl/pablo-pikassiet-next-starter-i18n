@@ -1,177 +1,178 @@
-  .toggle,
-  .toggledark {
-    top: 40px;
-    left: 40px;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    width: 50px;
-    cursor: pointer;
-    z-index: 50;
-  }
+.toggle,
+.toggledark {
+  top: 40px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 50px;
+  cursor: pointer;
+  z-index: 50;
+}
 
-  .toggle:before,
-  .toggle:after,
-  .toggle div {
-    background: rgb(0, 0, 0);
-    content: "";
-    display: block;
-    height: 6px;
-    border-radius: 3px;
-    margin: 7px 0;
-    transition: 0.5s;
-  }
+.toggle:before,
+.toggle:after,
+.toggle div {
+  background: rgb(0, 0, 0);
+  content: '';
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
 
-  .toggledark:before,
-  .toggledark:after,
-  .toggledark div {
-    background: rgb(255, 255, 255);
-    content: "";
-    display: block;
-    height: 6px;
-    border-radius: 3px;
-    margin: 7px 0;
-    transition: 0.5s;
-  }
+.toggledark:before,
+.toggledark:after,
+.toggledark div {
+  background: rgb(255, 255, 255);
+  content: '';
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
 
-  .toggle:active:before,
-  .toggledark:active:before {
-    transform: translateY(12px) rotate(135deg);
-  }
+.toggle:active:before,
+.toggledark:active:before {
+  transform: translateY(12px) rotate(135deg);
+}
 
-  .toggle:active:after,
-  .toggledark:active:after {
-    transform: translateY(-12px) rotate(-135deg);
-  }
+.toggle:active:after,
+.toggledark:active:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
 
-  .toggle:active div,
-  .toggledark:active div {
-    transform: scale(0);
-  }
+.toggle:active div,
+.toggledark:active div {
+  transform: scale(0);
+}
 
-  .toggle2,
-  .toggledark2 {
-    top: 40px;
-    left: 40px;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    width: 50px;
-    cursor: pointer;
-    z-index: 50;
-  }
+.toggle2,
+.toggledark2 {
+  top: 40px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 50px;
+  cursor: pointer;
+  z-index: 50;
+}
 
-  .toggle2:before,
-  .toggle2:after,
-  .toggle2 div {
-    background: rgb(0, 0, 0);
-    content: "";
-    display: block;
-    height: 6px;
-    border-radius: 3px;
-    margin: 7px 0;
-    transition: 0.5s;
+.toggle2:before,
+.toggle2:after,
+.toggle2 div {
+  background: rgb(0, 0, 0);
+  content: '';
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
 
-  }
+.toggledark2:before,
+.toggledark2:after,
+.toggledark2 div {
+  background: rgb(255, 255, 255);
+  content: '';
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
 
-  .toggledark2:before,
-  .toggledark2:after,
-  .toggledark2 div {
-    background: rgb(255, 255, 255);
-    content: "";
-    display: block;
-    height: 6px;
-    border-radius: 3px;
-    margin: 7px 0;
-    transition: 0.5s;
-  }
+.toggle2:before,
+.toggledark2:before {
+  transform: translateY(12px) rotate(135deg);
+}
 
-  .toggle2:before,
-  .toggledark2:before {
-    transform: translateY(12px) rotate(135deg);
-  }
+.toggle2:after,
+.toggledark2:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
 
-  .toggle2:after,
-  .toggledark2:after {
-    transform: translateY(-12px) rotate(-135deg);
-  }
+.toggle2 div,
+.toggledark2 div {
+  transform: scale(0);
+}
 
-  .toggle2 div,
-  .toggledark2 div {
-    transform: scale(0);
-  }
-
-  /*----------
+/*----------
       Menu
   ----------*/
 
+.navmenu {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 80px;
+  left: -100%;
+  opacity: 1;
+  transition: 0.5s ease;
+  padding-top: 100px;
+  padding-bottom: 1.5rem;
+  z-index: 20;
+}
+
+.navmenuactive {
+  border-radius: 16px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  opacity: 1;
+  transition: 0.5s ease;
+  padding-top: 100px;
+  padding-bottom: 1.5rem;
+  z-index: 20;
+}
+
+@media screen and (max-width: 768px) {
+  .navmenuactive {
+    width: 260px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .navmenu {
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 80px;
-    left: -100%;
+    top: -100%;
+    left: 0;
     opacity: 1;
     transition: 0.5s ease;
     padding-top: 100px;
     padding-bottom: 1.5rem;
-    z-index: 20;
+    z-index: 19;
   }
 
   .navmenuactive {
-    border-radius: 16px;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.16),
+      0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
     left: 0;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 100vh;
+    width: 100%;
+    height: 300px;
     position: fixed;
     top: 0px;
     opacity: 1;
     transition: 0.5s ease;
     padding-top: 100px;
     padding-bottom: 1.5rem;
-    z-index: 20;
+    z-index: 19;
   }
-
-  @media screen and (max-width: 768px) {
-    .navmenuactive {
-      width: 260px;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .navmenu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      top: -100%;
-      left: 0;
-      opacity: 1;
-      transition: 0.5s ease;
-      padding-top: 100px;
-      padding-bottom: 1.5rem;
-      z-index: 19;
-    }
-
-    .navmenuactive {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.16), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-      border-bottom-left-radius: 20%;
-      border-bottom-right-radius: 20%;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 300px;
-      position: fixed;
-      top: 0px;
-      opacity: 1;
-      transition: 0.5s ease;
-      padding-top: 100px;
-      padding-bottom: 1.5rem;
-      z-index: 19;
-    }
-  }
+}

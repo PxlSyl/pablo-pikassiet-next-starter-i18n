@@ -1,55 +1,55 @@
 .vm__checkbox {
-    display: inline-block;
-    height: 1.5rem;
-    width: 3rem;
-    position: relative;
+  display: inline-block;
+  height: 1.5rem;
+  width: 3rem;
+  position: relative;
 
-    input {
-        height: 0;
-        width: 0;
-        opacity: 0;
+  input {
+    height: 0;
+    width: 0;
+    opacity: 0;
 
-        &:checked {
-            +.slider {
-                background-color: #3d3d3d;
-
-                &:before {
-                    background-color: transparent;
-                    box-shadow: 0.5rem 0.1rem 0rem 0rem #ffffff; 
-                    border-radius: 50% ;
-                    width: 1rem;
-                    height: 1rem;
-                    position: absolute;
-                    top: 0.2rem;
-                    left: 0.25rem;
-                    transform: translateX(1rem);
-                    transition: transform 0.4s;
-                }
-            }
-        }
-    }
-
-    .slider {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        background-color: #d6dbdf;
-        border-radius: 2rem;
-        cursor: pointer;
-        transition: background-color .22s ease;
+    &:checked {
+      + .slider {
+        background-color: #3d3d3d;
 
         &:before {
-            content: '';
-            background-color: #000000;
-            border-radius: 50%;
-            width: 1rem;
-            height: 1rem;
-            position: absolute;
-            top: 0.25rem;
-            left: 0.25rem;
-            transition: all .4s;
+          background-color: transparent;
+          box-shadow: 0.5rem 0.1rem 0rem 0rem #ffffff;
+          border-radius: 50%;
+          width: 1rem;
+          height: 1rem;
+          position: absolute;
+          top: 0.2rem;
+          left: 0.25rem;
+          transform: translateX(1rem);
+          transition: transform 0.4s;
         }
+      }
     }
+  }
+
+  .slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #d6dbdf;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.22s ease;
+
+    &:before {
+      content: '';
+      background-color: #000000;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      top: 0.25rem;
+      left: 0.25rem;
+      transition: all 0.4s;
+    }
+  }
 }
