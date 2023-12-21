@@ -3,7 +3,11 @@
 import React, { useState } from 'react'
 import { useDarkMode } from '@/hooks/useDarkmode'
 
-const ThemeSwitcher = ({ className }: { className: string }): JSX.Element | null => {
+type ThemeProps = {
+  className: string
+}
+
+const ThemeSwitcher = ({ className }: ThemeProps) => {
   const [isChecked, setIsChecked] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark'

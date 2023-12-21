@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import { useParams, usePathname } from 'next/navigation'
 import {
@@ -19,12 +20,7 @@ interface SectionProps {
   closeMenu: () => void
 }
 
-export const Mobilesection: React.FC<SectionProps> = ({
-  icon,
-  title,
-  links,
-  closeMenu,
-}): JSX.Element => {
+export const Mobilesection = ({ icon, title, links, closeMenu }: SectionProps) => {
   const pathname = usePathname()
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'headerlinks')

@@ -12,14 +12,14 @@ const variants = {
   enter: { opacity: 1, x: 0, y: 0 },
 }
 
-interface CardProps {
+type CardProps = {
   title: string
   description: string
   imgSrc?: string
   href?: string
 }
 
-const ProjectsCard: React.FC<CardProps> = ({ title, description, imgSrc, href }) => {
+const ProjectsCard = ({ title, description, imgSrc, href }: CardProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'projects')
   return (

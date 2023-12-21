@@ -4,11 +4,11 @@ import { TagLink } from './TagLink'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 import { createTranslation } from '@/app/[locale]/i18n/server'
 
-type PageProps = {
+type PostSideBarProps = {
   params: { locale: LocaleTypes }
 }
 
-const PostSidebar = async ({ params: { locale } }: PageProps) => {
+const PostSidebar = async ({ params: { locale } }: PostSideBarProps) => {
   const { t } = await createTranslation(locale, 'blog')
   return (
     <div className="mt-8 lg:col-4 sm:mt-0">

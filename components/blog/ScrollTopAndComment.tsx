@@ -3,11 +3,11 @@
 import siteMetadata from '@/config/siteMetadata'
 import { useEffect, useState } from 'react'
 
-type Props = {
+type ScrollProps = {
   scrollToComment: boolean
 }
 
-const ScrollTopAndComment = ({ scrollToComment }: Props) => {
+const ScrollTopAndComment = ({ scrollToComment }: ScrollProps) => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {

@@ -12,11 +12,11 @@ import { createTranslation } from '@/app/[locale]/i18n/server'
 
 import { markdownify } from '@/lib/utils/textConverter'
 
-type Props = {
+type FooterProps = {
   params: { locale: LocaleTypes }
 }
 
-const Footer = async ({ params: { locale } }: Props) => {
+const Footer = async ({ params: { locale } }: FooterProps) => {
   const { t } = await createTranslation(locale, 'headerlinks')
   const { copyright, credits } = footer.params
 

@@ -32,7 +32,7 @@ interface PlaybackControlsProps {
   toggleLoop: () => void
 }
 
-export const PlaybackControls: React.FC<PlaybackControlsProps> = ({
+export const PlaybackControls = ({
   id,
   music,
   isPlaying,
@@ -43,7 +43,7 @@ export const PlaybackControls: React.FC<PlaybackControlsProps> = ({
   skipBack,
   skipForward,
   toggleLoop,
-}) => {
+}: PlaybackControlsProps) => {
   return (
     <div className="flex flex-row items-center justify-center">
       <div className="w-35 h-35">

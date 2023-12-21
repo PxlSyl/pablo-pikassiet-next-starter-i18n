@@ -12,13 +12,15 @@ import ScrollTopAndComment from '@/components/blog/ScrollTopAndComment'
 import { getSinglePage } from '@/lib/contentParser'
 import { LocaleTypes } from '../../i18n/settings'
 
-export async function generateMetadata({
-  params,
-}: {
+type PageProps = {
   params: { single: string; locale: LocaleTypes }
-}): Promise<Metadata | undefined> {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
-  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
+}
+
+export async function generateMetadata({
+  params: { single, locale },
+}: PageProps): Promise<Metadata | undefined> {
+  const imagesData: ImgData[] = getSinglePage('gallery', locale)
+  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
   const { frontmatter } = imageSingle
   const { title, description, image } = frontmatter
 
@@ -29,7 +31,7 @@ export async function generateMetadata({
       title: title,
       description: description,
       siteName: siteMetadata.title,
-      locale: params.locale,
+      locale: locale,
       type: 'article',
       url: './',
       images: image ? image : siteMetadata.socialBanner,
@@ -49,12 +51,8 @@ export async function generateMetadata({
 export const dynamicParams = false
 
 // generate static params
-export const generateStaticParams = ({
-  params,
-}: {
-  params: { single: string; locale: LocaleTypes }
-}) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+export const generateStaticParams = ({ params: { single, locale } }: PageProps) => {
+  const imagesData: ImgData[] = getSinglePage('gallery', locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
   }))
@@ -62,9 +60,9 @@ export const generateStaticParams = ({
   return paths
 }
 
-const ImageSingle = ({ params }: { params: { single: string; locale: LocaleTypes } }) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
-  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
+const ImageSingle = ({ params: { single, locale } }: PageProps) => {
+  const imagesData: ImgData[] = getSinglePage('gallery', locale)
+  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
   const { frontmatter, content, slug } = imageSingle
   const { title, description, image, width, height } = frontmatter
 

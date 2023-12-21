@@ -9,14 +9,14 @@ interface VolumeControlsProps {
   sliderthumbclass: string
 }
 
-export const VolumeControls: React.FC<VolumeControlsProps> = ({
+export const VolumeControls = ({
   isMuted,
   setIsMuted,
   setVolume,
   volume,
   volumebarClass,
   sliderthumbclass,
-}) => {
+}: VolumeControlsProps) => {
   return (
     <div className="w-400 ml-4 flex items-center justify-end">
       <button

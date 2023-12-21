@@ -9,7 +9,11 @@ const variants = {
   enter: { opacity: 1, x: 0, y: 0 },
 }
 
-const PageHeader = ({ title }: { title: string }) => {
+type PageHeaderProps = {
+  title: string
+}
+
+const PageHeader = ({ title }: PageHeaderProps) => {
   return (
     <motion.section
       variants={variants}

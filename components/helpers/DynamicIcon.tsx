@@ -20,7 +20,7 @@ const iconLibraries: { [key: string]: IconMap } = {
   fa: FaIcons6,
 }
 
-const DynamicIcon: FC<IDynamicIcon> = ({ icon, ...props }) => {
+const DynamicIcon = ({ icon, ...props }: IDynamicIcon) => {
   const IconLibrary = getIconLibrary(icon)
   const Icon = IconLibrary ? IconLibrary[icon] : undefined
 

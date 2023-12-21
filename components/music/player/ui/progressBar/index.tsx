@@ -9,7 +9,7 @@ interface ProgressBarProps {
   progressBarRef: React.RefObject<HTMLInputElement>
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
+export const ProgressBar = ({
   isFull,
   progressBarClass,
   sliderThumbClass,
@@ -18,7 +18,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   currentTime,
   changeRange,
   progressBarRef,
-}) => {
+}: ProgressBarProps) => {
   return isFull ? (
     <div className="md:w-88vw lg:right-30 mb-2 flex w-full items-center md:relative md:bottom-0 md:right-10">
       <p className="w-35 relative right-5 text-sm">{calculateDuration(currentTime)}</p>

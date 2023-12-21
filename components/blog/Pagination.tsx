@@ -2,17 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 
-const Pagination = ({
-  section,
-  currentPage,
-  totalPages,
-  params: { locale },
-}: {
+type PaginationProps = {
   section: string
   currentPage: number
   totalPages: number
   params: { locale: LocaleTypes }
-}) => {
+}
+
+const Pagination = ({ section, currentPage, totalPages, params: { locale } }: PaginationProps) => {
   const hasPrevPage = currentPage > 1
   const hasNextPage = totalPages > currentPage
 

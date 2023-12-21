@@ -7,7 +7,7 @@ type SearchProps = {
   handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Search = ({ isSearch, handleSearchChange }: SearchProps): JSX.Element | null => {
+export const Search = ({ isSearch, handleSearchChange }: SearchProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'music')
   const bgClass = 'bg-white dark:bg-gray-800'

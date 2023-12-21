@@ -21,7 +21,7 @@ interface GalleryProps {
   allTags: string[]
 }
 
-const Gallery: React.FC<GalleryProps> = ({ galleryData, allSerie, allTags }) => {
+const Gallery = ({ galleryData, allSerie, allTags }: GalleryProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { selectedSerie, selectSeries, selectedTags, selectTag } = useGalleryStore()
 

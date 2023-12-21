@@ -1,12 +1,17 @@
 import DynamicIcon from '../helpers/DynamicIcon'
 
-export interface ISocial {
+interface ISocial {
   name: string
   icon: string
   link?: string
 }
 
-const Social = ({ source, className }: { source: ISocial[]; className: string }) => {
+type SocialProps = {
+  source: ISocial[]
+  className: string
+}
+
+const Social = ({ source, className }: SocialProps) => {
   return (
     <ul className={className}>
       {source.map((social) =>

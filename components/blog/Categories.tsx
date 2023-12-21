@@ -1,11 +1,7 @@
 import Link from 'next/link'
 import { slugify } from '@/lib/utils/textConverter'
 
-interface Props {
-  text: string
-}
-
-const Category = ({ text }: Props) => {
+const Category = ({ text }: { text: string }) => {
   return (
     <Link
       href={`/categories/${slugify(text)}`}

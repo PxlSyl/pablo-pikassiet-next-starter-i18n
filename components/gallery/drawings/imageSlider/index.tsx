@@ -23,7 +23,7 @@ type ImageSliderProps = {
   params: { locale: LocaleTypes }
 }
 
-export const ImageSlider: React.FC<ImageSliderProps> = ({
+export const ImageSlider = ({
   imageData,
   portraitDimensions,
   landscapeDimensions,
@@ -31,7 +31,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
   selectedTags,
   selectTag,
   params: { locale },
-}) => {
+}: ImageSliderProps) => {
   const filteredImages = useMemo(() => {
     const uniqueFileNames = new Set<string>()
 

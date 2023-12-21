@@ -13,19 +13,20 @@ import { genPageMetadata } from '../seo'
 import { createTranslation } from '../i18n/server'
 import { LocaleTypes } from '../i18n/settings'
 
-type BlogPageProps = {
+type PageProps = {
   params: { locale: LocaleTypes }
 }
 
-export async function generateMetadata({ params: { locale } }: BlogPageProps): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: PageProps): Promise<Metadata> {
+  const { t } = await createTranslation(locale, 'headerlinks')
   return genPageMetadata({
-    title: 'Blog Posts',
+    title: t('posts'),
     params: { locale: locale },
   })
 }
 
 // for all regular pages
-const Posts = ({ params: { locale } }: BlogPageProps) => {
+const Posts = ({ params: { locale } }: PageProps) => {
   const sortedPosts = sortPosts(allBlogs)
   const posts = allCoreContent(sortedPosts)
 

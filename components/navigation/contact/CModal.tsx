@@ -18,7 +18,7 @@ const variants = {
   enter: { opacity: 1, x: 0, y: 0 },
 }
 
-export const CModal: React.FC<cModalProps> = ({
+export const CModal = ({
   isOpen,
   onClose,
   title,
@@ -26,7 +26,7 @@ export const CModal: React.FC<cModalProps> = ({
   footer,
   disabled,
   arialabel,
-}) => {
+}: cModalProps) => {
   const modalContentRef = useRef<HTMLDivElement>(null)
 
   // Close modal when clicking outside of it

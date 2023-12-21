@@ -12,6 +12,11 @@ import Providers from '@/components/partials/Providers'
 import { dir } from 'i18next'
 import { LocaleTypes, locales } from './i18n/settings'
 
+type PageProps = {
+  children: React.ReactNode
+  params: { locale: LocaleTypes }
+}
+
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
@@ -58,13 +63,7 @@ export async function generateMetadata({ params: { locale } }): Promise<Metadata
   }
 }
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode
-  params: { locale: LocaleTypes }
-}) {
+export default function RootLayout({ children, params: { locale } }: PageProps) {
   // import google font css
   const pf = theme.fonts.font_family.primary
   const sf = theme.fonts.font_family.secondary

@@ -11,14 +11,14 @@ type SidebarProps = {
   selectTag: (tag: string) => void
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({
+export const Sidebar = ({
   allSerie,
   selectedSerie,
   selectSeries,
   allTags,
   selectedTags,
   selectTag,
-}) => {
+}: SidebarProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'gallery')
   return (

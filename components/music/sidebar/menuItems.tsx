@@ -7,7 +7,7 @@ interface MenuItemsProps {
   t: (key: string) => string
 }
 
-export const MenuItems: React.FC<MenuItemsProps> = ({ selectedItem, handleSelect, t }) => {
+export const MenuItems = ({ selectedItem, handleSelect, t }: MenuItemsProps) => {
   return (
     <div>
       <div

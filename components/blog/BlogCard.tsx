@@ -13,12 +13,12 @@ import { Blog } from 'contentlayer/generated'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 import { createTranslation } from '@/app/[locale]/i18n/server'
 
-interface Props {
+interface BlogCardProps {
   post: CoreContent<Blog>
   params: { locale: LocaleTypes }
 }
 
-const BlogCard = async ({ post, params: { locale } }: Props) => {
+const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
   const { t } = await createTranslation(locale, 'blog')
   if (!post) {
     return null

@@ -4,7 +4,11 @@ import siteMetadata from '@/config/siteMetadata'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 
-const Providers = ({ children }: { children: ReactNode }) => {
+type ProvidersProps = {
+  children: ReactNode
+}
+
+const Providers = ({ children }: ProvidersProps) => {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme} enableColorScheme={false}>
       {children}

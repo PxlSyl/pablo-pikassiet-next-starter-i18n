@@ -22,12 +22,7 @@ type SidebarProps = {
   musics: Music[]
 }
 
-export const Sidebar = ({
-  setGenre,
-  setIsSearch,
-  setIsFull,
-  musics,
-}: SidebarProps): JSX.Element | null => {
+export const Sidebar = ({ setGenre, setIsSearch, setIsFull, musics }: SidebarProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'music')
   const [isOpen, setIsOpen] = useState(false)

@@ -13,12 +13,7 @@ interface SectionProps {
   closeMenu: () => void
 }
 
-export const Regularsection: React.FC<SectionProps> = ({
-  icon,
-  title,
-  links,
-  closeMenu,
-}): JSX.Element => {
+export const Regularsection = ({ icon, title, links, closeMenu }: SectionProps) => {
   const pathname = usePathname()
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'headerlinks')

@@ -2,11 +2,11 @@ import { AlgoliaButton } from 'pliny/search/AlgoliaButton'
 import { KBarButton } from './KBarButton'
 import siteMetadata from '@/config/siteMetadata'
 
-type Props = {
+type SearchButtonProps = {
   className: string
 }
 
-const SearchButton = ({ className }: Props) => {
+const SearchButton = ({ className }: SearchButtonProps) => {
   if (
     siteMetadata.search &&
     (siteMetadata.search.provider === 'algolia' || siteMetadata.search.provider === 'kbar')

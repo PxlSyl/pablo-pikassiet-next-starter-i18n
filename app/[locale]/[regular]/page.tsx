@@ -8,13 +8,15 @@ import PageHeader from '@/components/partials/PageHeader'
 
 import { LocaleTypes } from '../i18n/settings'
 
-export async function generateMetadata({
-  params,
-}: {
+type PageProps = {
   params: { regular: string; locale: LocaleTypes }
-}): Promise<Metadata | undefined> {
-  const regularData = getSinglePage('pages', params.locale)
-  const data = regularData.filter((page: RegularPage) => page.slug === params.regular)[0]
+}
+
+export async function generateMetadata({
+  params: { regular, locale },
+}: PageProps): Promise<Metadata | undefined> {
+  const regularData = getSinglePage('pages', locale)
+  const data = regularData.filter((page: RegularPage) => page.slug === regular)[0]
   const { frontmatter } = data
   const { title, description, image } = frontmatter
 
@@ -25,7 +27,7 @@ export async function generateMetadata({
       title: title,
       description: description,
       siteName: siteMetadata.title,
-      locale: params.locale,
+      locale: locale,
       type: 'website',
       url: './',
       images: image ? image : siteMetadata.socialBanner,
@@ -45,8 +47,8 @@ export async function generateMetadata({
 export const dynamicParams = false
 
 // generate static params
-export const generateStaticParams = ({ params }: { params: { locale: LocaleTypes } }) => {
-  const getRegularPages = getSinglePage('pages', params.locale)
+export const generateStaticParams = ({ params: { locale } }: PageProps) => {
+  const getRegularPages = getSinglePage('pages', locale)
 
   const regularPages = getRegularPages.map((page: RegularPage) => ({
     regular: page.slug,
@@ -56,9 +58,9 @@ export const generateStaticParams = ({ params }: { params: { locale: LocaleTypes
 }
 
 // for all regular pages
-const RegularPages = ({ params }: { params: { regular: string; locale: LocaleTypes } }) => {
-  const regularData = getSinglePage('pages', params.locale)
-  const data = regularData.filter((page: RegularPage) => page.slug === params.regular)[0]
+const RegularPages = ({ params: { regular, locale } }: PageProps) => {
+  const regularData = getSinglePage('pages', locale)
+  const data = regularData.filter((page: RegularPage) => page.slug === regular)[0]
   const { frontmatter, content } = data
   const { title } = frontmatter
 

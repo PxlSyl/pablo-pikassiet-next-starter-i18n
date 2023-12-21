@@ -17,14 +17,14 @@ type ImageSliderProps = {
   params: { locale: LocaleTypes }
 }
 
-export const ImageSlider: React.FC<ImageSliderProps> = ({
+export const ImageSlider = ({
   imageData,
   portraitDimensions,
   landscapeDimensions,
   selectedSerie,
   selectedTags,
   params,
-}) => {
+}: ImageSliderProps) => {
   const [thumbs, setThumbs] = useState(null)
 
   const filteredImages = useMemo(() => {

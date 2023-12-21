@@ -16,13 +16,7 @@ interface MusicInfoProps {
   audioTag: React.RefObject<HTMLAudioElement>
 }
 
-export const MusicInfo: React.FC<MusicInfoProps> = ({
-  music,
-  isFull,
-  windowWidth,
-  isPlaying,
-  audioTag,
-}) => {
+export const MusicInfo = ({ music, isFull, windowWidth, audioTag }: MusicInfoProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'music')
 

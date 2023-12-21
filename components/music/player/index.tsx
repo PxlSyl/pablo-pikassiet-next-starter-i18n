@@ -23,14 +23,14 @@ type PlayerProps = {
   totalMusicFiles: number
 }
 
-export const Player: React.FC<PlayerProps> = ({
+export const Player = ({
   id,
   setId,
   isFull,
   windowWidth,
   musicData,
   totalMusicFiles,
-}): JSX.Element | null => {
+}: PlayerProps) => {
   const {
     isPlaying,
     volume,

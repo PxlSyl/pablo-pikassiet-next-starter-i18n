@@ -10,6 +10,7 @@ import PostSidebar from '@/components/blog/PostSidebar'
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 
+import { createTranslation } from '@/app/[locale]/i18n/server'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 
 type PageProps = {
@@ -17,8 +18,9 @@ type PageProps = {
 }
 
 export async function generateMetadata({ params: { locale } }: PageProps): Promise<Metadata> {
+  const { t } = await createTranslation(locale, 'headerlinks')
   return genPageMetadata({
-    title: 'Blog Posts',
+    title: t('posts'),
     params: { locale: locale },
   })
 }
@@ -39,16 +41,6 @@ export const generateStaticParams = ({ params: { locale } }: PageProps) => {
   }
 
   return paths
-}
-
-function spreadPages(num: number): number[] {
-  const pages = []
-
-  for (let i = 2; i <= num; i++) {
-    pages.push(i)
-  }
-
-  return pages
 }
 
 // for all regular pages
