@@ -30,7 +30,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
   selectedSerie,
   selectedTags,
   selectTag,
-  params,
+  params: { locale },
 }) => {
   const filteredImages = useMemo(() => {
     const uniqueFileNames = new Set<string>()
@@ -81,7 +81,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
       const handleImageClick = () => {
         if (img.frontmatter.draft === false) {
           // Handle the click action, e.g., navigate to the details page
-          window.location.href = `/${params.locale}/drawings/${img.slug}`
+          window.location.href = `/${locale}/drawings/${img.slug}`
         }
       }
 
@@ -104,7 +104,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
             {img.frontmatter.draft === false ? (
               <Link
                 href={{
-                  pathname: `/${params.locale}/drawings/${img.slug}`,
+                  pathname: `/${locale}/drawings/${img.slug}`,
                 }}
                 aria-label={img.frontmatter.title}
               >
