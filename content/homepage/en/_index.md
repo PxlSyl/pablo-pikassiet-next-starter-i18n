@@ -11,9 +11,8 @@ banner:
 
 # Features
 features:
-  - title: "What's Included in Pablo Pikassiet"
-    image: '/images/service-1.png'
-    content: "Pablo Pikassiet is a comprehensive starter template that includes everything you need to get started with your project. What's Included in Pablo Pikassiet:"
+  - title: "What's included in Pablo Pikassiet"
+    content: "Pablo Pikassiet is a comprehensive starter template that includes everything you need to get started with your project. What's included in Pablo Pikassiet:"
     bulletpoints:
       - '20+ Pre-build pages'
       - '95+ Google Pagespeed Score'

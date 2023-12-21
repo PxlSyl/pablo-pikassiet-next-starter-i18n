@@ -6,6 +6,7 @@ import { genPageMetadata } from '../seo'
 import PageHeader from '@/components/partials/PageHeader'
 import Gallery from '@/components/gallery/drawings'
 import { getSinglePage } from '@/lib/contentParser'
+
 import { LocaleTypes } from '../i18n/settings'
 import { createTranslation } from '../i18n/server'
 import { fallbackLng } from '../i18n/locales'

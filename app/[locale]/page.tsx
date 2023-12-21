@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { Button, Feature } from '@/types'
 import { FaCheck } from 'react-icons/fa/index.js'
 import { genPageMetadata } from './seo'
@@ -10,21 +11,22 @@ import ImageFallback from '@/components/helpers/ImageFallback'
 import NewsletterForm from '@/components/blog/NewsletterForm'
 
 import { LocaleTypes } from './i18n/settings'
-import Link from 'next/link'
+import { createTranslation } from './i18n/server'
 
 interface HomeProps {
   params: { locale: LocaleTypes }
 }
 
 export async function generateMetadata({ params: { locale } }: HomeProps): Promise<Metadata> {
+  const { t } = await createTranslation(locale, 'headerlinks')
   return genPageMetadata({
-    title: 'Home',
+    title: t('home'),
     params: { locale: locale },
   })
 }
 
 const Home = ({ params: { locale } }: HomeProps) => {
-  const homepage = getListPage('homepage/_index.md')
+  const homepage = getListPage(`homepage/${locale}/_index.md`)
   const { frontmatter } = homepage
   const {
     banner,
@@ -42,12 +44,12 @@ const Home = ({ params: { locale } }: HomeProps) => {
             <div className="mb-16 text-center lg:col-7">
               <h1
                 className="mb-4 text-highlighted dark:text-darkmode-highlighted"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
+                dangerouslySetInnerHTML={markdownify(banner?.title ?? '')}
               />
               <p className="mb-8" dangerouslySetInnerHTML={markdownify(banner.content ?? '')} />
               {banner.button!.enable && (
                 <Link href={banner.button!.link}>
-                  <button className="h-[40px] w-[200px] rounded-md bg-highlighted p-2 px-4 py-2 font-medium text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-highlighted focus:ring-offset-2 dark:bg-darkmode-highlighted dark:ring-offset-black dark:hover:bg-opacity-80 sm:py-0">
+                  <button className="h-[40px] w-[230px] rounded-md bg-highlighted p-2 px-4 py-2 font-medium text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-highlighted focus:ring-offset-2 dark:bg-darkmode-highlighted dark:ring-offset-black dark:hover:bg-opacity-80 sm:py-0">
                     {banner.button!.label}
                   </button>
                 </Link>
