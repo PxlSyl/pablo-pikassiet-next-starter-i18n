@@ -108,5 +108,8 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "lockfileIgnorePatterns": [
+    "pablopikassiet/*"
+  ]
 }
