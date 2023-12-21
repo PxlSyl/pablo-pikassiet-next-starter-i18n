@@ -75,7 +75,7 @@ const ProjectsCard: React.FC<CardProps> = ({ title, description, imgSrc, href })
           {href && (
             <Link
               href={href.startsWith('http') ? href : `/${locale}${href}`}
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base font-medium leading-6"
+              className="text-base font-medium leading-6 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted"
               aria-label={`${t('linkto')}${title}`}
             >
               {t('learn')} &rarr;
