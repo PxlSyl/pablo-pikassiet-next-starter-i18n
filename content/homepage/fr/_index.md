@@ -6,7 +6,7 @@ banner:
   image: '/images/banner.png'
   button:
     enable: true
-    label: 'Commencez gratuitement'
+    label: 'Commencer gratuitement'
     link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter-i18n'
 
 # Features
@@ -33,6 +33,6 @@ features:
       - '**Open source et gratuit** pour un usage personnel et commercial'
     button:
       enable: true
-      label: 'Get Started Now'
+      label: 'Commencer maintenant'
       link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter-i18n'
 ---

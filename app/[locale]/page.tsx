@@ -93,7 +93,7 @@ const Home = ({ params: { locale } }: HomeProps) => {
                 </ul>
                 {feature.button.enable && (
                   <Link href={feature.button.link}>
-                    <button className="mt-4 h-[40px] w-[200px] rounded-md bg-highlighted p-2 px-4 py-2 font-medium text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-highlighted focus:ring-offset-2 dark:bg-darkmode-highlighted dark:ring-offset-black dark:hover:bg-opacity-80 sm:py-0">
+                    <button className="mt-4 h-[40px] w-[230px] rounded-md bg-highlighted p-2 px-4 py-2 font-medium text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-highlighted focus:ring-offset-2 dark:bg-darkmode-highlighted dark:ring-offset-black dark:hover:bg-opacity-80 sm:py-0">
                       {feature.button.label}
                     </button>
                   </Link>

@@ -131,7 +131,7 @@ export default async function PostLayout({
                 </header>
                 <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0">
                   <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                    <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
+                    <div className="content pb-8 pt-10">{children}</div>
                   </div>
                   <div className="flex items-center">
                     <h5 className="mr-3 text-highlighted dark:text-darkmode-highlighted">

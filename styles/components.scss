@@ -158,15 +158,15 @@
 .content {
   @apply prose max-w-none;
   @apply prose-headings:mb-[.3em] prose-headings:mt-[.6em];
-  @apply prose-h1:text-h1-sm md:prose-h1:text-h1;
-  @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
-  @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
+  @apply prose-h1:text-h1-sm md:prose-h1:text-h1 prose-h1:dark:text-darkmode-primary;
+  @apply prose-h2:text-h2-sm md:prose-h2:text-h2 prose-h2:dark:text-darkmode-primary;
+  @apply prose-h3:text-h3-sm md:prose-h3:text-h3 prose-h3:dark:text-darkmode-primary;
+  @apply  prose-h4:dark:text-darkmode-primary;
   @apply prose-img:max-w-full prose-img:rounded;
   @apply prose-hr:border-border prose-hr:dark:border-darkmode-border;
   @apply prose-p:text-base prose-p:text-text prose-p:dark:text-darkmode-text;
   @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-theme-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-dark prose-blockquote:dark:border-darkmode-primary prose-blockquote:dark:bg-darkmode-theme-light prose-blockquote:dark:text-darkmode-light;
   @apply prose-pre:rounded-lg prose-pre:bg-theme-light prose-pre:dark:bg-darkmode-theme-light;
-  @apply prose-code:px-1 prose-code:text-primary prose-code:dark:text-darkmode-primary;
   @apply prose-strong:text-dark prose-strong:dark:text-darkmode-text;
   @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary prose-a:dark:text-darkmode-text hover:prose-a:dark:text-darkmode-primary;
   @apply prose-li:text-text prose-li:dark:text-darkmode-text;

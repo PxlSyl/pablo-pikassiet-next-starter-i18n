@@ -125,7 +125,7 @@ export default async function PostMinimal({
                     </li>
                   )}
                 </ul>
-                <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
+                <div className="content max-w-none py-4 ">{children}</div>
                 <div className="flex flex-col justify-center text-sm font-medium sm:flex-row sm:justify-between">
                   <div className="mb-6 flex items-center sm:mb-0 ">
                     <h5 className="mr-3 text-highlighted dark:text-darkmode-highlighted">
