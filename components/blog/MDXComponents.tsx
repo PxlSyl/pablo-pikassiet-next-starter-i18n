@@ -2,7 +2,7 @@ import { CustomMDXComponents } from 'custom'
 
 import TOCInline from 'pliny/ui/TOCInline'
 import Pre from 'pliny/ui/Pre'
-import BlogNewsletterForm from 'pliny/ui/BlogNewsletterForm'
+import BlogNewsletterForm from './BlogNewsLetterForm'
 import Accordion from '../shortcodes/Accordion'
 import Button from '../shortcodes/Button'
 import Notice from '../shortcodes/Notice'
