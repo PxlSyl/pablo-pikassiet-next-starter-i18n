@@ -22,7 +22,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       <li className="inline-block">
         <a
           aria-label="facebook share button"
-          href={`https://facebook.com/sharer/sharer.php?u=${siteMetadata.base_url}/${secondPath}/${slug}`}
+          href={`https://facebook.com/sharer/sharer.php?u=${siteMetadata.siteUrl}/${secondPath}/${slug}`}
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -32,7 +32,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       <li className="inline-block">
         <a
           aria-label="twitter share button"
-          href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${siteMetadata.base_url}/${secondPath}/${slug}`}
+          href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${siteMetadata.siteUrl}/${secondPath}/${slug}`}
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -42,7 +42,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       <li className="inline-block">
         <a
           aria-label="linkedin share button"
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteMetadata.base_url}/${secondPath}/${slug}&title=${title}&summary=${description}&source=${siteMetadata.base_url}`}
+          href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteMetadata.siteUrl}/${secondPath}/${slug}&title=${title}&summary=${description}&source=${siteMetadata.base_url}`}
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -52,7 +52,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       <li className="inline-block">
         <a
           aria-label="pinterest share button"
-          href={`https://pinterest.com/pin/create/button/?url=${siteMetadata.base_url}/${secondPath}/${slug}&media=&description=${description}`}
+          href={`https://pinterest.com/pin/create/button/?url=${siteMetadata.siteUrl}/${secondPath}/${slug}&media=&description=${description}`}
           target="_blank"
           rel="noreferrer noopener"
         >
