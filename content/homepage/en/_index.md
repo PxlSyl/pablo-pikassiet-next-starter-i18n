@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: 'Get Started For Free'
-    link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter'
+    link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter-i18n'
 
 # Features
 features:
@@ -33,5 +33,5 @@ features:
     button:
       enable: true
       label: 'Get Started Now'
-      link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter'
+      link: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter-i18n'
 ---
