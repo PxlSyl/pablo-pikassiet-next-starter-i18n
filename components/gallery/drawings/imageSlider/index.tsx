@@ -78,13 +78,6 @@ export const ImageSlider = ({
         backgroundSize: 'cover',
       }
 
-      const handleImageClick = () => {
-        if (img.frontmatter.draft === false) {
-          // Handle the click action, e.g., navigate to the details page
-          window.location.href = `/${locale}/drawings/${img.slug}`
-        }
-      }
-
       return (
         <SwiperSlide
           key={img.frontmatter.image}
@@ -94,13 +87,7 @@ export const ImageSlider = ({
             height: `${height}px`,
           }}
         >
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={handleImageClick}
-            onKeyDown={(e) => e.key === 'Enter' && handleImageClick()}
-            className="relative transition duration-500 sm:hover:scale-105"
-          >
+          <div className="relative transition duration-500 sm:hover:scale-105">
             {img.frontmatter.draft === false ? (
               <Link
                 href={{
