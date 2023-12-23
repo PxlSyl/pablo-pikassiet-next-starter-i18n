@@ -17,10 +17,12 @@ type PageProps = {
 }
 
 export async function generateMetadata({
-  params: { single, locale },
-}: PageProps): Promise<Metadata | undefined> {
-  const imagesData: ImgData[] = getSinglePage('gallery', locale)
-  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
+  params,
+}: {
+  params: { single: string; locale: LocaleTypes }
+}): Promise<Metadata | undefined> {
+  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
   const { frontmatter } = imageSingle
   const { title, description, image } = frontmatter
 
@@ -31,7 +33,7 @@ export async function generateMetadata({
       title: title,
       description: description,
       siteName: siteMetadata.title,
-      locale: locale,
+      locale: params.locale,
       type: 'article',
       url: './',
       images: image ? image : siteMetadata.socialBanner,
@@ -48,22 +50,26 @@ export async function generateMetadata({
 }
 
 // remove dynamicParams
-export const dynamicParams = true
+export const dynamicParams = false
 
 // generate static params
-export const generateStaticParams = ({ params: { locale } }: PageProps) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', locale)
+export const generateStaticParams = ({
+  params,
+}: {
+  params: { single: string; locale: LocaleTypes }
+}) => {
+  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
-    locale: locale,
+    locale: params.locale,
   }))
 
   return paths
 }
 
-const ImageSingle = ({ params: { single, locale } }: PageProps) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', locale)
-  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
+const ImageSingle = ({ params }: { params: { single: string; locale: LocaleTypes } }) => {
+  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
   const { frontmatter, content, slug } = imageSingle
   const { title, description, image, width, height } = frontmatter
 

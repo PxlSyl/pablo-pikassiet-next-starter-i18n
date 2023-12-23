@@ -57,6 +57,7 @@ export const generateStaticParams = ({
   const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
+    locale: params.locale,
   }))
 
   return paths
