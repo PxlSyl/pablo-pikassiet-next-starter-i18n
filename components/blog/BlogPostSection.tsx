@@ -33,13 +33,11 @@ const BlogPostsSection: React.FC<BlogPostsSectionProps> = ({
   params: { locale },
 }) => (
   <motion.ul variants={container} initial="hidden" animate="show" className={ulclassName}>
-    {currentPosts
-      .filter((p) => p.language === locale)
-      .map((post, index) => (
-        <motion.li variants={item} key={index} className={liclassName}>
-          <BlogCard post={post} params={{ locale: locale }} />
-        </motion.li>
-      ))}
+    {currentPosts.map((post, index) => (
+      <motion.li variants={item} key={index} className={liclassName}>
+        <BlogCard post={post} params={{ locale: locale }} />
+      </motion.li>
+    ))}
   </motion.ul>
 )
 

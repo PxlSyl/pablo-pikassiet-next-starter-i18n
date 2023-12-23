@@ -53,23 +53,28 @@ export async function generateMetadata({
 }
 
 // remove dynamicParams
-export const dynamicParams = false
+export const dynamicParams = true
 
 // generate static params
-export const generateStaticParams = ({ params: { locale } }: PageProps) => {
-  const tagCounts = tagData[locale]
-  const sortedTags = sortData(tagCounts)
-  const paths = sortedTags.map((tag) => ({
-    single: tag,
-  }))
+export const generateStaticParams = ({ params: { locale, single } }: PageProps) => {
+  const tagCount = tagData[locale][single] || 0
+  const totalPages = Math.ceil(tagCount / POSTS_PER_PAGE)
+  const paths: { page: string }[] = []
+
+  for (let i = 1; i <= totalPages; i++) {
+    paths.push({
+      page: i.toString(),
+    })
+  }
 
   return paths
 }
 
 const TagSingle = async ({ params: { locale, page, single } }: PageProps) => {
   const { t } = await createTranslation(locale, 'blog')
-  const posts = allCoreContent(sortPosts(allBlogs))
-  const filterByTags = taxonomyFilter(posts, 'tags', single)
+  const allPost = allCoreContent(sortPosts(allBlogs))
+  const filteredPosts = allPost.filter((post) => post.draft === false && post.language === locale)
+  const filterByTags = taxonomyFilter(filteredPosts, 'tags', single)
   const totalPages = Math.ceil(filterByTags.length / POSTS_PER_PAGE)
   const currentPage = page && !isNaN(Number(page)) ? Number(page) : 1
   const indexOfLastPost = currentPage * POSTS_PER_PAGE

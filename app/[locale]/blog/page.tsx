@@ -27,11 +27,10 @@ export async function generateMetadata({ params: { locale } }: PageProps): Promi
 
 // for all regular pages
 const Posts = ({ params: { locale } }: PageProps) => {
-  const sortedPosts = sortPosts(allBlogs)
-  const posts = allCoreContent(sortedPosts)
-
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE)
-  const currentPosts = sortedPosts.slice(0, POSTS_PER_PAGE)
+  const allPost = allCoreContent(sortPosts(allBlogs))
+  const filteredPosts = allPost.filter((post) => post.draft === false && post.language === locale)
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE)
+  const currentPosts = filteredPosts.slice(0, POSTS_PER_PAGE)
 
   return (
     <>

@@ -5,7 +5,6 @@ import categoryData from '@/config/data/category-data.json'
 import { POSTS_PER_PAGE } from '@/config/postsPerPage'
 
 import taxonomyFilter from '@/lib/utils/taxonomyFilter'
-import { sortData } from '@/lib/utils/sortData'
 import { capitalizeFirstLetter } from '@/lib/utils/textConverter'
 
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
@@ -53,23 +52,28 @@ export async function generateMetadata({
 }
 
 // remove dynamicParams
-export const dynamicParams = false
+export const dynamicParams = true
 
 // generate static params
 export const generateStaticParams = ({ params: { locale, single } }: PageProps) => {
-  const categoryCounts = categoryData[locale]
-  const sortedCategories = sortData(categoryCounts)
-  const paths = sortedCategories.map((category) => ({
-    single: category,
-  }))
+  const categoryCount = categoryData[locale][single] || 0
+  const totalPages = Math.ceil(categoryCount / POSTS_PER_PAGE)
+  const paths: { page: string }[] = []
+
+  for (let i = 1; i <= totalPages; i++) {
+    paths.push({
+      page: i.toString(),
+    })
+  }
 
   return paths
 }
 
 const CategorySingle = async ({ params: { locale, page, single } }: PageProps) => {
   const { t } = await createTranslation(locale, 'blog')
-  const posts = allCoreContent(sortPosts(allBlogs))
-  const filterByCategories = taxonomyFilter(posts, 'categories', single)
+  const allPost = allCoreContent(sortPosts(allBlogs))
+  const filteredPosts = allPost.filter((post) => post.draft === false && post.language === locale)
+  const filterByCategories = taxonomyFilter(filteredPosts, 'categories', single)
   const totalPages = Math.ceil(filterByCategories.length / POSTS_PER_PAGE)
   const currentPage = page && !isNaN(Number(page)) ? Number(page) : 1
   const indexOfLastPost = currentPage * POSTS_PER_PAGE

@@ -68,8 +68,9 @@ export const generateStaticParams = ({ params: { locale } }: PageProps) => {
 
 const TagSingle = async ({ params: { locale, single } }: PageProps) => {
   const { t } = await createTranslation(locale, 'blog')
-  const posts = allCoreContent(sortPosts(allBlogs))
-  const filterByTags = taxonomyFilter(posts, 'tags', single)
+  const allPost = allCoreContent(sortPosts(allBlogs))
+  const filteredPosts = allPost.filter((post) => post.draft === false && post.language === locale)
+  const filterByTags = taxonomyFilter(filteredPosts, 'tags', single)
   const totalPages = Math.ceil(filterByTags.length / POSTS_PER_PAGE)
   const currentPosts = filterByTags.slice(0, POSTS_PER_PAGE)
 
