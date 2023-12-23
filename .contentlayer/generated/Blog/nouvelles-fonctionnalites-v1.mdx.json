@@ -4,8 +4,14 @@
   "language": "fr",
   "localeid": "newfeaturesv1",
   "image": "/images/image-placeholder.png",
-  "categories": ["code"],
-  "tags": ["next-js", "tailwind", "guide"],
+  "categories": [
+    "code"
+  ],
+  "tags": [
+    "next-js",
+    "tailwind",
+    "guide"
+  ],
   "lastmod": "2021-02-01T00:00:00.000Z",
   "draft": false,
   "summary": "Un aperçu des nouvelles fonctionnalités publiées dans la v1 - copie de bloc de code, auteurs multiples, mise en page via frontmatter, etc.",

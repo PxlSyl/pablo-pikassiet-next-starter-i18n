@@ -4,8 +4,14 @@
   "language": "fr",
   "localeid": "derivingols",
   "image": "/images/image-placeholder.png",
-  "categories": ["code", "math"],
-  "tags": ["next-js", "ols"],
+  "categories": [
+    "code",
+    "math"
+  ],
+  "tags": [
+    "next-js",
+    "ols"
+  ],
   "draft": false,
   "summary": "Comment dériver l'estimateur OLS avec la notation matricielle et une visite guidée de la composition mathématique, en utilisant markdown et à l'aide de KaTeX.",
   "body": {

@@ -4,8 +4,14 @@
   "language": "fr",
   "localeid": "codesample",
   "image": "/images/image-placeholder.png",
-  "categories": ["code"],
-  "tags": ["markdown", "code", "fonctionnalites"],
+  "categories": [
+    "code"
+  ],
+  "tags": [
+    "markdown",
+    "code",
+    "fonctionnalites"
+  ],
   "draft": false,
   "summary": "Exemple de fichier markdown avec blocs de code et coloration syntaxique",
   "body": {

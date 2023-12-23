@@ -9,3 +9,5 @@ import { allBlogs } from './Blog/_index.mjs'
 export { allBlogs }
 
 export const allDocuments = [...allBlogs]
+
+

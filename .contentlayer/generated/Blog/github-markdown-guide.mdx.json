@@ -4,8 +4,13 @@
   "language": "en",
   "localeid": "mardownguide",
   "image": "/images/image-placeholder.png",
-  "categories": ["code"],
-  "tags": ["github", "guide"],
+  "categories": [
+    "code"
+  ],
+  "tags": [
+    "github",
+    "guide"
+  ],
   "draft": false,
   "summary": "Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.",
   "body": {

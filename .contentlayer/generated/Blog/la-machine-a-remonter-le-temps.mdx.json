@@ -4,8 +4,13 @@
   "language": "fr",
   "localeid": "thetimemachine",
   "image": "/images/image-placeholder.png",
-  "categories": ["livre"],
-  "tags": ["ecriture", "reflexion"],
+  "categories": [
+    "livre"
+  ],
+  "tags": [
+    "ecriture",
+    "reflexion"
+  ],
   "draft": false,
   "summary": "Le Voyageur Temporel (car c'est ainsi qu'il conviendra de parler de lui) était tel qu'il nous exposait à d'obscurs questionnements. Ses yeux gris pâle brillaient et scintillaient, et son visage habituellement pâle était rouge et animé...",
   "body": {
