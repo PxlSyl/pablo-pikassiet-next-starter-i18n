@@ -1,7 +1,7 @@
 // node ./scripts/postContentLayer.mjs
 
 import { writeFileSync } from 'fs'
-import GithubSlugger from 'github-slugger'
+import { slug } from 'github-slugger'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import siteMetadata from '../config/siteMetadata.js'
@@ -38,7 +38,7 @@ export async function createCategoryCount() {
   allBlogs.forEach((file) => {
     if (file.categories && (!isProduction || file.draft !== true)) {
       file.categories.forEach((category) => {
-        const formattedCategory = GithubSlugger.slug(category)
+        const formattedCategory = slug(category)
         if (file.language === fallbackLng) {
           categoryCount[fallbackLng][formattedCategory] =
             (categoryCount[fallbackLng][formattedCategory] || 0) + 1
@@ -62,7 +62,7 @@ export async function createTagCount() {
   allBlogs.forEach((file) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
       file.tags.forEach((tag) => {
-        const formattedTag = GithubSlugger.slug(tag)
+        const formattedTag = slug(tag)
         if (file.language === fallbackLng) {
           tagCount[fallbackLng][formattedTag] = (tagCount[fallbackLng][formattedTag] || 0) + 1
         } else if (file.language === secondLng) {
