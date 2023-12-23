@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Pablo Pikassiet',
   description: 'An amazing Next.js template for creative people',
 
-  siteUrl: 'https://pablo-pikassiet-next-starter-i18n.vercel.app/',
+  siteUrl: 'https://pablo-pikassiet-next-starter-i18n.vercel.app',
   base_path: '/',
   siteRepo: 'https://github.com/PxlSyl/pablo-pikassiet-next-starter-i18n',
 
