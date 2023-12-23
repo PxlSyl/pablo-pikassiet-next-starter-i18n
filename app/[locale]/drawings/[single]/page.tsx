@@ -48,10 +48,10 @@ export async function generateMetadata({
 }
 
 // remove dynamicParams
-export const dynamicParams = false
+export const dynamicParams = true
 
 // generate static params
-export const generateStaticParams = ({ params: { single, locale } }: PageProps) => {
+export const generateStaticParams = ({ params: { locale } }: PageProps) => {
   const imagesData: ImgData[] = getSinglePage('gallery', locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
