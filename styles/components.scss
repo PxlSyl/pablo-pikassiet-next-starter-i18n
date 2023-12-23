@@ -158,10 +158,10 @@
 .content {
   @apply prose max-w-none dark:prose-invert;
   @apply prose-headings:mb-[.3em] prose-headings:mt-[.6em];
-  @apply prose-h1:text-h1-sm md:prose-h1:text-h1 prose-h1:dark:text-darkmode-primary;
-  @apply prose-h2:text-h2-sm md:prose-h2:text-h2 prose-h2:dark:text-darkmode-primary;
-  @apply prose-h3:text-h3-sm md:prose-h3:text-h3 prose-h3:dark:text-darkmode-primary;
-  @apply  prose-h4:dark:text-darkmode-primary;
+  @apply prose-h1:text-h1-sm prose-h1:dark:text-darkmode-primary md:prose-h1:text-h1;
+  @apply prose-h2:text-h2-sm prose-h2:dark:text-darkmode-primary md:prose-h2:text-h2;
+  @apply prose-h3:text-h3-sm prose-h3:dark:text-darkmode-primary md:prose-h3:text-h3;
+  @apply prose-h4:dark:text-darkmode-primary;
   @apply prose-img:max-w-full prose-img:rounded;
   @apply prose-hr:border-border prose-hr:dark:border-darkmode-border;
   @apply prose-p:text-base prose-p:text-text prose-p:dark:text-darkmode-text;

@@ -4,12 +4,8 @@
   "language": "en",
   "localeid": "myfancytitle",
   "image": "/images/image-placeholder.png",
-  "categories": [
-    "draft"
-  ],
-  "tags": [
-    "hello"
-  ],
+  "categories": ["draft"],
+  "tags": ["hello"],
   "draft": true,
   "summary": "draft post",
   "images": [],
