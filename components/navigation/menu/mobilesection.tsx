@@ -8,7 +8,6 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion'
-import { UrlObject } from 'url'
 import { selectedClass, hoverClass } from './menutheme'
 import { useTranslation } from '@/app/[locale]/i18n/client'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
@@ -16,7 +15,7 @@ import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 interface SectionProps {
   icon: React.ReactNode
   title: string
-  links: { title: string; href?: string | UrlObject; onClick?: () => void }[]
+  links: { title: string; href?: string }[]
   closeMenu: () => void
 }
 
@@ -41,7 +40,7 @@ export const Mobilesection = ({ icon, title, links, closeMenu }: SectionProps) =
             return (
               <Link
                 key={link.title}
-                href={`/${locale}${t(`${link.href}`)}` as string | UrlObject}
+                href={link.href.startsWith('http') ? link.href : `/${locale}${t(`${link.href}`)}`}
                 onClick={closeMenu}
                 className={`ml-8 flex flex-col font-medium ${hoverClass}
                  ${isSelected ? selectedClass : ''}`}

@@ -1,4 +1,5 @@
 'use client'
+
 // css and third party libraries
 import styles from './menu.module.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
@@ -184,7 +185,9 @@ export const Header = () => {
                 return (
                   <Link
                     key={link.title}
-                    href={`/${locale}${t(`${link.href}`)}`}
+                    href={
+                      link.href.startsWith('http') ? link.href : `/${locale}${t(`${link.href}`)}`
+                    }
                     onClick={closeMenu}
                     className={`ml-4 flex cursor-pointer flex-col text-sm text-gray-900 underline dark:text-gray-100 ${hoverClass} 
                      ${isSelected ? selectedClass : ''}`}

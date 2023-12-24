@@ -37,12 +37,10 @@ const Drawings = ({ params: { locale } }: PageProps) => {
   )
 
   return (
-    <>
-      <div className="mb-20 mt-20">
-        <PageHeader title={pagetitle} />
-        <Gallery galleryData={galleryData} allSerie={allSerie} allTags={allTags} />
-      </div>
-    </>
+    <div>
+      <PageHeader title={pagetitle} />
+      <Gallery galleryData={galleryData} allSerie={allSerie} allTags={allTags} />
+    </div>
   )
 }
 

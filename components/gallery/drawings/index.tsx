@@ -30,7 +30,7 @@ const Gallery = ({ galleryData, allSerie, allTags }: GalleryProps) => {
 
   return (
     <>
-      <div className="mt-20 w-screen">
+      <div className="mb-20 mt-20 w-screen">
         <ImageSlider
           params={{ locale: locale }}
           imageData={galleryData}
