@@ -124,30 +124,30 @@ export const Header = () => {
             onClick={closeMenu}
           >
             <FaHome />
-            <p className="ml-1">Home</p>
+            <p className="ml-1">{t('home')}</p>
           </Link>
           <div className="lg:flex lg:flex-row">
             <Accordion allowZeroExpanded className="lg:hidden">
               <Mobilesection
-                title="Shop"
+                title={t('shop')}
                 links={headerShopLinks}
                 icon={<FaShop />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
-                title="Gallery"
+                title={t('gallery')}
                 links={headerArtLinks}
                 icon={<FaPalette />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
-                title="Music"
+                title={t('music')}
                 links={headerMusicLinks}
                 icon={<FaMusic />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
-                title="Blog"
+                title={t('blog')}
                 links={headerBlogLinks}
                 icon={<FaBlogger />}
                 closeMenu={closeMenu}
@@ -155,25 +155,25 @@ export const Header = () => {
             </Accordion>
             <div className="hidden lg:grid lg:grid-cols-4 lg:justify-center lg:gap-4">
               <Regularsection
-                title="Shop"
+                title={t('shop')}
                 links={headerShopLinks}
                 icon={<FaShop />}
                 closeMenu={closeMenu}
               />
               <Regularsection
-                title="Gallery"
+                title={t('gallery')}
                 links={headerArtLinks}
                 icon={<FaPalette />}
                 closeMenu={closeMenu}
               />
               <Regularsection
-                title="Music"
+                title={t('music')}
                 links={headerMusicLinks}
                 icon={<FaMusic />}
                 closeMenu={closeMenu}
               />
               <Regularsection
-                title="Blog"
+                title={t('blog')}
                 links={headerBlogLinks}
                 icon={<FaBlogger />}
                 closeMenu={closeMenu}
@@ -207,7 +207,7 @@ export const Header = () => {
                 role="button"
                 tabIndex={0}
               >
-                Contact
+                {t('contact')}
               </div>
             </div>
           </div>
