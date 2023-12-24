@@ -7,8 +7,6 @@ import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import siteMetadata from '../config/siteMetadata.js'
 import { fallbackLng, secondLng } from '../app/[locale]/i18n/locales.js'
 
-const isProduction = process.env.NODE_ENV === 'production'
-
 export async function generateSlugMap() {
   const slugMap = {}
 
@@ -36,7 +34,7 @@ export async function createCategoryCount() {
   const categoryCount = { [fallbackLng]: {}, [secondLng]: {} }
 
   allBlogs.forEach((file) => {
-    if (file.categories && (!isProduction || file.draft !== true)) {
+    if (file.categories && file.draft === false) {
       file.categories.forEach((category) => {
         const formattedCategory = slug(category)
         if (file.language === fallbackLng) {
@@ -60,7 +58,7 @@ export async function createTagCount() {
   }
 
   allBlogs.forEach((file) => {
-    if (file.tags && (!isProduction || file.draft !== true)) {
+    if (file.tags && file.draft === false) {
       file.tags.forEach((tag) => {
         const formattedTag = slug(tag)
         if (file.language === fallbackLng) {
