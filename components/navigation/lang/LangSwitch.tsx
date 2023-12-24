@@ -19,7 +19,9 @@ const LangSwitch = () => {
 
     if (
       newUrl.startsWith(`/${newLocale}/categories/`) ||
-      newUrl.startsWith(`/${newLocale}/tags/`)
+      newUrl.startsWith(`/${newLocale}/tags/`) ||
+      newUrl.startsWith(`/${newLocale}/drawings/`) ||
+      newUrl.startsWith(`/${newLocale}/photography/`)
     ) {
       return `/${newLocale}/${urlSegments.slice(0, -1).join('/')}`
     }
