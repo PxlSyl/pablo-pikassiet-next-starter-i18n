@@ -24,7 +24,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
         // uncomment and complete this if you want to use in your app
         defaultActions: [
           {
-            id: t('drawings'),
+            id: 'drawings',
             name: t('drawings'),
             keywords: '',
             shortcut: ['d'],
@@ -32,7 +32,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             perform: () => router.push(`/${locale}/drawings`),
           },
           {
-            id: t('photography'),
+            id: 'photography',
             name: t('photography'),
             keywords: '',
             shortcut: ['p'],
@@ -40,7 +40,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             perform: () => router.push(`/${locale}/photography`),
           },
           {
-            id: t('music'),
+            id: 'music',
             name: t('music'),
             keywords: '',
             shortcut: ['m'],
@@ -48,7 +48,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             perform: () => router.push(`/${locale}/music`),
           },
           {
-            id: t('projects'),
+            id: 'projects',
             name: t('projects'),
             keywords: '',
             shortcut: ['p'],
@@ -56,7 +56,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             perform: () => router.push(`/${locale}/projects`),
           },
           {
-            id: t('blog'),
+            id: 'blog',
             name: t('blog'),
             keywords: '',
             shortcut: ['b'],
@@ -64,7 +64,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             perform: () => router.push(`/${locale}/blog`),
           },
           {
-            id: t('about'),
+            id: 'about',
             name: t('about'),
             keywords: '',
             shortcut: ['a'],
