@@ -1,10 +1,13 @@
 import { useState, useEffect, FC, ReactNode } from 'react'
 import type { Action } from 'kbar'
 import { KBarProvider } from 'kbar'
-import { useRouter } from 'next/navigation.js'
+import { useParams, useRouter } from 'next/navigation'
 import { KBarModal } from './KBarModal'
 import { CoreContent, MDXDocument } from 'pliny/utils/contentlayer'
 import { formatDate } from 'pliny/utils/formatDate'
+
+import { LocaleTypes } from 'app/[locale]/i18n/settings'
+import { useTranslation } from 'app/[locale]/i18n/client'
 
 export interface KBarSearchProps {
   searchDocumentsPath: string | false
@@ -39,6 +42,8 @@ export const KBarSearchProvider: FC<{
   children: ReactNode
   kbarConfig: KBarSearchProps
 }> = ({ kbarConfig, children }) => {
+  const locale = useParams()?.locale as LocaleTypes
+  const { t } = useTranslation(locale, 'elements')
   const router = useRouter()
   const { searchDocumentsPath, defaultActions, onSearchDocumentsLoad } = kbarConfig
   const [searchActions, setSearchActions] = useState<Action[]>([])
@@ -52,8 +57,8 @@ export const KBarSearchProvider: FC<{
           id: post.path,
           name: post.title,
           keywords: post?.summary || '',
-          section: 'Content',
-          subtitle: formatDate(post.date, 'en-US'),
+          section: t('content'),
+          subtitle: formatDate(post.date, post.language),
           perform: () => router.push('/' + post.path),
         })
       }

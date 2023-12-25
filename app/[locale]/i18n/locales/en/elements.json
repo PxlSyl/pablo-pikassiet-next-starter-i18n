@@ -1,9 +1,11 @@
 {
-  "home": "Home",
-  "blog": "Blog",
-  "tags": "Tags",
+  "drawings": "Drawings",
+  "photography": "Photography",
   "projects": "Projects",
+  "music ": "Music",
+  "blog": "Blog",
   "about": "About",
+  "navigate": "Navigate",
   "lang": "Language",
   "showmenu": "Show menu",
   "scrollcomment": "Scroll to comment",
@@ -12,6 +14,5 @@
   "content": "Content",
   "kbarplaceholder": "Type a command or search",
   "loading": "Loading...",
-  "noresults": "No results for your search...",
-  "poststagged": "View posts tagged"
+  "noresults": "No results for your search..."
 }

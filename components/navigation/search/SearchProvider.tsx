@@ -14,7 +14,7 @@ interface SearchProviderProps {
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
   const locale = useParams()?.locale as LocaleTypes
-  const { t } = useTranslation(locale, '')
+  const { t } = useTranslation(locale, 'elements')
   const router = useRouter()
 
   return (
@@ -22,24 +22,56 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
       kbarConfig={{
         searchDocumentsPath: 'search.json',
         // uncomment and complete this if you want to use in your app
-        /* defaultActions: [
+        defaultActions: [
           {
-            id: 'homepage',
-            name: 'Homepage',
+            id: t('drawings'),
+            name: t('drawings'),
             keywords: '',
-            shortcut: ['h'],
-            section: t('home'),
-            perform: () => router.push(`/`),
+            shortcut: ['d'],
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/drawings`),
           },
           {
-            id: 'projects',
-            name: 'Projects',
+            id: t('photography'),
+            name: t('photography'),
             keywords: '',
             shortcut: ['p'],
-            section: t('projects'),
-            perform: () => router.push(`/projects`),
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/photography`),
           },
-        ], */
+          {
+            id: t('music'),
+            name: t('music'),
+            keywords: '',
+            shortcut: ['m'],
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/music`),
+          },
+          {
+            id: t('projects'),
+            name: t('projects'),
+            keywords: '',
+            shortcut: ['p'],
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/projects`),
+          },
+          {
+            id: t('blog'),
+            name: t('blog'),
+            keywords: '',
+            shortcut: ['b'],
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/blog`),
+          },
+          {
+            id: t('about'),
+            name: t('about'),
+            keywords: '',
+            shortcut: ['a'],
+            section: t('navigate'),
+            perform: () => router.push(`/${locale}/about`),
+          },
+        ],
         onSearchDocumentsLoad(json) {
           return json
             .filter((post: CoreContent<Blog>) => post.language === locale)

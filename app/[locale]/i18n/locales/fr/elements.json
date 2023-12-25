@@ -1,9 +1,11 @@
 {
-  "home": "Accueil",
-  "blog": "Blog",
-  "tags": "Tags",
+  "drawings": "Drawings",
+  "photography": "Photography",
   "projects": "Projets",
+  "music ": "Music",
+  "blog": "Blog",
   "about": "À Propos",
+  "navigate": "Naviguer",
   "lang": "Langage",
   "showmenu": "Montrer le menu",
   "scrollcomment": "Faire défiler pour commenter",
@@ -12,6 +14,5 @@
   "content": "Contenu",
   "kbarplaceholder": "Taper une commande ou chercher",
   "loading": "Chargement...",
-  "noresults": "Aucun résultat pour la recherche...",
-  "poststagged": "Voir les posts balisés"
+  "noresults": "Aucun résultat pour la recherche..."
 }

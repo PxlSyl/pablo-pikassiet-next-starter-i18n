@@ -3,11 +3,17 @@
 import siteMetadata from '@/config/siteMetadata'
 import { useEffect, useState } from 'react'
 
+import { useParams } from 'next/navigation'
+import { useTranslation } from 'app/[locale]/i18n/client'
+import { LocaleTypes } from 'app/[locale]/i18n/settings'
+
 type ScrollProps = {
   scrollToComment: boolean
 }
 
 const ScrollTopAndComment = ({ scrollToComment }: ScrollProps) => {
+  const locale = useParams()?.locale as LocaleTypes
+  const { t } = useTranslation(locale, 'elements')
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -35,7 +41,7 @@ const ScrollTopAndComment = ({ scrollToComment }: ScrollProps) => {
     >
       {siteMetadata.comments?.provider && scrollToComment && (
         <button
-          aria-label="Scroll To Comment"
+          aria-label={t('scrollcomment')}
           onClick={handleScrollToComment}
           className="rounded-full bg-gray-200 p-2 text-gray-500 transition-all hover:bg-gray-300 dark:bg-[#3d3d3d] dark:text-gray-400 dark:hover:bg-[#4e4e4e]"
         >
@@ -49,7 +55,7 @@ const ScrollTopAndComment = ({ scrollToComment }: ScrollProps) => {
         </button>
       )}
       <button
-        aria-label="Scroll To Top"
+        aria-label={t('scrolltop')}
         onClick={handleScrollTop}
         className="rounded-full bg-gray-200 p-2 text-gray-500 transition-all hover:bg-gray-300 dark:bg-[#3d3d3d] dark:text-gray-400 dark:hover:bg-[#4e4e4e]"
       >
