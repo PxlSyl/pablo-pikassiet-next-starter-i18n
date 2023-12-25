@@ -8,6 +8,7 @@ import {
   IoLogoTwitter,
 } from 'react-icons/io5/index.js'
 import { useParams, usePathname } from 'next/navigation'
+import { useTranslation } from 'app/[locale]/i18n/client'
 import { fallbackLng, secondLng } from '@/app/[locale]/i18n/locales'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 
@@ -15,6 +16,7 @@ type ShareProps = { title: string; description?: string; slug: string; className
 
 const Share = ({ title, description, slug, className }: ShareProps) => {
   const locale = useParams()?.locale as LocaleTypes
+  const { t } = useTranslation(locale, 'elements')
   const pathname = usePathname()
   const pathSegments = pathname.split('/')
 
@@ -33,7 +35,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
     <ul className={className}>
       <li className="inline-block">
         <a
-          aria-label="facebook share button"
+          aria-label={t('facebookshare')}
           href={`https://facebook.com/sharer/sharer.php?u=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}`}
           target="_blank"
           rel="noreferrer noopener"
@@ -43,7 +45,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       </li>
       <li className="inline-block">
         <a
-          aria-label="twitter share button"
+          aria-label={t('twittershare')}
           href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}`}
           target="_blank"
           rel="noreferrer noopener"
@@ -53,7 +55,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       </li>
       <li className="inline-block">
         <a
-          aria-label="linkedin share button"
+          aria-label={t('linkedinshare')}
           href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&title=${title}&summary=${description}&source=${siteMetadata.base_url}`}
           target="_blank"
           rel="noreferrer noopener"
@@ -63,7 +65,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       </li>
       <li className="inline-block">
         <a
-          aria-label="pinterest share button"
+          aria-label={t('pinterestshare')}
           href={`https://pinterest.com/pin/create/button/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&media=&description=${description}`}
           target="_blank"
           rel="noreferrer noopener"
