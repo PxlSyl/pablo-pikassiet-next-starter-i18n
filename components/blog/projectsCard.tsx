@@ -21,7 +21,7 @@ const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => 
         }  rounded-2xl bg-gradient-to-b from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light`}
       >
         <Link
-          href={href.startsWith('http') ? href : `/${locale}${href}`}
+          href={href.startsWith('http') ? href : `/${locale}/${href}`}
           aria-label={`${t('linkto')}${title}`}
         >
           <Image
@@ -35,7 +35,7 @@ const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => 
         <div className="p-6">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
             <Link
-              href={href.startsWith('http') ? href : `/${locale}${href}`}
+              href={href.startsWith('http') ? href : `/${locale}/${href}`}
               aria-label={`${t('linkto')}${title}`}
             >
               {title}
@@ -46,7 +46,7 @@ const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => 
             {plainify(data.content.slice(0, Number(149)))}...
           </p>
           <Link
-            href={href.startsWith('http') ? href : `/${locale}${href}`}
+            href={href.startsWith('http') ? href : `/${locale}/${href}`}
             className="text-base font-medium leading-6 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted"
             aria-label={`${t('linkto')}${title}`}
           >
