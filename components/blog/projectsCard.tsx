@@ -1,89 +1,60 @@
-import React from 'react'
+import { Project } from '@/types'
+import { plainify } from '@/lib/utils/textConverter'
 import Image from './Image'
 import Link from './Link'
-import { useParams } from 'next/navigation'
 import { LocaleTypes } from 'app/[locale]/i18n/settings'
+import { createTranslation } from '@/app/[locale]/i18n/server'
 
-import { motion } from 'framer-motion'
-import { useTranslation } from 'app/[locale]/i18n/client'
-
-const variants = {
-  hidden: { opacity: 0, x: 0, y: -25 },
-  enter: { opacity: 1, x: 0, y: 0 },
+type ProjectsCardProps = {
+  data: Project
+  params: { locale: LocaleTypes }
 }
 
-type CardProps = {
-  title: string
-  description: string
-  imgSrc?: string
-  href?: string
-}
-
-const ProjectsCard = ({ title, description, imgSrc, href }: CardProps) => {
-  const locale = useParams()?.locale as LocaleTypes
-  const { t } = useTranslation(locale, 'projects')
+const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => {
+  const { title, imgSrc, href } = data.frontmatter
+  const { t } = await createTranslation(locale, 'projects')
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      transition={{ type: 'linear' }}
-      className="md max-w-[544px] p-4 md:w-1/2"
-    >
+    <div className="max-w-[544px] p-4">
       <div
         className={`${
           imgSrc && 'h-full'
-        }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
+        }  rounded-2xl bg-gradient-to-b from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light`}
       >
-        {imgSrc &&
-          (href ? (
-            <Link
-              href={href.startsWith('http') ? href : `/${locale}${href}`}
-              aria-label={`${t('linkto')}${title}`}
-            >
-              <Image
-                alt={title}
-                src={imgSrc}
-                className="object-cover object-center md:h-36 lg:h-48"
-                width={544}
-                height={306}
-              />
-            </Link>
-          ) : (
-            <Image
-              alt={title}
-              src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
-              height={306}
-            />
-          ))}
+        <Link
+          href={href.startsWith('http') ? href : `/${locale}${href}`}
+          aria-label={`${t('linkto')}${title}`}
+        >
+          <Image
+            alt={title}
+            src={imgSrc}
+            className="rounded-2xl object-cover object-center md:h-36 lg:h-48"
+            width={544}
+            height={306}
+          />
+        </Link>
         <div className="p-6">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
-            {href ? (
-              <Link
-                href={href.startsWith('http') ? href : `/${locale}${href}`}
-                aria-label={`${t('linkto')}${title}`}
-              >
-                {title}
-              </Link>
-            ) : (
-              title
-            )}
-          </h2>
-          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
-          {href && (
             <Link
               href={href.startsWith('http') ? href : `/${locale}${href}`}
-              className="text-base font-medium leading-6 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted"
               aria-label={`${t('linkto')}${title}`}
             >
-              {t('learn')} &rarr;
+              {title}
             </Link>
-          )}
+          </h2>
+          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+            {' '}
+            {plainify(data.content.slice(0, Number(149)))}...
+          </p>
+          <Link
+            href={href.startsWith('http') ? href : `/${locale}${href}`}
+            className="text-base font-medium leading-6 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted"
+            aria-label={`${t('linkto')}${title}`}
+          >
+            {t('learn')} &rarr;
+          </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 export default ProjectsCard

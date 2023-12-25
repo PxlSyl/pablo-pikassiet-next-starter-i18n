@@ -46,6 +46,16 @@ export type Author = {
   slug?: string
 }
 
+export type Project = {
+  frontmatter: {
+    title: string
+    imgSrc: string
+    href: string
+  }
+  slug?: string
+  content?: string
+}
+
 export type ImgData = {
   frontmatter: {
     draft: boolean
@@ -67,21 +77,6 @@ export type Feature = {
   bulletpoints: string[]
   content: string
   title: string
-}
-
-export type Testimonial = {
-  name: string
-  designation: string
-  avatar: string
-  content: string
-}
-
-export type Call_to_action = {
-  enable?: boolean
-  title: string
-  description: string
-  image: string
-  button: Button
 }
 
 export type Button = {

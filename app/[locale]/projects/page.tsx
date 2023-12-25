@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import Project from './project'
+import { Project } from '@/types'
+import ProjectsCard from '@/components/blog/projectsCard'
+import { getSinglePage } from '@/lib/contentParser'
 import { genPageMetadata } from '../seo'
 import PageHeader from '@/components/partials/PageHeader'
 import { createTranslation } from '../i18n/server'
@@ -19,16 +21,17 @@ export async function generateMetadata({ params: { locale } }: ProjectsProps): P
 
 export default async function Projects({ params: { locale } }: ProjectsProps) {
   const { t } = await createTranslation(locale, 'headerlinks')
+  const projects: Project[] = getSinglePage('projects', locale)
   return (
     <>
       <PageHeader title={t('projects')} />
-      <section className="section-sm mb-20 pb-0">
-        <div className="container">
-          <div className="row justify-center">
-            <Project />
+      <div className="mb-20 mt-20 flex flex-row justify-center pb-0">
+        {projects.map((project: any, index: number) => (
+          <div key={index}>
+            <ProjectsCard data={project} params={{ locale: locale }} />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
     </>
   )
 }

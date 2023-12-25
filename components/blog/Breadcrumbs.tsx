@@ -43,7 +43,7 @@ const getTranslatedLabel = (label: string, t: any) => {
   }
 }
 
-const Breadcrumbs = ({ className }: { className?: string }) => {
+const Breadcrumbs = ({ className, element }: { className?: string; element?: string }) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'headerlinks')
   const pathname = usePathname()
@@ -72,7 +72,7 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
       <ol className="inline-flex">
         {parts.map(({ label, ...attrs }, index) => (
           <li className="mx-1 capitalize" key={index}>
-            {index > 0 && <span className="inlin-block mr-1">/</span>}
+            {index > 0 && <span className="mr-1 inline-block">/</span>}
             {index !== parts.length - 1 ? (
               <Link className="text-primary dark:text-darkmode-primary" {...attrs}>
                 {label}
