@@ -50,7 +50,7 @@ const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => 
             className="text-base font-medium leading-6 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted"
             aria-label={`${t('linkto')}${title}`}
           >
-            {t('learn')} &rarr;
+            {href.startsWith('http') ? `${t('visit')}` : `${t('read')}`} &rarr;
           </Link>
         </div>
       </div>

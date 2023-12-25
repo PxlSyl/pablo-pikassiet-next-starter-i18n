@@ -25,7 +25,7 @@ export default async function Projects({ params: { locale } }: ProjectsProps) {
   return (
     <>
       <PageHeader title={t('projects')} />
-      <div className="mb-20 mt-20 flex flex-row justify-center pb-0">
+      <div className="mb-20 mt-20 flex flex-col items-center justify-center pb-0 md:flex-row">
         {projects.map((project: any, index: number) => (
           <div key={index}>
             <ProjectsCard data={project} params={{ locale: locale }} />
