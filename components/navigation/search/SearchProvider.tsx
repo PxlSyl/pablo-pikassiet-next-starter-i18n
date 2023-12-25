@@ -7,6 +7,7 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import { Blog } from 'contentlayer/generated'
 import { LocaleTypes } from 'app/[locale]/i18n/settings'
 import { useTranslation } from 'app/[locale]/i18n/client'
+import { fallbackLng } from '@/app/[locale]/i18n/locales'
 
 interface SearchProviderProps {
   children: ReactNode
@@ -21,54 +22,54 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
     <KBarSearchProvider
       kbarConfig={{
         searchDocumentsPath: 'search.json',
-        // uncomment and complete this if you want to use in your app
         defaultActions: [
+          /* issue when using regular translations, this is a workaround */
           {
             id: 'drawings',
-            name: t('drawings'),
+            name: locale === fallbackLng ? 'Drawings' : 'Dessins',
             keywords: '',
             shortcut: ['d'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/drawings`),
           },
           {
             id: 'photography',
-            name: t('photography'),
+            name: locale === fallbackLng ? 'Photography' : 'Photographie',
             keywords: '',
             shortcut: ['p'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/photography`),
           },
           {
             id: 'music',
-            name: t('music'),
+            name: locale === fallbackLng ? 'Music' : 'Musique',
             keywords: '',
             shortcut: ['m'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/music`),
           },
           {
             id: 'projects',
-            name: t('projects'),
+            name: locale === fallbackLng ? 'Projects' : 'Projets',
             keywords: '',
             shortcut: ['p'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/projects`),
           },
           {
             id: 'blog',
-            name: t('blog'),
+            name: locale === fallbackLng ? 'Blog' : 'Blog',
             keywords: '',
             shortcut: ['b'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/blog`),
           },
           {
             id: 'about',
-            name: t('about'),
+            name: locale === fallbackLng ? 'About' : 'À propos',
             keywords: '',
             shortcut: ['a'],
-            section: t('navigate'),
+            section: locale === fallbackLng ? 'Navigate' : 'Naviguer',
             perform: () => router.push(`/${locale}/about`),
           },
         ],
