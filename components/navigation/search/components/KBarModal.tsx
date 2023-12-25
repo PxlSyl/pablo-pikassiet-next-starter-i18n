@@ -63,7 +63,7 @@ export const KBarModal = ({ actions, isLoading }: { actions: Action[]; isLoading
 const RenderResults = () => {
   const { results } = useMatches()
   const locale = useParams()?.locale as LocaleTypes
-  const { t } = useTranslation(locale, '')
+  const { t } = useTranslation(locale, 'elements')
   if (results.length) {
     return (
       <KBarResults
