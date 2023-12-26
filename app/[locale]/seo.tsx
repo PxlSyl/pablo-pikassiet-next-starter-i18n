@@ -21,6 +21,7 @@ export function genPageMetadata({
 }: PageSEOProps): Metadata {
   return {
     title,
+    description,
     openGraph: {
       title: `${title} | ${maintitle[locale]}`,
       description: description ? description : maindescription[locale],
