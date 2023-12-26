@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { selectedPhotographySerie } from '@/config/selectedSeries'
+import { selectedThumbsGallerySerie } from '@/config/selectedSeries'
 
 type GalleryStore = {
   selectedSerie: string
@@ -11,7 +11,7 @@ type GalleryStore = {
 }
 
 export const useGalleryStore = create<GalleryStore>((set) => ({
-  selectedSerie: selectedPhotographySerie,
+  selectedSerie: selectedThumbsGallerySerie,
   selectSeries: (serie: string) =>
     set((state) => {
       if (serie === state.selectedSerie) {

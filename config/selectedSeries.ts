@@ -1,3 +1,3 @@
-export const selectedDrawingSerie = 'Bonsai' as string
+export const selectedCoverflowGallerySerie = 'Bonsai' as string
 
-export const selectedPhotographySerie = 'Portrait' as string
+export const selectedThumbsGallerySerie = 'Portrait' as string
