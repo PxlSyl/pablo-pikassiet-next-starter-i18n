@@ -9,7 +9,7 @@ import MDXContent from '@/components/helpers/MDXContent'
 import Share from '@/components/blog/Share'
 import Comments from '@/components/blog/Comments'
 import ScrollTopAndComment from '@/components/blog/ScrollTopAndComment'
-
+import { coverflowGallery } from '@/config/galleriesContent'
 import { getSinglePage } from '@/lib/contentParser'
 import { LocaleTypes } from '../../i18n/settings'
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
 }: {
   params: { single: string; locale: LocaleTypes }
 }): Promise<Metadata | undefined> {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+  const imagesData: ImgData[] = getSinglePage(coverflowGallery, params.locale)
   const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
   const { frontmatter } = imageSingle
   const { title, description, image } = frontmatter
@@ -59,7 +59,7 @@ export const generateStaticParams = ({
 }: {
   params: { single: string; locale: LocaleTypes }
 }) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+  const imagesData: ImgData[] = getSinglePage(coverflowGallery, params.locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
     locale: params.locale,
@@ -69,7 +69,7 @@ export const generateStaticParams = ({
 }
 
 const ImageSingle = ({ params }: { params: { single: string; locale: LocaleTypes } }) => {
-  const imagesData: ImgData[] = getSinglePage('gallery', params.locale)
+  const imagesData: ImgData[] = getSinglePage(coverflowGallery, params.locale)
   const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
   const { frontmatter, content, slug } = imageSingle
   const { title, description, image, width, height } = frontmatter

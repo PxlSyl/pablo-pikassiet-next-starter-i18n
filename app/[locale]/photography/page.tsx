@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import type { ImgData } from '@/types'
 import { useMemo } from 'react'
 import { genPageMetadata } from '../seo'
-import Gallery from '@/components/gallery/photos'
+import Gallery from '@/components/gallery/thumbsGallery'
+import { thumbsGallery } from '@/config/galleriesContent'
 import PageHeader from '@/components/partials/PageHeader'
 import { getSinglePage } from '@/lib/contentParser'
 
@@ -25,7 +26,7 @@ export async function generateMetadata({ params: { locale } }: PageProps): Promi
 
 const Photography = ({ params: { locale } }: PageProps) => {
   const pagetitle = locale === fallbackLng ? 'Photography' : 'Photographie'
-  const galleryData: ImgData[] = getSinglePage('gallery', locale)
+  const galleryData: ImgData[] = getSinglePage(thumbsGallery, locale)
 
   const allSerie = useMemo(
     () => Array.from(new Set(galleryData.map((item) => item.frontmatter.serie))).sort(),
