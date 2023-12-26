@@ -14,6 +14,7 @@ export async function generateMetadata({ params: { locale } }: PageProps): Promi
   const { t } = await createTranslation(locale, 'headerlinks')
   return genPageMetadata({
     title: t('music'),
+    description: t('music'),
     params: { locale: locale },
   })
 }

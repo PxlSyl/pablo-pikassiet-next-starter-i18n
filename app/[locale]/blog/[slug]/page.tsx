@@ -49,8 +49,8 @@ export async function generateMetadata({
   const publishedAt = new Date(post.date).toISOString()
   const modifiedAt = new Date(post.lastmod || post.date).toISOString()
   let imageList = [siteMetadata.socialBanner]
-  if (post.images) {
-    imageList = typeof post.images === 'string' ? [post.images] : post.images
+  if (post.image) {
+    imageList = typeof post.image === 'string' ? [post.image] : post.image
   }
   const ogImages = imageList.map((img) => {
     return {
@@ -64,12 +64,12 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.summary,
+      url: './',
       siteName: maintitle[locale],
       locale: post.language,
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
-      url: './',
       images: ogImages,
       authors: post.authors,
     },

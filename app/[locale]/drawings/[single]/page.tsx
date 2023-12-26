@@ -1,6 +1,7 @@
 import { ImgData } from '@/types'
 import { Metadata } from 'next'
 import siteMetadata from '@/config/siteMetadata'
+import { maintitle } from '@/config/localeMetadata'
 
 import PageHeader from '@/components/partials/PageHeader'
 import ImageFallback from '@/components/helpers/ImageFallback'
@@ -32,19 +33,19 @@ export async function generateMetadata({
     openGraph: {
       title: title,
       description: description,
-      siteName: siteMetadata.title,
-      locale: params.locale,
-      type: 'article',
       url: './',
-      images: image ? image : siteMetadata.socialBanner,
+      siteName: maintitle[params.locale],
+      images: image ? [image] : [siteMetadata.socialBanner],
+      locale: params.locale,
+      type: 'website',
     },
     twitter: {
-      card: 'summary_large_image',
-      site: siteMetadata.siteUrl,
-      creator: siteMetadata.author,
       title: title,
       description: description,
-      images: image ? image : siteMetadata.socialBanner,
+      site: siteMetadata.siteUrl,
+      creator: siteMetadata.author,
+      card: 'summary_large_image',
+      images: image ? [image] : [siteMetadata.socialBanner],
     },
   }
 }

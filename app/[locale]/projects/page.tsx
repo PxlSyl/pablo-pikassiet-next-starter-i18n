@@ -15,6 +15,7 @@ export async function generateMetadata({ params: { locale } }: ProjectsProps): P
   const { t } = await createTranslation(locale, 'headerlinks')
   return genPageMetadata({
     title: t('projects'),
+    description: t('projects'),
     params: { locale: locale },
   })
 }

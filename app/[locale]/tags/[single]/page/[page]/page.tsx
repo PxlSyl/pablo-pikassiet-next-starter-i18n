@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import siteMetadata from '@/config/siteMetadata'
+import { maintitle } from '@/config/localeMetadata'
 import tagData from '@/config/data/tag-data.json'
 import { POSTS_PER_PAGE } from '@/config/postsPerPage'
 
 import taxonomyFilter from '@/lib/utils/taxonomyFilter'
-import { sortData } from '@/lib/utils/sortData'
 import { capitalizeFirstLetter } from '@/lib/utils/textConverter'
 
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
@@ -29,24 +29,25 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata | undefined> {
   const title = capitalizeFirstLetter(single)
   const { t } = await createTranslation(locale, 'blog')
+
   return {
     title: title,
     description: t('tags'),
     openGraph: {
       title: title,
       description: t('tags'),
-      siteName: siteMetadata.title,
+      url: './',
+      siteName: maintitle[locale],
+      images: siteMetadata.socialBanner,
       locale: locale,
       type: 'website',
-      url: './',
-      images: siteMetadata.socialBanner,
     },
     twitter: {
-      card: 'summary_large_image',
-      site: siteMetadata.siteUrl,
-      creator: siteMetadata.author,
       title: title,
       description: t('tags'),
+      site: siteMetadata.siteUrl,
+      creator: siteMetadata.author,
+      card: 'summary_large_image',
       images: siteMetadata.socialBanner,
     },
   }

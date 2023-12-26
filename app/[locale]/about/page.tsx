@@ -1,6 +1,7 @@
 import { RegularPage } from '@/types'
 import { Metadata } from 'next'
 import siteMetadata from '@/config/siteMetadata'
+import { maintitle } from '@/config/localeMetadata'
 
 import ImageFallback from '@/components/helpers/ImageFallback'
 import MDXContent from '@/components/helpers/MDXContent'
@@ -27,19 +28,19 @@ export async function generateMetadata({
     openGraph: {
       title: title,
       description: description,
-      siteName: siteMetadata.title,
+      url: './',
+      siteName: maintitle[locale],
+      images: image ? [image] : [siteMetadata.socialBanner],
       locale: locale,
       type: 'website',
-      url: './',
-      images: image ? image : siteMetadata.socialBanner,
     },
     twitter: {
-      card: 'summary_large_image',
-      site: siteMetadata.siteUrl,
-      creator: siteMetadata.author,
       title: title,
       description: description,
-      images: image ? image : siteMetadata.socialBanner,
+      site: siteMetadata.siteUrl,
+      creator: siteMetadata.author,
+      card: 'summary_large_image',
+      images: image ? [image] : [siteMetadata.socialBanner],
     },
   }
 }

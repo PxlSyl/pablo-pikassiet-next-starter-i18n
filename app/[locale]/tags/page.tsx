@@ -22,6 +22,7 @@ export async function generateMetadata({ params: { locale } }: PageProps): Promi
   const { t } = await createTranslation(locale, 'blog')
   return genPageMetadata({
     title: t('tags'),
+    description: t('tags'),
     params: { locale: locale },
   })
 }
