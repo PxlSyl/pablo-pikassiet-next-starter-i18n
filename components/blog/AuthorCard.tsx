@@ -36,7 +36,7 @@ const AuthorCard = ({ data, params: { locale } }: AuthorCardProps) => {
       </h4>
       <Link href={`/${locale}/authors/${data.slug}`}>
         <p className="mb-4">{plainify(data.content?.slice(0, 300))}...</p>
-        <p className="mb-4 text-highlighted dark:text-darkmode-highlighted">Read more</p>
+        <p className="mb-4 text-highlighted dark:text-darkmode-highlighted">Read more &rarr;</p>
       </Link>
       <Social source={social} className="social-icons" />
     </div>
