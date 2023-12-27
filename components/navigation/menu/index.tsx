@@ -81,7 +81,8 @@ export const Header = () => {
         className={`${menuClass}`}
         onClick={handleClick}
         onKeyDown={handleMenuKeyPress}
-        role="button"
+        role="menuitem"
+        aria-label={t('menubutton')}
         tabIndex={0}
       >
         <div></div>
