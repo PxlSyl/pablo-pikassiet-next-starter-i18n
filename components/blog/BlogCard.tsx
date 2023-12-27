@@ -105,7 +105,11 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
         )}
       </ul>
       <p className="mb-6">{summary.length > 149 ? `${summary.substring(0, 149)}...` : summary}</p>
-      <Link className="btn btn-outline-primary btn-sm" href={`/${locale}/blog/${path}`}>
+      <Link
+        className="btn btn-outline-primary btn-sm"
+        href={`/${locale}/blog/${path}`}
+        aria-label={`${t('linkto')}${title}`}
+      >
         {t('readmore')}
       </Link>
     </div>
