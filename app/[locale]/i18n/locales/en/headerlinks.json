@@ -23,9 +23,5 @@
   "about": "About",
   "terms": "Terms",
   "legalnotice": "Legal notice",
-  "contact": "Contact",
-
-  "/about": "/about",
-  "/terms": "/terms",
-  "/legal-notice": "/legal-notice"
+  "contact": "Contact"
 }
