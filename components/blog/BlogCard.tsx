@@ -28,7 +28,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
   return (
     <div className="bg-body dark:bg-darkmode-body">
       {image && (
-        <Link href={`/${locale}/blog/${path}`}>
+        <Link href={`/${locale}/blog/${path}`} aria-label={`${t('linkto')}${title}`}>
           <ImageFallback
             className="mb-6 w-full rounded"
             src={image}
@@ -39,7 +39,9 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
         </Link>
       )}
       <h4 className="mb-3">
-        <Link href={`/${locale}/blog/${path}`}>{title}</Link>
+        <Link href={`/${locale}/blog/${path}`} aria-label={`${t('linkto')}${title}`}>
+          {title}{' '}
+        </Link>
       </h4>
       <ul className="mb-4 ">
         <li className="mr-4 inline-block">
@@ -48,6 +50,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
             <Link
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
               href={`/${locale}/about`}
+              aria-label={`${t('linkto')}${title}`}
             >
               {humanize(authorDefault)}
             </Link>
@@ -62,6 +65,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
                       ? `/${locale}/about`
                       : `/${locale}/authors/${slugify(author)}`
                   }
+                  aria-label={`${t('linkto')}${title}`}
                 >
                   {humanize(author === 'default' ? authorDefault : author)}
                   {index !== authors.length - 1 && ', '}
@@ -77,6 +81,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
               key={index}
               href={`/${locale}/categories/${slugify(category)}`}
+              aria-label={`${t('linkto')}${title}`}
             >
               {humanize(category)}
               {index !== categories.length - 1 && ', '}
@@ -90,6 +95,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
               key={index}
               href={`/${locale}/tags/${slugify(tag)}`}
+              aria-label={`${t('linkto')}${title}`}
             >
               {humanize(tag)}
               {index !== tags.length - 1 && ', '}
