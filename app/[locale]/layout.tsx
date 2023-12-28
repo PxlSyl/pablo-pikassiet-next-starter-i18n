@@ -80,7 +80,7 @@ export default function RootLayout({ children, params: { locale } }: PageProps) 
     <html
       suppressHydrationWarning={true}
       lang={locale}
-      className={`${signika.variable} ${space_grotesk.variable}`}
+      className={`${signika.variable} ${space_grotesk.variable} scroll-smooth`}
       dir={dir(locale)}
     >
       <head>
@@ -94,6 +94,7 @@ export default function RootLayout({ children, params: { locale } }: PageProps) 
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
 
       <body suppressHydrationWarning={true}>
