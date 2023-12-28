@@ -1,6 +1,6 @@
 ---
 title: 'La machine à remonter le temps'
-imgSrc: '/static/images/time-machine.jpg'
+imgSrc: '/images/blog/time-machine.jpg'
 href: 'blog/la-machine-a-remonter-le-temps'
 ---
 

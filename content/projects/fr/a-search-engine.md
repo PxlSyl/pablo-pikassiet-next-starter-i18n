@@ -1,6 +1,6 @@
 ---
 title: 'Un moteur de recherche'
-imgSrc: '/static/images/google.png'
+imgSrc: '/images/blog/google.png'
 href: 'https://www.google.com'
 ---
 

@@ -37,21 +37,21 @@ export default Home
 
 Pour un fichier markdown, la balise d'image par défaut peut être utilisée et la balise « img » par défaut est remplacée par le composant « Image » dans le processus de construction.
 
-En supposant que nous ayons un fichier appelé « ocean.jpg » dans « data/img/ocean.jpg », la ligne de code suivante générerait l'image optimisée.
+En supposant que nous ayons un fichier appelé « ocean.jpg » dans « images/blog/ocean.jpg », la ligne de code suivante générerait l'image optimisée.
 
 ```
-![ocean](/static/images/ocean.jpg)
+![ocean](/images/blog/ocean.jpg)
 ```
 
 Alternativement, puisque nous utilisons mdx, nous pouvons simplement utiliser le composant image directement! Notez que vous devrez fournir une largeur et une hauteur fixes. La méthode de balise `img` analyse automatiquement la dimension.
 
 ```js
-<Image alt="ocean" src="/static/images/ocean.jpg" width={256} height={128} />
+<Image alt="ocean" src="/images/blog/ocean.jpg" width={256} height={128} />
 ```
 
 _Note_: Si vous essayez de sauvegarder l'image, elle est au format webp, si votre navigateur le prend en charge !
 
-![ocean](/static/images/ocean.jpeg)
+![ocean](/images/blog/ocean.jpeg)
 
 Photo de [YUCAR FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 sur [Unsplash](https://unsplash.com/s/photos/sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

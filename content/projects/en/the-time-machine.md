@@ -1,6 +1,6 @@
 ---
 title: 'The Time Machine'
-imgSrc: '/static/images/time-machine.jpg'
+imgSrc: '/images/blog/time-machine.jpg'
 href: 'blog/the-time-machine'
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'A Search Engine'
-imgSrc: '/static/images/google.png'
+imgSrc: '/images/blog/google.png'
 href: 'https://www.google.com'
 ---
 

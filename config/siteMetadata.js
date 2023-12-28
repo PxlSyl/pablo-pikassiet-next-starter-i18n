@@ -19,7 +19,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   theme_switcher: true,
 
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/images/twitter-card.png',
   locale: 'en',
 
   analytics: {
