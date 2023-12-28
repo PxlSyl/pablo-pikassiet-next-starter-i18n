@@ -186,7 +186,7 @@ export const Header = () => {
                 return (
                   <Link
                     key={link.title}
-                    href={link.href.startsWith('http') ? link.href : `/${locale}${link.href}}`}
+                    href={link.href.startsWith('http') ? link.href : `/${locale}${link.href}`}
                     onClick={closeMenu}
                     className={`ml-4 flex cursor-pointer flex-col text-sm ${hoverClass} 
                      ${isSelected ? selectedClass : ''}`}
