@@ -90,7 +90,7 @@ export const Header = () => {
       <div className="fixed left-[80px] top-[22px] z-40">
         <LangSwitch />
       </div>
-      <div className="bg-gradient fixed top-0 z-20 h-20 w-full">
+      <div className="fixed top-0 z-20 h-20 w-full bg-body dark:bg-darkmode-body">
         <nav className="mx-auto mt-3 flex max-w-7xl items-center justify-center space-x-4 px-4 sm:space-x-8">
           <div className="flex items-center space-x-2 xl:space-x-4">
             <div className="hidden lg:block">
@@ -116,7 +116,7 @@ export const Header = () => {
       <div
         className={`${
           menuclick ? styles.navmenuactive : styles.navmenu
-        } bg-gradient overflow-y-auto`}
+        } overflow-y-auto bg-body dark:bg-darkmode-body`}
       >
         <div className=" lg:mx-auto">
           <Link
@@ -188,7 +188,7 @@ export const Header = () => {
                     key={link.title}
                     href={link.href.startsWith('http') ? link.href : `/${locale}${link.href}}`}
                     onClick={closeMenu}
-                    className={`ml-4 flex cursor-pointer flex-col text-sm text-gray-900 underline dark:text-gray-100 ${hoverClass} 
+                    className={`ml-4 flex cursor-pointer flex-col text-sm ${hoverClass} 
                      ${isSelected ? selectedClass : ''}`}
                   >
                     {t(`${link.title.toLowerCase()}`)}

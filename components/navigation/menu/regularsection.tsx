@@ -25,7 +25,7 @@ export const Regularsection = ({ icon, title, links, closeMenu }: SectionProps) 
       </div>
       {links.map((link) => {
         if (link.href) {
-          const isSelected = pathname.includes(link.href as string)
+          const isSelected = pathname.endsWith(link.href)
           return (
             <Link
               key={link.title}
