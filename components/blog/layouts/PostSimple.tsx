@@ -146,7 +146,7 @@ export default async function PostLayout({
                   </div>
                   {siteMetadata.comments && (
                     <div
-                      className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
+                      className="mt-10 pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
                       id="comment"
                     >
                       <Comments slug={slug} />
