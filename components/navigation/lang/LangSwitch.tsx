@@ -39,14 +39,9 @@ const LangSwitch = () => {
     return newUrl
   }
 
-  const handleLinkClick = async (newLocale: string) => {
-    try {
-      const resolvedUrl = await handleLocaleChange(newLocale)
-      router.push(resolvedUrl)
-    } catch (error) {
-      console.error('Error handling locale change:', error)
-      // Handle error as needed
-    }
+  const handleLinkClick = (newLocale: string) => {
+    const resolvedUrl = handleLocaleChange(newLocale)
+    router.push(resolvedUrl)
   }
 
   const toggleMenu = () => {
@@ -76,7 +71,7 @@ const LangSwitch = () => {
       </div>
       {isMenuOpen && (
         <div
-          className="absolute right-0 mt-2 w-12 origin-top-right rounded-md border border-gray-300 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:rounded-md dark:bg-[#3d3d3d] dark:ring-1 dark:ring-gray-300"
+          className="absolute right-0 mt-2 w-12 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:rounded-md dark:bg-[#3d3d3d] dark:ring-1 dark:ring-gray-300"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -87,7 +82,7 @@ const LangSwitch = () => {
               <li key={newLocale}>
                 <button
                   onClick={() => handleLinkClick(newLocale)}
-                  className="px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 dark:bg-[#3d3d3d] dark:text-white dark:hover:bg-[#4e4e4e]"
+                  className="rounded-md px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 dark:bg-[#3d3d3d] dark:text-white dark:hover:bg-[#4e4e4e]"
                   role="menuitem"
                   style={{ display: 'block', width: '100%', textDecoration: 'none' }}
                 >
