@@ -37,7 +37,7 @@ const Gallery = ({ galleryData, allSerie, allTags }: GalleryProps) => {
       initial="hidden"
       animate="enter"
       transition={{ type: 'linear' }}
-      className="flex w-screen flex-col justify-center md:mt-20 md:flex-row"
+      className="flex flex-col items-center justify-center md:mt-20 md:flex-row"
     >
       <ImageSlider
         params={{ locale: locale }}
