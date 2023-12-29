@@ -8,6 +8,7 @@ import 'swiper/scss/navigation'
 import Link from 'next/link'
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
 import { thumbsGallery } from '@/config/galleriesContent'
+import { useWindowWidth } from '@/hooks/useWindowWidth'
 
 type ImageSliderProps = {
   imageData: ImgData[]
@@ -26,6 +27,7 @@ export const ImageSlider = ({
   selectedTags,
   params,
 }: ImageSliderProps) => {
+  const windowWidth = useWindowWidth()
   const [thumbs, setThumbs] = useState(null)
 
   const filteredImages = useMemo(() => {
@@ -138,18 +140,14 @@ export const ImageSlider = ({
       </SwiperSlide>
     )
   })
-  const swiperStyles = {
-    width: '533px',
-  }
 
   return (
-    <div className="mb-10 mt-10">
+    <div className="mb-10 mt-10" style={{ transform: windowWidth < 768 ? 'scale(0.8)' : 'none' }}>
       <Swiper
         loop={true}
         modules={[Thumbs]}
         thumbs={{ swiper: thumbs && !thumbs.destroyed ? thumbs : null }}
-        style={swiperStyles}
-        className="mb-2 rounded  bg-theme-light p-6 dark:bg-darkmode-theme-light"
+        className="mb-2 w-[533px] rounded  bg-theme-light p-6 dark:bg-darkmode-theme-light"
       >
         {slides}
       </Swiper>
@@ -157,7 +155,7 @@ export const ImageSlider = ({
         loop={true}
         slidesPerView={3}
         onSwiper={setThumbs}
-        className="w-[533px] rounded  bg-theme-light p-6 dark:bg-darkmode-theme-light"
+        className="w-[533px] rounded bg-theme-light p-6 dark:bg-darkmode-theme-light"
       >
         <div style={{ display: 'flex' }}>{thumbsSlides}</div>
       </Swiper>
