@@ -158,7 +158,7 @@ export const ImageSlider = ({
         onSwiper={setThumbs}
         className={`${
           windowWidth < 768 ? 'w-[425px]' : 'w-[533px]'
-        } rounded bg-theme-light p-6 dark:bg-darkmode-theme-light`}
+        } mb-20 rounded bg-theme-light p-6 dark:bg-darkmode-theme-light`}
       >
         <div style={{ display: 'flex' }}>{thumbsSlides}</div>
       </Swiper>
