@@ -100,15 +100,12 @@ export const Header = () => {
           <div className="hidden lg:block">
             <Social source={social.main} className="social-icons" />
           </div>
-          <div className="hidden lg:flex">|</div>
-          <div className="hidden lg:flex">
-            <IoIosMail
-              style={{ width: '40px', height: '40px', cursor: 'pointer' }}
-              onClick={ContactClick}
-            />
-          </div>
         </nav>
         <div className="z-40">
+          <IoIosMail
+            className="fixed right-[120px] top-[26px] mr-5 h-8 w-8 cursor-pointer"
+            onClick={ContactClick}
+          />
           <SearchButton className="fixed right-[70px] top-[30px] mr-5" />
           <ThemeSwitcher className="fixed right-[20px] top-[30px] h-6 w-12 cursor-pointer opacity-100" />
         </div>
