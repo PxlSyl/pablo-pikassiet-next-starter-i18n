@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node ./scripts/postbuild.mjs",
+    "build": "next build",
     "preview": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint",
