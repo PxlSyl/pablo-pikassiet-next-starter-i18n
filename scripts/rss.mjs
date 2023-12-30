@@ -2,8 +2,8 @@ import { writeFileSync, mkdirSync } from 'fs'
 import path from 'path'
 import GithubSlugger from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
-import siteMetadata from '../src/config/siteMetadata.js'
-import tagData from '../app/tag-data.json' assert { type: 'json' }
+import siteMetadata from '../config/siteMetadata.js'
+import tagData from '../config/data/tag-data.json' assert { type: 'json' }
 import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 
