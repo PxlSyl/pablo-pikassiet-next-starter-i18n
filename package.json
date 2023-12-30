@@ -6,15 +6,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "preview": "next start",
-    "postbuild": "next-sitemap",
+    "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint",
-    "format": "prettier -w ./src",
+    "format": "prettier -w ./app ./components ./hooks ./lib ./scripts ./types",
     "windows": "node ./scripts/postContentLayer.mjs",
-    "music": "node ./scripts/musicData.mjs",
-    "generate-json": "node scripts/jsonGenerator.js",
-    "remove-darkmode": "node scripts/removeDarkmode.js && yarn format"
+    "music": "node ./scripts/musicData.mjs"
   },
   "engines": {
     "node": ">=18.0.0"

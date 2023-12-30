@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       'projects',
       'tags',
       'categories',
+      'authors',
     ].map((route) => ({
       url: `${siteUrl}/${locale}/${route}`,
       lastModified: new Date().toISOString().split('T')[0],
