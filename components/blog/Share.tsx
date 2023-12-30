@@ -46,7 +46,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
       <li className="inline-block">
         <a
           aria-label={t('twittershare')}
-          href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}`}
+          href={`https://twitter.com/intent/tweet/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&text=${title}`}
           target="_blank"
           rel="noreferrer noopener"
         >
