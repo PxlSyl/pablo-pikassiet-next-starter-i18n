@@ -11,7 +11,7 @@ type ProjectsCardProps = {
 }
 
 const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => {
-  const { title, imgSrc, href } = data.frontmatter
+  const { title, imgSrc, href, description } = data.frontmatter
   const { t } = await createTranslation(locale, 'projects')
   return (
     <div className="max-w-[544px] p-4">
@@ -43,7 +43,7 @@ const ProjectsCard = async ({ data, params: { locale } }: ProjectsCardProps) => 
           </h2>
           <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
             {' '}
-            {plainify(data.content.slice(0, Number(149)))}...
+            {plainify(description.slice(0, Number(149)))}...
           </p>
           <Link
             href={href.startsWith('http') ? href : `/${locale}/${href}`}
