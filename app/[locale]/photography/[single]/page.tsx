@@ -13,13 +13,15 @@ import { thumbsGallery } from '@/config/galleriesContent'
 import { getSinglePage } from '@/lib/contentParser'
 import { LocaleTypes } from '../../i18n/settings'
 
-export async function generateMetadata({
-  params,
-}: {
+type PageProps = {
   params: { single: string; locale: LocaleTypes }
-}): Promise<Metadata | undefined> {
-  const imagesData: ImgData[] = getSinglePage(thumbsGallery, params.locale)
-  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
+}
+
+export async function generateMetadata({
+  params: { single, locale },
+}: PageProps): Promise<Metadata | undefined> {
+  const imagesData: ImgData[] = getSinglePage(thumbsGallery, locale)
+  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
   const { frontmatter } = imageSingle
   const { title, description, image } = frontmatter
 
@@ -30,9 +32,9 @@ export async function generateMetadata({
       title: title,
       description: description,
       url: './',
-      siteName: maintitle[params.locale],
+      siteName: maintitle[locale],
       images: image ? [image] : [siteMetadata.socialBanner],
-      locale: params.locale,
+      locale: locale,
       type: 'website',
     },
     twitter: {
@@ -50,23 +52,19 @@ export async function generateMetadata({
 export const dynamicParams = false
 
 // generate static params
-export const generateStaticParams = ({
-  params,
-}: {
-  params: { single: string; locale: LocaleTypes }
-}) => {
-  const imagesData: ImgData[] = getSinglePage(thumbsGallery, params.locale)
+export const generateStaticParams = ({ params: { single, locale } }: PageProps) => {
+  const imagesData: ImgData[] = getSinglePage(thumbsGallery, locale)
   const paths = imagesData.map((image) => ({
     single: image.slug,
-    locale: params.locale,
+    locale: locale,
   }))
 
   return paths
 }
 
-const ImageSingle = ({ params }: { params: { single: string; locale: LocaleTypes } }) => {
-  const imagesData: ImgData[] = getSinglePage(thumbsGallery, params.locale)
-  const imageSingle = imagesData.filter((page) => page.slug === params.single)[0]
+const ImageSingle = ({ params: { single, locale } }: PageProps) => {
+  const imagesData: ImgData[] = getSinglePage(thumbsGallery, locale)
+  const imageSingle = imagesData.filter((page) => page.slug === single)[0]
   const { frontmatter, content, slug } = imageSingle
   const { title, description, image, width, height } = frontmatter
 
