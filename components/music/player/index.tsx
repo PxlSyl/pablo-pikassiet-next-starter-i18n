@@ -59,7 +59,7 @@ export const Player = ({
   const containerClass = 'bg-gray-200 dark:bg-darkmode-body'
   const progressbarClass = 'bg-gray-300 dark:bg-white'
   const volumebarClass = 'bg-gray-300 dark:bg-white'
-  const sliderthumbclass = ` ${theme === 'light' ? 'background: #70abf8' : 'background: #70abf8'}`
+  const sliderthumbclass = ` ${theme === 'light' ? 'background: #70abf8' : 'background: #ec4899'}`
 
   return (
     <div className="aspect-w-4 aspect-h-3 relative w-full">

@@ -1,3 +1,4 @@
+import { useDarkMode } from '@/hooks/useDarkmode'
 import { VolumeOff, VolumeOn } from '../svgs'
 
 interface VolumeControlsProps {
@@ -17,6 +18,9 @@ export const VolumeControls = ({
   volumebarClass,
   sliderthumbclass,
 }: VolumeControlsProps) => {
+  const { theme, mounted } = useDarkMode()
+  if (!mounted) return null
+  const fill = ` ${theme === 'light' ? '#70abf8' : '#ec4899'}`
   return (
     <div className="w-400 ml-4 flex items-center justify-end">
       <button
@@ -25,7 +29,7 @@ export const VolumeControls = ({
         aria-label="Mute"
         onClick={() => setIsMuted(!isMuted)}
       >
-        {isMuted ? <VolumeOff /> : <VolumeOn />}
+        {isMuted ? <VolumeOff fill={fill} /> : <VolumeOn fill={fill} />}
       </button>
       <input
         className={`${volumebarClass} w-120 mr-15 ml-2 h-5 appearance-none rounded-full outline-none`}

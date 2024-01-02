@@ -1,3 +1,4 @@
+import { useDarkMode } from '@/hooks/useDarkmode'
 import {
   Play,
   Pause,
@@ -44,6 +45,9 @@ export const PlaybackControls = ({
   skipForward,
   toggleLoop,
 }: PlaybackControlsProps) => {
+  const { theme, mounted } = useDarkMode()
+  if (!mounted) return null
+  const fill = ` ${theme === 'light' ? '#70abf8' : '#ec4899'}`
   return (
     <div className="flex flex-row items-center justify-center">
       <div className="w-35 h-35">
@@ -55,7 +59,7 @@ export const PlaybackControls = ({
             aria-label="Download"
           >
             <a href={music.url} download>
-              <Download />
+              <Download fill={fill} />
             </a>
           </button>
         ) : (
@@ -63,7 +67,7 @@ export const PlaybackControls = ({
             className="mr-2 cursor-pointer rounded-full border-0 bg-transparent outline-none hover:scale-110"
             style={{ width: '100%', height: '100%' }}
           >
-            <Download />
+            <Download fill={fill} />
           </div>
         )}
       </div>
@@ -74,7 +78,7 @@ export const PlaybackControls = ({
           id="buttonRandom"
           aria-label="Random"
         >
-          {id && music && isRandom ? <RandomMusicsTrue /> : <RandomMusicsFalse />}
+          {id && music && isRandom ? <RandomMusicsTrue fill={fill} /> : <RandomMusicsFalse />}
         </button>
       </div>
       <div>
@@ -84,7 +88,7 @@ export const PlaybackControls = ({
           aria-label="Skipback"
           onClick={skipBack}
         >
-          <SkipBack />
+          <SkipBack fill={fill} />
         </button>
       </div>
       <div className="w-45 h-45">
@@ -94,7 +98,7 @@ export const PlaybackControls = ({
           aria-label="PlayPause"
           onClick={() => setIsPlaying(!isPlaying)}
         >
-          {isPlaying ? <Pause /> : <Play />}
+          {isPlaying ? <Pause fill={fill} /> : <Play fill={fill} />}
         </button>
       </div>
       <div>
@@ -104,14 +108,14 @@ export const PlaybackControls = ({
           aria-label="Skipforward"
           onClick={skipForward}
         >
-          <SkipForward />
+          <SkipForward fill={fill} />
         </button>
       </div>
       <div className="w-25 h-25 ml-2 cursor-pointer rounded-full border-0 bg-transparent outline-none hover:scale-110">
         {id && music ? (
           <div>
             <button key={id} onClick={toggleLoop} id="buttonLoop" aria-label="Loop">
-              {isLooping ? <Repeat /> : <NoRepeat />}
+              {isLooping ? <Repeat fill={fill} /> : <NoRepeat />}
             </button>
           </div>
         ) : (
