@@ -24,7 +24,6 @@ features:
       - 'Two swiper galleries to showcase your art'
       - 'Complete music application for your listeners'
       - 'Beautiful contact form'
-      - 'Beautiful cookie banner'
       - 'i18n support'
       - 'Build with Next and TailwindCSS for easy and customizable styling'
       - 'Fully responsive on all devices'

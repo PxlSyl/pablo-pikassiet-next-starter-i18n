@@ -25,7 +25,6 @@ features:
       - 'Deux galeries Swiper pour mettre en valeur votre art'
       - 'Application musicale complète pour vos auditeurs'
       - 'Beau formulaire de contact'
-      - 'Superbe bannière de cookies'
       - 'Version avec internationalisation (i18n)'
       - 'Construit avec Next et TailwindCSS pour un style facile et personnalisable'
       - 'Entièrement responsive sur tous les appareils'
