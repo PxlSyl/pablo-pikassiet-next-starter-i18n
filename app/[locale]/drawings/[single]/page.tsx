@@ -91,7 +91,6 @@ const ImageSingle = ({ params: { single, locale } }: PageProps) => {
               </div>
             </div>
             <div className="m-4 flex items-center justify-center lg:col-4">
-              <h5 className="mr-3 text-highlighted dark:text-darkmode-highlighted">Share :</h5>
               <Share className="social-icons" title={title} description={description} slug={slug} />
             </div>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">

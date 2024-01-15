@@ -88,9 +88,6 @@ export default async function PostLayout({
                 </header>
                 <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
                   <div>
-                    <h5 className="mb-3 mr-3 mt-3 text-highlighted dark:text-darkmode-highlighted">
-                      {t('share')}:
-                    </h5>
                     <Share
                       className="social-icons flex items-center"
                       title={title}

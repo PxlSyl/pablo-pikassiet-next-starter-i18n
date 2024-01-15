@@ -32,48 +32,51 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
   }
 
   return (
-    <ul className={className}>
-      <li className="inline-block">
-        <a
-          aria-label={t('facebookshare')}
-          href={`https://facebook.com/sharer/sharer.php?u=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}`}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <IoLogoFacebook />
-        </a>
-      </li>
-      <li className="inline-block">
-        <a
-          aria-label={t('twittershare')}
-          href={`https://twitter.com/intent/tweet/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&text=${title}`}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <IoLogoTwitter />
-        </a>
-      </li>
-      <li className="inline-block">
-        <a
-          aria-label={t('linkedinshare')}
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&title=${title}&summary=${description}&source=${siteMetadata.base_url}`}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <IoLogoLinkedin />
-        </a>
-      </li>
-      <li className="inline-block">
-        <a
-          aria-label={t('pinterestshare')}
-          href={`https://pinterest.com/pin/create/button/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&media=&description=${description}`}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <IoLogoPinterest />
-        </a>
-      </li>
-    </ul>
+    <div className="m-4 mt-8 flex items-center justify-center">
+      <h5 className="mr-3 text-highlighted dark:text-darkmode-highlighted">{t('share')}</h5>
+      <ul className={className}>
+        <li className="inline-block">
+          <a
+            aria-label={t('facebookshare')}
+            href={`https://facebook.com/sharer/sharer.php?u=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <IoLogoFacebook />
+          </a>
+        </li>
+        <li className="inline-block">
+          <a
+            aria-label={t('twittershare')}
+            href={`https://twitter.com/intent/tweet/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&text=${title}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <IoLogoTwitter />
+          </a>
+        </li>
+        <li className="inline-block">
+          <a
+            aria-label={t('linkedinshare')}
+            href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&title=${title}&summary=${description}&source=${siteMetadata.base_url}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <IoLogoLinkedin />
+          </a>
+        </li>
+        <li className="inline-block">
+          <a
+            aria-label={t('pinterestshare')}
+            href={`https://pinterest.com/pin/create/button/?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&media=&description=${description}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <IoLogoPinterest />
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 }
 

@@ -142,9 +142,6 @@ export default async function PostMinimal({
                     ))}
                   </div>
                   <div className="flex items-center ">
-                    <h5 className="mr-3  text-highlighted dark:text-darkmode-highlighted">
-                      {t('share')}:
-                    </h5>
                     <Share
                       className="social-icons"
                       title={title}
