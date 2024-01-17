@@ -37,7 +37,7 @@ export type Author = {
     social: [
       {
         name: string
-        icon: string
+        icon: any
         link: string
       },
     ]

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
 
-import { FaRegClock, FaRegFolder, FaRegUserCircle } from 'react-icons/fa/index.js'
+import { Folder, User, Clock } from './../icons'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
 import { Blog } from 'contentlayer/generated'
@@ -58,7 +58,7 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
               <h1 dangerouslySetInnerHTML={markdownify(title)} className="h2 mb-4" />
               <ul className="mb-4">
                 <li className="mr-4 inline-block">
-                  <FaRegUserCircle className={'-mt-1 mr-2 inline-block'} />
+                  <User className={'-mt-1 mr-2 inline-block'} />
                   {authors === undefined ? (
                     <Link
                       className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -86,7 +86,7 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                   )}
                 </li>
                 <li className="mr-4 inline-block">
-                  <FaRegFolder className={'-mt-1 mr-2 inline-block'} />
+                  <Folder className={'-mt-1 mr-2 inline-block'} />
                   {categories?.map((category: string, index: number) => (
                     <Link
                       className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -101,7 +101,7 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                 {date && (
                   <li className="mr-4 inline-block">
                     <dt className="sr-only">{t('published')}</dt>
-                    <FaRegClock className="-mt-1 mr-2 inline-block" />
+                    <Clock className="-mt-1 mr-2 inline-block" />
                     <time dateTime={date}>
                       {new Date(date).toLocaleDateString(language, postDateTemplate)}
                     </time>

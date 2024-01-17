@@ -1,11 +1,10 @@
 import Link from 'next/link'
 
 import footer from '@/config/footer.json'
-import social from '@/config/social.json'
 import { footerLinks } from '@/config/headerLinks'
 
 import siteMetadata from '@/config/siteMetadata'
-import Social from '../../blog/Social'
+import SocialIcons from '../icons/social'
 
 import { LocaleTypes } from 'app/[locale]/i18n/settings'
 import { createTranslation } from '@/app/[locale]/i18n/server'
@@ -24,7 +23,7 @@ const Footer = async ({ params: { locale } }: FooterProps) => {
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
       <div className="container pt-10">
         <div className="mb-8 justify-center text-center">
-          <Social source={social.main} className="social-icons" />
+          <SocialIcons className="social-icons" />
         </div>
         <div className="mb-2 flex flex-row justify-center space-x-2 text-center text-sm">
           <div>{siteMetadata.author}</div>

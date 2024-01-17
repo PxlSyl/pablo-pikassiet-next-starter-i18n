@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button, Feature } from '@/types'
-import { FaCheck } from 'react-icons/fa/index.js'
+import { Check } from '@/components/navigation/icons'
 import { genPageMetadata } from './seo'
 import { getListPage } from '@/lib/contentParser'
 import { markdownify } from '@/lib/utils/textConverter'
@@ -87,7 +87,7 @@ const Home = ({ params: { locale } }: HomeProps) => {
                 <ul>
                   {feature.bulletpoints.map((bullet: string) => (
                     <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={'absolute left-0 top-1.5'} />
+                      <Check className={'absolute left-0 top-1.5'} />
                       <span dangerouslySetInnerHTML={markdownify(bullet)} />
                     </li>
                   ))}

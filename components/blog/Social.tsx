@@ -1,8 +1,10 @@
+import React from 'react'
 import DynamicIcon from '../helpers/DynamicIcon'
+import * as SocialIcons from '../navigation/icons'
 
 interface ISocial {
   name: string
-  icon: string
+  icon: any
   link?: string
 }
 
@@ -24,7 +26,7 @@ const Social = ({ source, className }: SocialProps) => {
               rel="noopener noreferrer nofollow"
             >
               <span className="sr-only">{social.name}</span>
-              <DynamicIcon icon={social.icon} />
+              <DynamicIcon icon={SocialIcons[social.icon]} />
             </a>
           </li>
         ) : null

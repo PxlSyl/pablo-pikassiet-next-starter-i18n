@@ -3,8 +3,7 @@ import Bleed from 'pliny/ui/Bleed'
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
 
-import { FaRegUserCircle } from 'react-icons/fa'
-import { FaRegFolder, FaRegClock } from 'react-icons/fa6'
+import { Folder, User, Clock } from './../icons'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
@@ -75,7 +74,7 @@ export default async function PostMinimal({
                 </div>
                 <ul className="mb-2 mt-2 text-center">
                   <li className="mr-4 inline-block">
-                    <FaRegUserCircle className={'-mt-1 mr-2 inline-block'} />
+                    <User className={'-mt-1 mr-2 inline-block'} />
                     {authors === undefined ? (
                       <Link
                         className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -103,7 +102,7 @@ export default async function PostMinimal({
                     )}
                   </li>
                   <li className="mr-4 inline-block">
-                    <FaRegFolder className={'-mt-1 mr-2 inline-block'} />
+                    <Folder className={'-mt-1 mr-2 inline-block'} />
                     {categories?.map((category: string, index: number) => (
                       <Link
                         className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -118,7 +117,7 @@ export default async function PostMinimal({
                   {date && (
                     <li className="mr-4 inline-block">
                       <dt className="sr-only">{t('published')}</dt>
-                      <FaRegClock className="-mt-1 mr-2 inline-block" />
+                      <Clock className="-mt-1 mr-2 inline-block" />
                       <time dateTime={date}>
                         {new Date(date).toLocaleDateString(language, postDateTemplate)}
                       </time>

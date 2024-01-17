@@ -4856,16 +4856,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"disqus-react@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "disqus-react@npm:1.1.5"
-  peerDependencies:
-    react: ^15.6.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^15.6.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 129fce2d9d5f23f31bebe7083d70e3d89f239bacbed46dbfe24385790e6ceffc2480c129f69b72c823e63e86511ab08304d55e84a0699af758afefd363ab7211
-  languageName: node
-  linkType: hard
-
 "dlv@npm:^1.1.3":
   version: 1.1.3
   resolution: "dlv@npm:1.1.3"
@@ -9317,7 +9307,6 @@ __metadata:
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^2.30.0"
     date-fns-tz: "npm:^2.0.0"
-    disqus-react: "npm:^1.1.5"
     eslint: "npm:^8.53.0"
     eslint-config-next: "npm:^14.0.4"
     eslint-config-prettier: "npm:^8.8.0"
@@ -9347,7 +9336,6 @@ __metadata:
     react-gtm-module: "npm:^2.0.11"
     react-h5-audio-player: "npm:^3.9.0"
     react-i18next: "npm:^13.3.1"
-    react-icons: "npm:^4.11.0"
     react-lite-youtube-embed: "npm:^2.3.52"
     react-toastify: "npm:^9.1.3"
     reading-time: "npm:^1.5.0"
@@ -9954,15 +9942,6 @@ __metadata:
     react-native:
       optional: true
   checksum: 955db09fb83bc68aa9fe7ed11c95fb3e9dc5ab95e85854f169c07a9e71f9154d2cc01f46e343801e2478d5de86475e7a19ec677bec532c3870cb7a01246a6a86
-  languageName: node
-  linkType: hard
-
-"react-icons@npm:^4.11.0":
-  version: 4.12.0
-  resolution: "react-icons@npm:4.12.0"
-  peerDependencies:
-    react: "*"
-  checksum: 2170f43031ee7365539f72d4075cbe6c7fbf9a66d6cf4494aa9393b194272da0564f5b19d1b24dbfc567c0ac89f5fe5b8974d92dd83f61e252388dde6a226fb8
   languageName: node
   linkType: hard
 

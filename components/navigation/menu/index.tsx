@@ -1,12 +1,9 @@
 'use client'
-
 // css and third party libraries
 import styles from './menu.module.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
 import { Accordion } from 'react-accessible-accordion'
-import { FaHome } from 'react-icons/fa'
-import { FaShop, FaRegNoteSticky, FaPalette, FaMusic, FaBlogger } from 'react-icons/fa6'
-import { IoIosMail } from 'react-icons/io'
+import { HomeIcon, ShopIcon, PaletteIcon, MusicIcon, BlogIcon, MailIcon } from '../icons'
 import Logo from '@/components/blog/Logo'
 import { selectedClass, hoverClass } from './menutheme'
 // utility and hooks
@@ -23,12 +20,10 @@ import ThemeSwitcher from '../theme'
 import SearchButton from '../search/SearchButton'
 import { Mobilesection } from './mobilesection'
 import { Regularsection } from './regularsection'
-import Social from '@/components/blog/Social'
+import SocialIcons from '../icons/social'
 // config
-import social from '@/config/social.json'
 import {
   headerShopLinks,
-  headerProjectsLinks,
   headerArtLinks,
   headerMusicLinks,
   headerBlogLinks,
@@ -98,14 +93,17 @@ export const Header = () => {
             </div>
           </div>
           <div className="hidden lg:block">
-            <Social source={social.main} className="social-icons" />
+            <SocialIcons className="social-icons" />
           </div>
         </nav>
         <div className="z-40">
-          <IoIosMail
-            className="fixed right-[120px] top-[26px] mr-5 h-8 w-8 cursor-pointer"
+          <button
+            className="fixed right-[112px] top-[26px] mr-5 h-8 w-8 cursor-pointer rounded-md  text-center leading-9"
+            aria-label="Email"
             onClick={ContactClick}
-          />
+          >
+            <MailIcon />
+          </button>
           <SearchButton className="fixed right-[70px] top-[30px] mr-5" />
           <ThemeSwitcher className="fixed right-[20px] top-[30px] h-6 w-12 cursor-pointer opacity-100" />
         </div>
@@ -121,7 +119,7 @@ export const Header = () => {
             href="/"
             onClick={closeMenu}
           >
-            <FaHome />
+            <HomeIcon />
             <p className="ml-1">{t('home')}</p>
           </Link>
           <div className="lg:flex lg:flex-row">
@@ -129,25 +127,25 @@ export const Header = () => {
               <Mobilesection
                 title={t('shop')}
                 links={headerShopLinks}
-                icon={<FaShop />}
+                icon={<ShopIcon />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
                 title={t('gallery')}
                 links={headerArtLinks}
-                icon={<FaPalette />}
+                icon={<PaletteIcon />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
                 title={t('music')}
                 links={headerMusicLinks}
-                icon={<FaMusic />}
+                icon={<MusicIcon />}
                 closeMenu={closeMenu}
               />
               <Mobilesection
                 title={t('blog')}
                 links={headerBlogLinks}
-                icon={<FaBlogger />}
+                icon={<BlogIcon />}
                 closeMenu={closeMenu}
               />
             </Accordion>
@@ -155,25 +153,25 @@ export const Header = () => {
               <Regularsection
                 title={t('shop')}
                 links={headerShopLinks}
-                icon={<FaShop />}
+                icon={<ShopIcon />}
                 closeMenu={closeMenu}
               />
               <Regularsection
                 title={t('gallery')}
                 links={headerArtLinks}
-                icon={<FaPalette />}
+                icon={<PaletteIcon />}
                 closeMenu={closeMenu}
               />
               <Regularsection
                 title={t('music')}
                 links={headerMusicLinks}
-                icon={<FaMusic />}
+                icon={<MusicIcon />}
                 closeMenu={closeMenu}
               />
               <Regularsection
                 title={t('blog')}
                 links={headerBlogLinks}
-                icon={<FaBlogger />}
+                icon={<BlogIcon />}
                 closeMenu={closeMenu}
               />
             </div>

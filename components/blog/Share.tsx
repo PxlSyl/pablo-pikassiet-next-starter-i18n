@@ -1,12 +1,7 @@
 'use client'
 
 import siteMetadata from '@/config/siteMetadata'
-import {
-  IoLogoFacebook,
-  IoLogoLinkedin,
-  IoLogoPinterest,
-  IoLogoTwitter,
-} from 'react-icons/io5/index.js'
+import { Facebook, Linkedin, Pinterest, Twitter } from '../navigation/icons'
 import { useParams, usePathname } from 'next/navigation'
 import { useTranslation } from 'app/[locale]/i18n/client'
 import { fallbackLng, secondLng } from '@/app/[locale]/i18n/locales'
@@ -42,7 +37,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <IoLogoFacebook />
+            <Facebook />
           </a>
         </li>
         <li className="inline-block">
@@ -52,7 +47,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <IoLogoTwitter />
+            <Twitter />
           </a>
         </li>
         <li className="inline-block">
@@ -62,7 +57,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <IoLogoLinkedin />
+            <Linkedin />
           </a>
         </li>
         <li className="inline-block">
@@ -72,7 +67,7 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <IoLogoPinterest />
+            <Pinterest />
           </a>
         </li>
       </ul>

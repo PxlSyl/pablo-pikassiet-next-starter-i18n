@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { FaRegFolder, FaRegUserCircle, FaRegClock, FaTags } from 'react-icons/fa/index.js'
+import { Folder, User, Clock, Tags } from './icons'
 
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
@@ -23,6 +23,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
   if (!post) {
     return null
   }
+
   const { path, title, language, summary, image, authors, categories, tags, date } = post
 
   return (
@@ -45,7 +46,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
       </h4>
       <ul className="mb-4 ">
         <li className="mr-4 inline-block">
-          <FaRegUserCircle className={'-mt-1 mr-2 inline-block'} />
+          <User className={'-mt-1 mr-2 inline-block'} />
           {authors === undefined ? (
             <Link
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -75,7 +76,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
           )}
         </li>
         <li className="mr-4 inline-block">
-          <FaRegFolder className={'-mt-1 mr-2 inline-block'} />
+          <Folder className={'-mt-1 mr-2 inline-block'} />
           {categories?.map((category: string, index: number) => (
             <Link
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -89,7 +90,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
           ))}
         </li>
         <li className="mr-4 inline-block">
-          <FaTags className={'-mt-1 mr-2 inline-block'} />
+          <Tags className={'-mt-1 mr-2 inline-block'} />
           {tags?.map((tag: string, index: number) => (
             <Link
               className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -105,7 +106,7 @@ const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
         {date && (
           <li className="inline-block">
             {' '}
-            <FaRegClock className={'-mt-1 mr-2 inline-block'} />
+            <Clock className={'-mt-1 mr-2 inline-block'} />
             <time dateTime={date}>{formatDate(date, language)}</time>
           </li>
         )}

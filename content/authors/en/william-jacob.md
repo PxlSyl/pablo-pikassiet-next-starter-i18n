@@ -5,15 +5,15 @@ image: '/images/avatar.png'
 description: this is meta description
 social:
   - name: github
-    icon: FaGithub
+    icon: Github
     link: https://github.com
 
   - name: twitter
-    icon: FaTwitter
+    icon: Twitter
     link: https://twitter.com
 
   - name: linkedin
-    icon: FaLinkedin
+    icon: Linkedin
     link: https://linkedin.com
 ---
 

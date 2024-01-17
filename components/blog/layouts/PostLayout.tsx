@@ -1,8 +1,6 @@
 import { ReactNode } from 'react'
 
-import { FaRegClock, FaRegFolder } from 'react-icons/fa6'
-import { FaHashtag, FaRegUserCircle } from 'react-icons/fa'
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
+import { Folder, User, Clock, Tags, ArrowLeft, ArrowRight } from './../icons'
 
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
@@ -74,7 +72,7 @@ export default async function PostLayout({
                       <div>
                         <dt className="sr-only">{t('published')}</dt>
                         <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <FaRegClock className="-mt-1 mr-2 inline-block" />
+                          <Clock className="-mt-1 mr-2 inline-block" />
                           <time dateTime={date}>
                             {new Date(date).toLocaleDateString(language, postDateTemplate)}
                           </time>
@@ -110,7 +108,7 @@ export default async function PostLayout({
                     <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                       <div className="py-4 xl:py-8">
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          <FaRegUserCircle className={'-mt-1 mr-2 inline-block'} />
+                          <User className={'-mt-1 mr-2 inline-block'} />
                           {t('author')}
                         </h2>
                         {authors === undefined ? (
@@ -142,7 +140,7 @@ export default async function PostLayout({
                       {categories && (
                         <div className="py-4 xl:py-8">
                           <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                            <FaRegFolder className={'-mt-1 mr-2 inline-block'} />
+                            <Folder className={'-mt-1 mr-2 inline-block'} />
                             {t('categories')}
                           </h2>
                           <div className="flex flex-wrap">
@@ -155,7 +153,7 @@ export default async function PostLayout({
                       {tags && (
                         <div className="py-4 xl:py-8">
                           <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                            <FaHashtag className={'-mt-1 mr-2 inline-block'} />
+                            <Tags className={'-mt-1 mr-2 inline-block'} />
                             {t('tags')}
                           </h2>
                           <div className="flex flex-wrap">
@@ -171,7 +169,7 @@ export default async function PostLayout({
                             <div>
                               <Link href={`/${locale}/blog/${prev.path}`}>
                                 <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                  <IoIosArrowDropleftCircle className={'-mt-1 mr-2 inline-block'} />
+                                  <ArrowLeft className={'-mt-1 mr-2 inline-block'} />
                                   {t('prevpost')}
                                 </h2>
                                 <div className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80">
@@ -185,9 +183,7 @@ export default async function PostLayout({
                               <Link href={`/${locale}/blog/${next.path}`}>
                                 <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                                   {t('nextpost')}
-                                  <IoIosArrowDroprightCircle
-                                    className={'-mt-1 mr-2 inline-block'}
-                                  />
+                                  <ArrowRight className={'-mt-1 mr-2 inline-block'} />
                                 </h2>
                                 <div className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80">
                                   {next.title}
