@@ -3581,13 +3581,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"all@npm:^0.0.0":
-  version: 0.0.0
-  resolution: "all@npm:0.0.0"
-  checksum: c0d1d43ffc6f32f88c652c70a63ef5ce7ede340991c509a36c6b0994126f1119f2796d86a3d24bae739c7fbed11c0ea5d87a4c540b4a7a8694dbce2927bd3abb
-  languageName: node
-  linkType: hard
-
 "ansi-escapes@npm:^5.0.0":
   version: 5.0.0
   resolution: "ansi-escapes@npm:5.0.0"
@@ -9271,7 +9264,6 @@ __metadata:
     "@types/react-dom": "npm:18.2.15"
     "@typescript-eslint/eslint-plugin": "npm:^6.1.0"
     "@typescript-eslint/parser": "npm:^6.1.0"
-    all: "npm:^0.0.0"
     autoprefixer: "npm:^10.4.16"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^2.30.0"
