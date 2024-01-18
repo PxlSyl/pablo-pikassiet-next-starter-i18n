@@ -19,6 +19,42 @@ I don't have that much time so I need help to write and replace some posts for t
 - All best features from [Tailwind Next Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 - All best features, ideas and improvments from my own project and website.
 
+This means :
+
+- Next.js with Typescript
+- Easy styling customization with Tailwind 3.0
+- Framermotion for smooth page transitions
+- Great advanced menu bar
+- Two swiper galleries to showcase your art
+- Complete music application for your listeners
+- Beautiful contact form
+- MD/MDX to manage your pages : write and update content in Markdown / MDX
+- Contentlayer to manage blog content logic
+- Near perfect lighthouse score
+- Mobile-friendly view & fully responsive on all devices
+- Light and dark theme
+- Font optimization with next/font
+- Integration with pliny that provides:
+  Multiple analytics options including Umami, Plausible, Simple Analytics, Posthog and Google Analytics
+- Comments via Giscus, Utterances or Disqus
+- Newsletter API and component with support for Mailchimp, Buttondown, Convertkit, Klaviyo, Revue, and Emailoctopus
+- Command palette search with Kbar or Algolia
+- Server-side syntax highlighting with line numbers and line highlighting via rehype-prism-plus
+- Math display supported via KaTeX
+- Code syntax highlighting
+- Citation and bibliography support via rehype-citation
+- Automatic image optimization via next/image
+- Support for tags - each unique tag will be its own page, + pagination and subpagination
+- Support for categories - each unique category will be its own page, + pagination and subpagination
+- Support for main author page, + dedicated page for multiple authors
+- Similar posts suggestion
+- 4 different blog layouts
+- Projects page
+- Preconfigured security headers
+- SEO friendly with RSS feed, sitemaps and more!
+- Terms and Legal notice preconfigured pages
+- Open-source and free for personal and commercial use
+
 ## License
 
 Copyright (c) 2023 - Present, Designed & Developed by [PxlSyl](https://www.pxlsyl.art/fr)
