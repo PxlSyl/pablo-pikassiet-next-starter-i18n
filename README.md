@@ -49,6 +49,7 @@ This means :
 - Similar posts suggestion
 - 4 different blog layouts
 - Projects page
+- Opengraph protocol support for metadata
 - Preconfigured security headers
 - SEO friendly with RSS feed, sitemaps and more!
 - Terms and Legal notice preconfigured pages
