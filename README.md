@@ -54,6 +54,10 @@ This means :
 - Terms and Legal notice preconfigured pages
 - Open-source and free for personal and commercial use
 
+My own website based on this new template:
+
+- [PxlSyl.art](https://www.pxlsyl.art/)
+
 ## License
 
 Copyright (c) 2023 - Present, Designed & Developed by [PxlSyl](https://www.pxlsyl.art/fr)
