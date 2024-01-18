@@ -8,7 +8,8 @@
     "en": "deriving-ols-estimator"
   },
   "elements": {
-    "en": "elements"
+    "en": "elements",
+    "fr": "elements-fr"
   },
   "mardownguide": {
     "en": "github-markdown-guide",
