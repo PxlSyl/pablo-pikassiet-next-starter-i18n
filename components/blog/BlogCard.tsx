@@ -20,7 +20,7 @@ interface BlogCardProps {
   post: CoreContent<Blog>
 }
 
-const BlogCard = async ({ post }: BlogCardProps) => {
+const BlogCard = ({ post }: BlogCardProps) => {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'blog')
   if (!post) {
