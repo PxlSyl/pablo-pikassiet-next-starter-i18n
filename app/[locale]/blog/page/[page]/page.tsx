@@ -63,7 +63,6 @@ const Posts = ({ params: { locale, page } }: PageProps) => {
           <div className="row gx-5">
             <div className="lg:col-8">
               <BlogPostsSection
-                params={{ locale: locale }}
                 currentPosts={currentPosts}
                 ulclassName="row"
                 liclassName="mb-14 md:col-6"

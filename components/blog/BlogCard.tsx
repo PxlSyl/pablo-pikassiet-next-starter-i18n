@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import { Folder, User, Clock, Tags } from './icons'
@@ -11,15 +13,16 @@ import { authorDefault } from '@/config/authorDefault'
 import { Blog } from 'contentlayer/generated'
 
 import { LocaleTypes } from '@/app/[locale]/i18n/settings'
-import { createTranslation } from '@/app/[locale]/i18n/server'
+import { useTranslation } from '@/app/[locale]/i18n/client'
+import { useParams } from 'next/navigation'
 
 interface BlogCardProps {
   post: CoreContent<Blog>
-  params: { locale: LocaleTypes }
 }
 
-const BlogCard = async ({ post, params: { locale } }: BlogCardProps) => {
-  const { t } = await createTranslation(locale, 'blog')
+const BlogCard = async ({ post }: BlogCardProps) => {
+  const locale = useParams()?.locale as LocaleTypes
+  const { t } = useTranslation(locale, 'blog')
   if (!post) {
     return null
   }

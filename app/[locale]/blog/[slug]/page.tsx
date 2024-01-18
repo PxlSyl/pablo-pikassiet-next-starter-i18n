@@ -131,7 +131,7 @@ export default async function Page({ params: { slug, locale } }: PageProps) {
               <div className="row justify-center">
                 {similarPosts.map((post) => (
                   <div key={post.slug} className="mb-7 lg:col-4">
-                    <BlogCard params={{ locale: locale }} post={post} />
+                    <BlogCard post={post} />
                   </div>
                 ))}
               </div>
