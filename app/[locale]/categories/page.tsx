@@ -51,7 +51,6 @@ const Categories = async ({ params: { locale } }: PageProps) => {
         </div>
         <div className="section-sm pb-0">
           <BlogPostsSection
-            params={{ locale: locale }}
             currentPosts={currentPosts}
             ulclassName="container max-w-[600px]"
             liclassName="mb-14"
