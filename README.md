@@ -41,7 +41,6 @@ This means :
 - Command palette search with Kbar or Algolia
 - Server-side syntax highlighting with line numbers and line highlighting via rehype-prism-plus
 - Math display supported via KaTeX
-- Code syntax highlighting
 - Citation and bibliography support via rehype-citation
 - Automatic image optimization via next/image
 - Support for tags - each unique tag will be its own page, + pagination and subpagination
