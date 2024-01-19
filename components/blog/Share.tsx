@@ -1,7 +1,7 @@
 'use client'
 
 import siteMetadata from '@/config/siteMetadata'
-import { Facebook, Linkedin, Pinterest, Twitter } from '../navigation/icons'
+import { Facebook, Linkedin, Pinterest, Twitter, Whatsapp, Telegram } from '../navigation/icons'
 import { useParams, usePathname } from 'next/navigation'
 import { useTranslation } from 'app/[locale]/i18n/client'
 import { fallbackLng, secondLng } from '@/app/[locale]/i18n/locales'
@@ -68,6 +68,26 @@ const Share = ({ title, description, slug, className }: ShareProps) => {
             rel="noreferrer noopener"
           >
             <Pinterest />
+          </a>
+        </li>
+        <li className="inline-block">
+          <a
+            aria-label={t('whatsappshareshare')}
+            href={`https://wa.me/?text=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&text=${title}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Whatsapp />
+          </a>
+        </li>
+        <li className="inline-block">
+          <a
+            aria-label={t('telegramshare')}
+            href={`https://telegram.me/share/url?url=${siteMetadata.siteUrl}/${locale}/${targetSegment}/${slug}&text=${title}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Telegram />
           </a>
         </li>
       </ul>
