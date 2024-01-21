@@ -28,8 +28,8 @@ export const humanize = (content: string) => {
 }
 
 // plainify
-export const plainify = (content: string) => {
-  const parseMarkdown = marked.parse(content)
+export const plainify = async (content: string) => {
+  const parseMarkdown = await marked.parse(content)
   const filterBrackets = parseMarkdown.replace(/<\/?[^>]+(>|$)/gm, '')
   const filterSpaces = filterBrackets.replace(/[\r\n]\s*[\r\n]/gm, '')
   const stripHTML = htmlEntityDecoder(filterSpaces)
