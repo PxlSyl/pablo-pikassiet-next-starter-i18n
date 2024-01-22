@@ -3,6 +3,7 @@
 import codeSampleMdx from './code-sample.mdx.json' assert { type: 'json' }
 import derivationEstimateurOlsMdx from './derivation-estimateur-ols.mdx.json' assert { type: 'json' }
 import derivingOlsEstimatorMdx from './deriving-ols-estimator.mdx.json' assert { type: 'json' }
+import elementsFrMdx from './elements-fr.mdx.json' assert { type: 'json' }
 import elementsMdx from './elements.mdx.json' assert { type: 'json' }
 import exempleCodeMdx from './exemple-code.mdx.json' assert { type: 'json' }
 import githubMarkdownGuideMdx from './github-markdown-guide.mdx.json' assert { type: 'json' }
@@ -25,6 +26,5 @@ import releaseOfTailwindNextjsStarterBlogV2_0Mdx from './release-of-tailwind-nex
 import theTimeMachineMdx from './the-time-machine.mdx.json' assert { type: 'json' }
 import nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx from './nested-route__introducing-multi-part-posts-with-nested-routing.mdx.json' assert { type: 'json' }
 import routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx from './route-imbriquee__presentation-publications-en-plusieurs-parties-routage-imbrique.mdx.json' assert { type: 'json' }
-import elementsFrMdx from './elements-fr.mdx.json' assert { type: 'json' }
 
-export const allBlogs = [codeSampleMdx, derivationEstimateurOlsMdx, derivingOlsEstimatorMdx, elementsMdx, exempleCodeMdx, githubMarkdownGuideMdx, guideGithubMarkdownMdx, guideToUsingImagesInNextjsMdx, guideUtilisationImagesNextjsMdx, imagesDuCanadaMdx, internationalisationV2Mdx, internationalizationV2Mdx, introducingTailwindNextjsStarterBlogMdx, laMachineARemonterLeTempsMdx, monTitreFancyMdx, myFancyTitleMdx, newFeaturesInV1Mdx, nouvellesFonctionnalitesV1Mdx, picturesOfCanadaMdx, presentationBlogStarterTailwindNextjsMdx, presentationStarterBlogTailwindNextjsV2_0Mdx, releaseOfTailwindNextjsStarterBlogV2_0Mdx, theTimeMachineMdx, nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx, routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx, elementsFrMdx]
+export const allBlogs = [codeSampleMdx, derivationEstimateurOlsMdx, derivingOlsEstimatorMdx, elementsFrMdx, elementsMdx, exempleCodeMdx, githubMarkdownGuideMdx, guideGithubMarkdownMdx, guideToUsingImagesInNextjsMdx, guideUtilisationImagesNextjsMdx, imagesDuCanadaMdx, internationalisationV2Mdx, internationalizationV2Mdx, introducingTailwindNextjsStarterBlogMdx, laMachineARemonterLeTempsMdx, monTitreFancyMdx, myFancyTitleMdx, newFeaturesInV1Mdx, nouvellesFonctionnalitesV1Mdx, picturesOfCanadaMdx, presentationBlogStarterTailwindNextjsMdx, presentationStarterBlogTailwindNextjsV2_0Mdx, releaseOfTailwindNextjsStarterBlogV2_0Mdx, theTimeMachineMdx, nestedRoute__introducingMultiPartPostsWithNestedRoutingMdx, routeImbriquee__presentationPublicationsEnPlusieursPartiesRoutageImbriqueMdx]

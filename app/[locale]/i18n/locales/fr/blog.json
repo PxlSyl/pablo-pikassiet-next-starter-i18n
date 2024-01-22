@@ -11,5 +11,7 @@
   "back": "Retour sur le blog",
   "relatedposts": "Articles similaires",
   "comments": "Charger les commentaires",
-  "linkto": "Lien vers"
+  "linkto": "Lien vers",
+  "series": "Séries",
+  "episodes": "Episodes"
 }

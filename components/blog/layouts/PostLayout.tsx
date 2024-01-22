@@ -13,6 +13,7 @@ import Link from '../Link'
 import PageTitle from '../PageTitle'
 import Category from '../Categories'
 import Tag from '../Tag'
+import { PostSeriesBox } from '../PostseriesBox'
 import ScrollTopAndComment from '../ScrollTopAndComment'
 import Share from '../Share'
 import ImageFallback from '../../helpers/ImageFallback'
@@ -45,7 +46,8 @@ export default async function PostLayout({
   params: { locale },
 }: LayoutProps) {
   const { t } = await createTranslation(locale, 'blog')
-  const { slug, date, title, description, language, authors, image, categories, tags } = content
+  const { slug, date, title, description, language, authors, image, categories, tags, series } =
+    content
 
   return (
     <>
@@ -94,6 +96,11 @@ export default async function PostLayout({
                     />
                   </div>
                   <div className="mt-10 divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+                    {series && (
+                      <div className="not-prose mt-4">
+                        <PostSeriesBox data={series} />
+                      </div>
+                    )}
                     <div className="content max-w-none pb-8 pt-10">{children}</div>
                     {siteMetadata.comments && (
                       <div

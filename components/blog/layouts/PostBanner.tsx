@@ -12,6 +12,7 @@ import Comments from '../Comments'
 import Link from '../Link'
 import PageTitle from '../PageTitle'
 import ScrollTopAndComment from '../ScrollTopAndComment'
+import { PostSeriesBox } from '../PostseriesBox'
 import Share from '../Share'
 import ImageFallback from '../../helpers/ImageFallback'
 
@@ -43,7 +44,8 @@ export default async function PostMinimal({
   params: { locale },
 }: LayoutProps) {
   const { t } = await createTranslation(locale, 'blog')
-  const { slug, title, description, language, image, authors, categories, tags, date } = content
+  const { slug, title, description, language, image, authors, categories, tags, date, series } =
+    content
 
   return (
     <>
@@ -124,6 +126,11 @@ export default async function PostMinimal({
                     </li>
                   )}
                 </ul>
+                {series && (
+                  <div className="not-prose mt-4">
+                    <PostSeriesBox data={series} />
+                  </div>
+                )}
                 <div className="content max-w-none py-4 ">{children}</div>
                 <div className="flex flex-col justify-center text-sm font-medium sm:flex-row sm:justify-between">
                   <div className="mb-6 flex items-center sm:mb-0 ">

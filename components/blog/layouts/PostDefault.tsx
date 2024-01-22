@@ -10,6 +10,7 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import { Blog } from 'contentlayer/generated'
 
 import { humanize, markdownify, slugify } from '@/lib/utils/textConverter'
+import { PostSeriesBox } from '../PostseriesBox'
 import ImageFallback from '../../helpers/ImageFallback'
 import Share from '../Share'
 import ScrollTopAndComment from '../ScrollTopAndComment'
@@ -35,7 +36,8 @@ interface LayoutProps {
 
 const PostDefault = async ({ children, content, params: { locale } }: LayoutProps) => {
   const { t } = await createTranslation(locale, 'blog')
-  const { title, slug, description, language, image, authors, categories, date, tags } = content
+  const { title, slug, description, language, image, authors, categories, date, tags, series } =
+    content
 
   return (
     <>
@@ -108,6 +110,11 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                   </li>
                 )}
               </ul>
+              {series && (
+                <div className="not-prose mt-4">
+                  <PostSeriesBox data={series} />
+                </div>
+              )}
               <div className="content mb-10">{children}</div>
               <div className="row items-start justify-between">
                 <div className="mb-10 flex items-center lg:col-5 lg:mb-0">

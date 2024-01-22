@@ -11,5 +11,7 @@
   "back": "Back to the blog",
   "relatedposts": "Related posts",
   "comments": "Load comments",
-  "linkto": "Link to"
+  "linkto": "Link to",
+  "series": "Series",
+  "episodes": "Episodes"
 }
