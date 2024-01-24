@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Folder, User, Clock, Tags, ArrowLeft, ArrowRight } from './../icons'
+import { Folder, User, Clock, Calendar, Tags, ArrowLeft, ArrowRight } from './../icons'
 
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
@@ -46,8 +46,19 @@ export default async function PostLayout({
   params: { locale },
 }: LayoutProps) {
   const { t } = await createTranslation(locale, 'blog')
-  const { slug, date, title, description, language, authors, image, categories, tags, series } =
-    content
+  const {
+    slug,
+    date,
+    title,
+    description,
+    language,
+    authors,
+    image,
+    categories,
+    tags,
+    series,
+    readingTime,
+  } = content
 
   return (
     <>
@@ -74,13 +85,17 @@ export default async function PostLayout({
                       <div>
                         <dt className="sr-only">{t('published')}</dt>
                         <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <Clock className="-mt-1 mr-2 inline-block" />
+                          <Calendar className="-mt-1 mr-2 inline-block" />
                           <time dateTime={date}>
                             {new Date(date).toLocaleDateString(language, postDateTemplate)}
                           </time>
                         </dd>
                       </div>
                     </dl>
+                    <div className="inline-block">
+                      <Clock className={'mr-2 mt-1 inline-block'} />
+                      <time className="mb-2">{`${readingTime}`}</time>
+                    </div>
                     <div>
                       <PageTitle>{title}</PageTitle>
                     </div>

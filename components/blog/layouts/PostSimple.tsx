@@ -6,7 +6,7 @@ import type { Blog } from 'contentlayer/generated'
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
 
-import { Folder, User, Clock, Tags } from './../icons'
+import { Folder, User, Calendar, Clock, Tags } from './../icons'
 
 import Comments from '../Comments'
 import Link from '../Link'
@@ -37,8 +37,19 @@ export default async function PostLayout({
   params: { locale },
 }: LayoutProps) {
   const { t } = await createTranslation(locale, 'blog')
-  const { title, description, language, image, slug, authors, categories, tags, date, series } =
-    content
+  const {
+    title,
+    description,
+    language,
+    image,
+    slug,
+    authors,
+    categories,
+    tags,
+    date,
+    series,
+    readingTime,
+  } = content
 
   return (
     <>
@@ -65,11 +76,15 @@ export default async function PostLayout({
                       <div>
                         <dt className="sr-only">{t('published')}</dt>
                         <dd className="text-base font-medium leading-6">
-                          <Clock className="-mt-1 mr-2 inline-block" />
+                          <Calendar className="-mt-1 mr-2 inline-block" />
                           <time dateTime={date}>{formatDate(date, language)}</time>
                         </dd>
                       </div>
                     </dl>
+                    <li className="inline-block">
+                      <Clock className={'mr-2 mt-1 inline-block'} />
+                      <time className="mb-2">{`${readingTime}`}</time>
+                    </li>
                     <div>
                       <PageTitle>{title}</PageTitle>
                     </div>

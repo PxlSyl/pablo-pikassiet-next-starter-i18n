@@ -4,7 +4,7 @@ import Link from 'next/link'
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
 
-import { Folder, User, Clock } from './../icons'
+import { Folder, User, Calendar, Clock } from './../icons'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
 import { Blog } from 'contentlayer/generated'
@@ -36,8 +36,19 @@ interface LayoutProps {
 
 const PostDefault = async ({ children, content, params: { locale } }: LayoutProps) => {
   const { t } = await createTranslation(locale, 'blog')
-  const { title, slug, description, language, image, authors, categories, date, tags, series } =
-    content
+  const {
+    title,
+    slug,
+    description,
+    language,
+    image,
+    authors,
+    categories,
+    date,
+    tags,
+    series,
+    readingTime,
+  } = content
 
   return (
     <>
@@ -103,12 +114,16 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                 {date && (
                   <li className="mr-4 inline-block">
                     <dt className="sr-only">{t('published')}</dt>
-                    <Clock className="-mt-1 mr-2 inline-block" />
+                    <Calendar className="-mt-1 mr-2 inline-block" />
                     <time dateTime={date}>
                       {new Date(date).toLocaleDateString(language, postDateTemplate)}
                     </time>
                   </li>
                 )}
+                <li className="inline-block">
+                  <Clock className={'mr-2 mt-1 inline-block'} />
+                  <time className="mb-2">{`${readingTime}`}</time>
+                </li>
               </ul>
               {series && (
                 <div className="not-prose mt-4">

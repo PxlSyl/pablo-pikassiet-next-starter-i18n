@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import { Folder, User, Clock, Tags } from './icons'
+import { Folder, User, Clock, Calendar, Tags } from './icons'
 
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
@@ -27,7 +27,8 @@ const BlogCard = ({ post }: BlogCardProps) => {
     return null
   }
 
-  const { path, title, language, summary, image, authors, categories, tags, date } = post
+  const { path, title, language, summary, image, authors, categories, tags, date, readingTime } =
+    post
 
   return (
     <div className="bg-body dark:bg-darkmode-body">
@@ -108,11 +109,14 @@ const BlogCard = ({ post }: BlogCardProps) => {
         </li>
         {date && (
           <li className="inline-block">
-            {' '}
-            <Clock className={'-mt-1 mr-2 inline-block'} />
+            <Calendar className={'-mt-1 mr-2 inline-block'} />
             <time dateTime={date}>{formatDate(date, language)}</time>
           </li>
         )}
+        <li className="inline-block">
+          <Clock className={'mr-2 mt-1 inline-block'} />
+          <time className="mb-2">{`${readingTime}`}</time>
+        </li>
       </ul>
       <p className="mb-6">{summary.length > 149 ? `${summary.substring(0, 149)}...` : summary}</p>
       <Link

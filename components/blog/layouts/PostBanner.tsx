@@ -3,7 +3,7 @@ import Bleed from 'pliny/ui/Bleed'
 import siteMetadata from '@/config/siteMetadata'
 import { authorDefault } from '@/config/authorDefault'
 
-import { Folder, User, Clock } from './../icons'
+import { Folder, User, Calendar, Clock } from './../icons'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
@@ -44,8 +44,19 @@ export default async function PostMinimal({
   params: { locale },
 }: LayoutProps) {
   const { t } = await createTranslation(locale, 'blog')
-  const { slug, title, description, language, image, authors, categories, tags, date, series } =
-    content
+  const {
+    slug,
+    title,
+    description,
+    language,
+    image,
+    authors,
+    categories,
+    tags,
+    date,
+    series,
+    readingTime,
+  } = content
 
   return (
     <>
@@ -119,12 +130,16 @@ export default async function PostMinimal({
                   {date && (
                     <li className="mr-4 inline-block">
                       <dt className="sr-only">{t('published')}</dt>
-                      <Clock className="-mt-1 mr-2 inline-block" />
+                      <Calendar className="-mt-1 mr-2 inline-block" />
                       <time dateTime={date}>
                         {new Date(date).toLocaleDateString(language, postDateTemplate)}
                       </time>
                     </li>
                   )}
+                  <li className="inline-block">
+                    <Clock className={'mr-2 mt-1 inline-block'} />
+                    <time className="mb-2">{`${readingTime}`}</time>
+                  </li>
                 </ul>
                 {series && (
                   <div className="not-prose mt-4">
