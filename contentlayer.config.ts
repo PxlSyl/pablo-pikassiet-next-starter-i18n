@@ -1,6 +1,6 @@
 import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
 import { writeFileSync } from 'fs'
-import readingTime from 'reading-time'
+import readingTime from './lib/utils/readingTime'
 import { slug } from 'github-slugger'
 import path from 'path'
 // Remark packages

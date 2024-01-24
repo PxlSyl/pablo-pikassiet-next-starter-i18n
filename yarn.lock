@@ -9587,7 +9587,6 @@ __metadata:
     react-i18next: "npm:^13.3.1"
     react-lite-youtube-embed: "npm:^2.4.0"
     react-toastify: "npm:^10.0.4"
-    reading-time: "npm:^1.5.0"
     rehype-autolink-headings: "npm:^7.1.0"
     rehype-citation: "npm:^1.0.2"
     rehype-katex: "npm:^6.0.3"
@@ -10254,13 +10253,6 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
-  languageName: node
-  linkType: hard
-
-"reading-time@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "reading-time@npm:1.5.0"
-  checksum: 0f730852fd4fb99e5f78c5b0cf36ab8c3fa15db96f87d9563843f6fd07a47864273ade539ebb184b785b728cde81a70283aa2d9b80cba5ca03b81868be03cabc
   languageName: node
   linkType: hard
 

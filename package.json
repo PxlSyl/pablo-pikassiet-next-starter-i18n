@@ -44,7 +44,6 @@
     "react-i18next": "^13.3.1",
     "react-lite-youtube-embed": "^2.4.0",
     "react-toastify": "^10.0.4",
-    "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-citation": "^1.0.2",
     "rehype-katex": "^6.0.3",

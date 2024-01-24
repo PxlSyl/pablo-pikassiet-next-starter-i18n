@@ -108,7 +108,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
           ))}
         </li>
         {date && (
-          <li className="inline-block">
+          <li className="mr-4 inline-block">
             <Calendar className={'-mt-1 mr-2 inline-block'} />
             <time dateTime={date}>{formatDate(date, language)}</time>
           </li>
