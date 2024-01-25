@@ -99,7 +99,7 @@ export default async function PostMinimal({
                       <>
                         {authors.map((author: string, index: number) => (
                           <Link
-                            className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
+                            className="mx-1 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
                             key={index}
                             href={
                               author === 'default'
@@ -118,7 +118,7 @@ export default async function PostMinimal({
                     <Folder className="mr-2" />
                     {categories?.map((category: string, index: number) => (
                       <Link
-                        className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
+                        className="mx-1 text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
                         key={category}
                         href={`/${locale}/categories/${slugify(category)}`}
                       >
@@ -130,7 +130,7 @@ export default async function PostMinimal({
                   {date && (
                     <li className="mr-4 flex flex-row items-center">
                       <dt className="sr-only">{t('published')}</dt>
-                      <Calendar className="mr-2" />
+                      <Calendar className="-mt-1 mr-2" />
                       <time dateTime={date}>
                         {new Date(date).toLocaleDateString(language, postDateTemplate)}
                       </time>

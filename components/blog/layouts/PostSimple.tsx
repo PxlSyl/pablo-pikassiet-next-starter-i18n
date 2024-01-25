@@ -152,7 +152,7 @@ export default async function PostLayout({
                     </div>
                   )}
                   <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                    <div className="content pb-8 pt-10">{children}</div>
+                    <div className="content max-w-none pb-8 pt-10">{children}</div>
                   </div>
                   <div className="flex items-center">
                     <Share

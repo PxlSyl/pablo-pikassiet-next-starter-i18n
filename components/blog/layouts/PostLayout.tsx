@@ -212,10 +212,10 @@ export default async function PostLayout({
                             <div>
                               <Link href={`/${locale}/blog/${next.path}`}>
                                 <div className="flex flex-row items-center">
-                                  <ArrowRight className="-mt-1 mr-2" />
                                   <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                                     {t('nextpost')}
                                   </h2>
+                                  <ArrowRight className="-mt-1 ml-2" />
                                 </div>
                                 <div className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80">
                                   {next.title}

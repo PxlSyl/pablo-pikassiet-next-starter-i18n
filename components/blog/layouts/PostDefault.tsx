@@ -131,8 +131,8 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                 </div>
               )}
               <div className="content mb-10">{children}</div>
-              <div className="row items-start justify-between">
-                <div className="mb-10 flex items-center lg:col-5 lg:mb-0">
+              <div className="flex flex-col items-center md:flex-row md:justify-between">
+                <div className="flex items-center justify-center">
                   <h5 className="mr-3 text-highlighted dark:text-darkmode-highlighted">
                     {t('tags')}:
                   </h5>
@@ -140,7 +140,7 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                     {tags?.map((tag: string) => (
                       <li key={tag} className="inline-block">
                         <Link
-                          className="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-highlighted hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-highlighted"
+                          className="mx-1 block rounded bg-theme-light px-3 py-1 hover:bg-highlighted hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-highlighted"
                           href={`/${locale}/tags/${slugify(tag)}`}
                         >
                           {humanize(tag)}
@@ -149,7 +149,7 @@ const PostDefault = async ({ children, content, params: { locale } }: LayoutProp
                     ))}
                   </ul>
                 </div>
-                <div className="flex items-center lg:col-4">
+                <div>
                   <Share
                     className="social-icons"
                     title={title}
