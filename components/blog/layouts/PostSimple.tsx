@@ -72,26 +72,26 @@ export default async function PostLayout({
               <div>
                 <header>
                   <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
-                    <dl>
-                      <div>
-                        <dt className="sr-only">{t('published')}</dt>
-                        <dd className="text-base font-medium leading-6">
-                          <Calendar className="-mt-1 mr-2 inline-block" />
-                          <time dateTime={date}>{formatDate(date, language)}</time>
-                        </dd>
-                      </div>
-                    </dl>
-                    <li className="inline-block">
-                      <Clock className={'mr-2 mt-1 inline-block'} />
-                      <time className="mb-2">{`${readingTime}`}</time>
-                    </li>
                     <div>
                       <PageTitle>{title}</PageTitle>
                     </div>
+                    <ul className="flex flex-wrap justify-center">
+                      <li className="mr-4 flex flex-row items-center">
+                        <dt className="sr-only">{t('published')}</dt>
+                        <Calendar className="-mt-1 mr-2" />
+                        <dd className="text-base font-medium leading-6">
+                          <time dateTime={date}>{formatDate(date, language)}</time>
+                        </dd>
+                      </li>
+                      <li className="flex flex-row items-center">
+                        <Clock className="mr-2" />
+                        <time>{readingTime}</time>
+                      </li>
+                    </ul>
                   </div>
-                  <ul className="text-cente mb-4 mt-4 ">
-                    <li className="mr-4 inline-block">
-                      <User className={'-mt-1 mr-2 inline-block'} />
+                  <ul className="mb-4 mt-4 flex flex-wrap text-center">
+                    <li className="mr-4 flex flex-row items-center">
+                      <User className="mr-2" />
                       {authors === undefined ? (
                         <Link
                           className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -118,8 +118,8 @@ export default async function PostLayout({
                         </>
                       )}
                     </li>
-                    <li className="mr-4 inline-block">
-                      <Folder className={'-mt-1 mr-2 inline-block'} />
+                    <li className="mr-4 flex flex-row items-center">
+                      <Folder className="mr-2" />
                       {categories?.map((category: string, index: number) => (
                         <Link
                           className="mx-1 text-highlighted  hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -131,8 +131,8 @@ export default async function PostLayout({
                         </Link>
                       ))}
                     </li>
-                    <li className="mr-4 inline-block">
-                      <Tags className={'-mt-1 mr-2 inline-block'} />
+                    <li className="flex flex-row items-center">
+                      <Tags className="mr-2" />
                       {tags?.map((tag: string) => (
                         <Link
                           className="mx-1 text-highlighted  hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"

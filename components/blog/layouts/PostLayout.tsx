@@ -81,24 +81,24 @@ export default async function PostLayout({
               <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
                 <header className="pt-6 xl:pb-6">
                   <div className="space-y-1 text-center">
-                    <dl className="space-y-10">
-                      <div>
+                    <div>
+                      <PageTitle>{title}</PageTitle>
+                    </div>
+                    <ul className="flex flex-wrap justify-center">
+                      <li className="mr-4 flex flex-row items-center">
                         <dt className="sr-only">{t('published')}</dt>
+                        <Calendar className="-mt-1 mr-2" />
                         <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <Calendar className="-mt-1 mr-2 inline-block" />
                           <time dateTime={date}>
                             {new Date(date).toLocaleDateString(language, postDateTemplate)}
                           </time>
                         </dd>
-                      </div>
-                    </dl>
-                    <div className="inline-block">
-                      <Clock className={'mr-2 mt-1 inline-block'} />
-                      <time className="mb-2">{`${readingTime}`}</time>
-                    </div>
-                    <div>
-                      <PageTitle>{title}</PageTitle>
-                    </div>
+                      </li>
+                      <li className="flex flex-row items-center">
+                        <Clock className="mr-2" />
+                        <time>{readingTime}</time>
+                      </li>
+                    </ul>
                   </div>
                 </header>
                 <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
@@ -129,10 +129,12 @@ export default async function PostLayout({
                   <footer>
                     <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                       <div className="py-4 xl:py-8">
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          <User className={'-mt-1 mr-2 inline-block'} />
-                          {t('author')}
-                        </h2>
+                        <div className="flex flex-row items-center">
+                          <User className="-mt-1 mr-2" />
+                          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                            {t('author')}
+                          </h2>
+                        </div>
                         {authors === undefined ? (
                           <Link
                             className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -161,10 +163,12 @@ export default async function PostLayout({
                       </div>
                       {categories && (
                         <div className="py-4 xl:py-8">
-                          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                            <Folder className={'-mt-1 mr-2 inline-block'} />
-                            {t('categories')}
-                          </h2>
+                          <div className="flex flex-row items-center">
+                            <Folder className="-mt-1 mr-2" />
+                            <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                              {t('categories')}
+                            </h2>
+                          </div>
                           <div className="flex flex-wrap">
                             {categories.map((category) => (
                               <Category key={category} text={category} />
@@ -174,10 +178,12 @@ export default async function PostLayout({
                       )}
                       {tags && (
                         <div className="py-4 xl:py-8">
-                          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                            <Tags className={'-mt-1 mr-2 inline-block'} />
-                            {t('tags')}
-                          </h2>
+                          <div className="flex flex-row items-center">
+                            <Tags className="-mt-1 mr-2" />
+                            <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                              {t('tags')}
+                            </h2>
+                          </div>
                           <div className="flex flex-wrap">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
@@ -190,10 +196,12 @@ export default async function PostLayout({
                           {prev && prev.path && (
                             <div>
                               <Link href={`/${locale}/blog/${prev.path}`}>
-                                <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                  <ArrowLeft className={'-mt-1 mr-2 inline-block'} />
-                                  {t('prevpost')}
-                                </h2>
+                                <div className="flex flex-row items-center">
+                                  <ArrowLeft className="-mt-1 mr-2" />
+                                  <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                    {t('prevpost')}
+                                  </h2>
+                                </div>
                                 <div className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80">
                                   {prev.title}
                                 </div>
@@ -203,10 +211,12 @@ export default async function PostLayout({
                           {next && next.path && (
                             <div>
                               <Link href={`/${locale}/blog/${next.path}`}>
-                                <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                  {t('nextpost')}
-                                  <ArrowRight className={'-mt-1 mr-2 inline-block'} />
-                                </h2>
+                                <div className="flex flex-row items-center">
+                                  <ArrowRight className="-mt-1 mr-2" />
+                                  <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                    {t('nextpost')}
+                                  </h2>
+                                </div>
                                 <div className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80">
                                   {next.title}
                                 </div>

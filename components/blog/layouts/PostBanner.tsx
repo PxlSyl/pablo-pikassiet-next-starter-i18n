@@ -85,9 +85,9 @@ export default async function PostMinimal({
                     <PageTitle>{title}</PageTitle>
                   </div>
                 </div>
-                <ul className="mb-2 mt-2 text-center">
-                  <li className="mr-4 inline-block">
-                    <User className={'-mt-1 mr-2 inline-block'} />
+                <ul className="mb-2 mt-2 flex flex-wrap justify-center">
+                  <li className="mr-4 flex flex-row items-center">
+                    <User className="mr-2" />
                     {authors === undefined ? (
                       <Link
                         className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -114,8 +114,8 @@ export default async function PostMinimal({
                       </>
                     )}
                   </li>
-                  <li className="mr-4 inline-block">
-                    <Folder className={'-mt-1 mr-2 inline-block'} />
+                  <li className="mr-4 flex flex-row items-center">
+                    <Folder className="mr-2" />
                     {categories?.map((category: string, index: number) => (
                       <Link
                         className="text-highlighted hover:opacity-80 dark:text-darkmode-highlighted dark:hover:opacity-80"
@@ -128,17 +128,17 @@ export default async function PostMinimal({
                     ))}
                   </li>
                   {date && (
-                    <li className="mr-4 inline-block">
+                    <li className="mr-4 flex flex-row items-center">
                       <dt className="sr-only">{t('published')}</dt>
-                      <Calendar className="-mt-1 mr-2 inline-block" />
+                      <Calendar className="mr-2" />
                       <time dateTime={date}>
                         {new Date(date).toLocaleDateString(language, postDateTemplate)}
                       </time>
                     </li>
                   )}
-                  <li className="inline-block">
-                    <Clock className={'mr-2 mt-1 inline-block'} />
-                    <time className="mb-2">{`${readingTime}`}</time>
+                  <li className="flex flex-row items-center">
+                    <Clock className="mr-2" />
+                    <time>{readingTime}</time>
                   </li>
                 </ul>
                 {series && (
