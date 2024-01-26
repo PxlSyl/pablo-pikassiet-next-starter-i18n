@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import footer from '@/config/footer.json'
@@ -7,20 +9,21 @@ import siteMetadata from '@/config/siteMetadata'
 import SocialIcons from '../icons/social'
 
 import { LocaleTypes } from 'app/[locale]/i18n/settings'
-import { createTranslation } from '@/app/[locale]/i18n/server'
+import { useParams, usePathname } from 'next/navigation'
+
+import { useTranslation } from '@/app/[locale]/i18n/client'
 
 import { markdownify } from '@/lib/utils/textConverter'
 
-type FooterProps = {
-  params: { locale: LocaleTypes }
-}
-
-const Footer = async ({ params: { locale } }: FooterProps) => {
-  const { t } = await createTranslation(locale, 'headerlinks')
+const Footer = () => {
   const { copyright, credits } = footer.params
+  const locale = useParams()?.locale as LocaleTypes
+  const { t } = useTranslation(locale, 'headerlinks')
+  const pathname = usePathname()
+  const isMusicPage = pathname.endsWith(`music`)
 
   return (
-    <footer className="bg-theme-light dark:bg-darkmode-theme-light">
+    <footer className={`${isMusicPage ? 'hidden' : 'bg-theme-light dark:bg-darkmode-theme-light'}`}>
       <div className="container pt-10">
         <div className="mb-8 justify-center text-center">
           <SocialIcons className="social-icons" />
