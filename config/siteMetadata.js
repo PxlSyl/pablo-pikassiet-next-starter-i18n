@@ -3,6 +3,7 @@ const siteMetadata = {
   title: 'Pablo Pikassiet',
   author: 'Pablo Pikassiet',
   description: 'An amazing Next.js template for creative people',
+  email: '<YOUR EMAIL>',
 
   siteUrl: 'https://pablo-pikassiet-next-starter-i18n.vercel.app',
   base_path: '/',
@@ -90,6 +91,9 @@ const siteMetadata = {
     //   indexName: 'docsearch',
     // },
   },
+  formspree: true,
+  waline: true,
+  walineServer: 'https://waline-comments-snowy.vercel.app/',
 }
 
 module.exports = siteMetadata

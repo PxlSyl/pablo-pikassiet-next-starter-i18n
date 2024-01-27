@@ -1,4 +1,6 @@
 'use client'
+
+import siteMetadata from '@/config/siteMetadata'
 // css and third party libraries
 import styles from './menu.module.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
@@ -97,13 +99,23 @@ export const Header = () => {
           </div>
         </nav>
         <div className="z-40">
-          <button
-            className="fixed right-[112px] top-[26px] mr-5 h-8 w-8 cursor-pointer rounded-md  text-center leading-9"
-            aria-label="Email"
-            onClick={ContactClick}
-          >
-            <MailIcon />
-          </button>
+          {siteMetadata.formspree === true ? (
+            <button
+              className="fixed right-[112px] top-[26px] mr-5 h-8 w-8 cursor-pointer rounded-md  text-center leading-9"
+              aria-label="Email"
+              onClick={ContactClick}
+            >
+              <MailIcon />
+            </button>
+          ) : (
+            <Link
+              className="fixed right-[112px] top-[26px] mr-5 h-8 w-8 cursor-pointer rounded-md  text-center leading-9"
+              aria-label="Email"
+              href={`mailto:${siteMetadata.email}`}
+            >
+              <MailIcon />
+            </Link>
+          )}
           <SearchButton className="fixed right-[70px] top-[30px] mr-5" />
           <ThemeSwitcher className="fixed right-[20px] top-[30px] h-6 w-12 cursor-pointer opacity-100" />
         </div>
