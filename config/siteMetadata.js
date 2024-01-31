@@ -92,8 +92,8 @@ const siteMetadata = {
     // },
   },
   formspree: true,
-  waline: true,
-  walineServer: 'https://waline-comments-snowy.vercel.app/',
+  waline: false,
+  walineServer: '',
 }
 
 module.exports = siteMetadata
