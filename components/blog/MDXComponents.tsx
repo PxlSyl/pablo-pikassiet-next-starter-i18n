@@ -1,5 +1,3 @@
-import { CustomMDXComponents } from 'custom'
-
 import TOCInline from 'pliny/ui/TOCInline'
 import Pre from 'pliny/ui/Pre'
 import BlogNewsletterForm from './BlogNewsLetterForm'
@@ -15,7 +13,7 @@ import Audioplayer from '../shortcodes/Audioplayer'
 import Image from './Image'
 import CustomLink from './Link'
 
-export const components: CustomMDXComponents = {
+export const components = {
   Image,
   TOCInline,
   a: CustomLink,

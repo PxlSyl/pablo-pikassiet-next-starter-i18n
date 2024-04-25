@@ -16,6 +16,26 @@
   @import 'utilities';
 }
 
+.katex-display {
+  overflow: auto hidden;
+}
+
+.content-header-link {
+  opacity: 0;
+  margin-left: -24px;
+  padding-right: 4px;
+}
+
+.content-header:hover .content-header-link,
+.content-header-link:hover {
+  opacity: 1;
+}
+
+.linkicon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .animate-spin {
   animation: spin infinite 5s linear;
 }
@@ -116,28 +136,28 @@
   left: 13.5px;
 }
 
-.checkbox:checked + label > .hamburger_style > .bar1 {
+.checkbox:checked+label>.hamburger_style>.bar1 {
   top: 13.5px;
   background-color: transparent;
 }
 
-.checkbox:checked + label > .hamburger_style > .bar2 {
+.checkbox:checked+label>.hamburger_style>.bar2 {
   left: 0px;
   width: 30px;
   transform: rotate(45deg);
 }
 
-.checkbox:checked + label > .hamburger_style > .bar3 {
+.checkbox:checked+label>.hamburger_style>.bar3 {
   left: 0;
   width: 30px;
   transform: rotate(-45deg);
 }
 
-.checkbox:checked + label > .hamburger_style > .bar4 {
+.checkbox:checked+label>.hamburger_style>.bar4 {
   background-color: transparent;
 }
 
-.checkbox:checked + label > .hamburger_style > .bar5 {
+.checkbox:checked+label>.hamburger_style>.bar5 {
   bottom: 13.5px;
   background-color: transparent;
 }
