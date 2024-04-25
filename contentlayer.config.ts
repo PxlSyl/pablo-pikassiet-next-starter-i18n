@@ -3,7 +3,7 @@ import {
   ComputedFields,
   makeSource,
   defineNestedType,
-} from 'contentlayer/source-files'
+} from 'contentlayer2/source-files'
 import { writeFileSync } from 'fs'
 import readingTime from './lib/utils/readingTime'
 import { slug } from 'github-slugger'
