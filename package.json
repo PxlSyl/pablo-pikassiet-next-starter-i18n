@@ -34,7 +34,7 @@
     "marked": "^11.1.1",
     "music-metadata": "^7.14.0",
     "next": "^14.2.1",
-    "next-contentlayer2": "0.3.4",
+    "next-contentlayer2": "0.4.4",
     "next-mdx-remote": "^0.0.0-canary-20240321205249",
     "next-themes": "^0.3.0",
     "pliny": "0.2.0",
