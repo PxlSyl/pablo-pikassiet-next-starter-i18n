@@ -213,7 +213,16 @@ export default makeSource({
     ],
     rehypePlugins: [
       rehypeSlug,
-      rehypeAutolinkHeadings,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'prepend',
+          headingProperties: {
+            className: ['content-header'],
+          },
+          content: icon,
+        },
+      ],
       rehypeKatex,
       [rehypeCitation, { path: path.join(root, 'content', 'blog') }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
