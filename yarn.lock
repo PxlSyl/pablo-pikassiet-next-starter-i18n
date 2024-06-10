@@ -2203,26 +2203,26 @@ __metadata:
   linkType: hard
 
 "@grpc/grpc-js@npm:^1.7.1":
-  version: 1.9.14
-  resolution: "@grpc/grpc-js@npm:1.9.14"
+  version: 1.10.9
+  resolution: "@grpc/grpc-js@npm:1.10.9"
   dependencies:
-    "@grpc/proto-loader": "npm:^0.7.8"
-    "@types/node": "npm:>=12.12.47"
-  checksum: 921c5a34b4b290555b41291f514658b89c5035926d77bbbedc2e7d408bd7156450539df4f6b8698cd5a6ee7f20109a444efb9ec200a4302c84dda0c6f223b7c0
+    "@grpc/proto-loader": "npm:^0.7.13"
+    "@js-sdsl/ordered-map": "npm:^4.4.2"
+  checksum: 4f161015878057ad55ac84299fdbc4e74798bdb25aa5a078978b87b9ce521d11b4b33baa196d5092385f463020cd2dedbad121de22509e23a0996387001393e5
   languageName: node
   linkType: hard
 
-"@grpc/proto-loader@npm:^0.7.8":
-  version: 0.7.10
-  resolution: "@grpc/proto-loader@npm:0.7.10"
+"@grpc/proto-loader@npm:^0.7.13":
+  version: 0.7.13
+  resolution: "@grpc/proto-loader@npm:0.7.13"
   dependencies:
     lodash.camelcase: "npm:^4.3.0"
     long: "npm:^5.0.0"
-    protobufjs: "npm:^7.2.4"
+    protobufjs: "npm:^7.2.5"
     yargs: "npm:^17.7.2"
   bin:
     proto-loader-gen-types: build/bin/proto-loader-gen-types.js
-  checksum: efd9a094afd90a271019adb7213dbbf6ae8788b7ad5b9b98e2b15848f0dcdd645ab8701b7feb981e3692846d4f81f71468be61bb10e85ced53dfd9a5aa2df7dd
+  checksum: dc8ed7aa1454c15e224707cc53d84a166b98d76f33606a9f334c7a6fb1aedd3e3614dcd2c2b02a6ffaf140587d19494f93b3a56346c6c2e26bc564f6deddbbf3
   languageName: node
   linkType: hard
 
@@ -2520,6 +2520,13 @@ __metadata:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
   checksum: 18cf19f88e2792c1c91515f2b629aae05f3cdbb2e60c3886e16e80725234ce26dd10144c4981c05d9366e7094498c0b4fe5c1a89f4a730d7376a4ba4af448149
+  languageName: node
+  linkType: hard
+
+"@js-sdsl/ordered-map@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "@js-sdsl/ordered-map@npm:4.4.2"
+  checksum: cc7e15dc4acf6d9ef663757279600bab70533d847dcc1ab01332e9e680bd30b77cdf9ad885cc774276f51d98b05a013571c940e5b360985af5eb798dc1a2ee2b
   languageName: node
   linkType: hard
 
@@ -3540,7 +3547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
+"@types/node@npm:>=13.7.0":
   version: 20.11.5
   resolution: "@types/node@npm:20.11.5"
   dependencies:
@@ -9904,7 +9911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:^7.2.3, protobufjs@npm:^7.2.4":
+"protobufjs@npm:^7.2.3":
   version: 7.2.6
   resolution: "protobufjs@npm:7.2.6"
   dependencies:
@@ -9921,6 +9928,26 @@ __metadata:
     "@types/node": "npm:>=13.7.0"
     long: "npm:^5.0.0"
   checksum: e164855536a43aa7941c7d95a2342e466f599d2e033ed89c5f5582fb0e3affeec702810091b850f3b700bfd646260b07bb4d8bb94c107cddcecd92de4d1d62fd
+  languageName: node
+  linkType: hard
+
+"protobufjs@npm:^7.2.5":
+  version: 7.3.0
+  resolution: "protobufjs@npm:7.3.0"
+  dependencies:
+    "@protobufjs/aspromise": "npm:^1.1.2"
+    "@protobufjs/base64": "npm:^1.1.2"
+    "@protobufjs/codegen": "npm:^2.0.4"
+    "@protobufjs/eventemitter": "npm:^1.1.0"
+    "@protobufjs/fetch": "npm:^1.1.0"
+    "@protobufjs/float": "npm:^1.0.2"
+    "@protobufjs/inquire": "npm:^1.1.0"
+    "@protobufjs/path": "npm:^1.1.2"
+    "@protobufjs/pool": "npm:^1.1.0"
+    "@protobufjs/utf8": "npm:^1.1.0"
+    "@types/node": "npm:>=13.7.0"
+    long: "npm:^5.0.0"
+  checksum: fdcd17a783a4d71dd46463419cdfb5a5e3ad07cf4d9460abb5bdeb2547b0fa77c55955ac26c38e5557f5169dc3909456c675a08c56268c0e79b34d348c05dcab
   languageName: node
   linkType: hard
 
