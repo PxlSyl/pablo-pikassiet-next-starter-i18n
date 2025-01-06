@@ -33,7 +33,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "marked": "^12.0.2",
     "music-metadata": "^7.14.0",
-    "next": "^14.2.3",
+    "next": "^14.2.10",
     "next-contentlayer2": "^0.4.5",
     "next-mdx-remote": "^0.0.0-canary-20240321205249",
     "next-themes": "^0.3.0",
